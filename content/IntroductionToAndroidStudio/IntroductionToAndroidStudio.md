@@ -32,7 +32,7 @@ math: true
 
     Course Code: ELEE1146 and COMP1836
 
-    Course Name: Mibile Applications for Engineers/Technologists
+    Course Name: Mobile Applications for Engineers/Technologists
 
     Credits: 20
 
@@ -109,7 +109,7 @@ math: true
 |Android 6.0	|23	|MARSHMALLOW|	
 |Android 5.1	|22	|LOLLIPOP_MR1|	
 |Android 5.0	|21	|LOLLIPOP	|
-|Android 4.4W |20 |	KITKAT_WATCH	KitKat for Wearables Only|
+|Android 4.4W |20 |	KITKAT_WATCH 	(KitKat for Wearables Only)|
 |Android 4.4	|19	|KITKAT	|
 |Android 4.3	|18	|JELLY_BEAN_MR2|
 
@@ -124,10 +124,9 @@ math: true
   - `Java` is an Object-oriented programming language patterned after the `C++` language
 - **Android Studio**
   - An `integrated development environment (IDE)` for building and integrating application development tools and open-source projects. 
-  - Android Studio IDE is exclusively dedicated to the purpose of creating Android applications
+  - Android Studio `IDE` is exclusively dedicated to the purpose of creating Android applications
   - Includes the `Android Software Development Kit (SDK)`
   - `XML` is used to assist in the layout of the Android emulator
-
 ---
 
 ## Emulator vs Simulator
@@ -219,3 +218,109 @@ Don't use because they wont understand the APIs' yet
 
 ---
 
+## Designing the User Interface Layout within the Virtual Device
+
+- **Widget** – a single element on the screen (Button, Text Box, etc.)
+- **Layout** – a container that holds as many widgets as needed
+- **Properties pane** – contains the properties of the currently active app project or object 
+- **Android Virtual Device (AVD)** – Android Studio displays an emulator configuration for design and layout purposes
+
+---
+
+## Designing the User Interface Layout within the Virtual Device (Cont’d.)
+
+Click AVD Manager on the menu and Create Virtual Device at the bottom of the screen 
+
+![w:900 center](../../figures/avd.png)
+
+---
+## Designing the User Interface Layout within the Virtual Device (Cont’d.)
+
+![w:850 center](../../figures/selectingAVD.png)
+
+---
+## Designing the User Interface Layout within the Virtual Device (Cont’d.)
+
+![w:850 center](../../figures/selectingAVDImage.png)
+
+---
+## Designing the User Interface Layout within the Virtual Device (Cont’d.)
+
+![w:850 center](../../figures/selectingAVDVerification.png)
+
+---
+## Designing the User Interface Layout within the Virtual Device (Cont’d.)
+
+Step 1: Click ‘Device for Preview (D)’ button (the emulator button) directly to the right of the Palette on the `activity_main.xml` tab, and then click Nexus 6 
+
+---
+## Designing the User Interface Layout within the Virtual Device (Cont’d.)
+
+![w:950 center](../../figures/nexusSelection.png)
+
+---
+## Designing the User Interface Layout within the Virtual Device (Cont’d.)
+
+Step 2: Click on the text in the middle to display the Attributes window 
+
+
+![w:850 center](../../figures/mainActivityView.png)
+
+---
+
+## Modifying the Text in the TextView Control
+
+
+- Step 1: In the Android project view, click the expand arrow for the  values subfolder in the res folder to expand the folder’s contents
+
+- Double-click the strings.xml file to display the strings.xml tab in the Project window
+
+![w:850 center](../../figures/stringsXML.png)
+
+---
+
+## Modifying the Text in the TextView Control
+
+- Step 2: Tap or click the Open editor link on the right side of the Project window to display the Translations Editor tab
+
+- Click on the `+` button on the upper left corner of the Translations Editor
+
+![w:800 center](../../figures/translationEditor.png)
+
+---
+
+## Modifying the Text in the TextView Control
+
+A dialog box will appear. In the Key: text box type `hello` and in the Default Value: textbox, type in `Hello` followed by `your name`
+
+![center](../../figures/addKey.png)
+
+---
+## Modifying the Text in the TextView Control
+
+Now your Translations Editor and strings.xml file looks like this:
+
+![center](../../figures/translationEditorAndStringsXML.png)
+
+---
+
+## Modifying the Text in the TextView Control
+
+Step 4: Now click on activity_main.xml tab and then on Hello World the text property in the Attributes window and then the vertical bar next to the text property   
+
+![w:850 center](../../figures/attributeWindow.png)
+
+---
+
+## Modifying the Text in the TextView Control
+
+![w:700 center](../../figures/resourcePicker.png)
+
+---
+
+## Testing the Application in the Emulator
+
+- Step 1:  Tap or click the Run ‘app’ button on the toolbar 
+- Step 2: After you have run the app once and have started the emulator, next time around the Run ‘app’ button has changed
+
+![bg right:50% 60%](../../figures/Emulator.png)
