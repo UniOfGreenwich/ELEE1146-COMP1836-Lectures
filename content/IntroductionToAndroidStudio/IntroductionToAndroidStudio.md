@@ -1,6 +1,6 @@
 ---
-title: DOCUMENT TITLE
-description: DESCRIPTION OF DOCUMENT
+title: Introduction to Android Studio
+description: Introduction to Android Studio
 class: gaia
 _class:
   - lead
