@@ -1,3 +1,3 @@
 [Module Introduction](./content/ModuleIntroduction/moduleIntroduction.html)
 
-[Android Studio](content/IntroductionToAndroidStudio/IntroductionToAndroidStudio.md)
+[Android Studio](content/IntroductionToAndroidStudio/IntroductionToAndroidStudio.html)
