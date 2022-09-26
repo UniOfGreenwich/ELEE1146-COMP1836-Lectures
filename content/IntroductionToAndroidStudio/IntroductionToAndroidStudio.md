@@ -117,7 +117,6 @@ math: true
 
 ---
 
-
 ## Programming and Environment
 
 - **Writing Android Apps**
@@ -136,15 +135,19 @@ math: true
 - **Emulator**
   - attempts to mimic all of the hardware features of a production environment and software features.
 
-**Android Emulator**
-- Design, develop, prototype, and test Android apps without using a physical device
-- Mimics almost every feature of a real Android handset, except placing phone calls
+- **Android Emulator**
+  - Design, develop, prototype, and test Android apps without using a physical device
+  - Mimics almost every feature of a real Android handset, except placing phone calls
 
 ---
 
 ## What about Kotlin
 
-Don't use because they wont understand the APIs' yet
+- Kotlin is an open-source programming language that can run on Java Virtual Machine (JVM). The language can run on numerous platforms.
+
+- It is a language that combines Object Oriented Programming (OOPs) and functional programming in an unrestricted, self-sufficient and distinctive platform.
+- In 2019, Google announced Kotlin as its preferred programming language for Android application developers
+- However, Java is still the prodominent programming language for Android App development
 
 ---
 
