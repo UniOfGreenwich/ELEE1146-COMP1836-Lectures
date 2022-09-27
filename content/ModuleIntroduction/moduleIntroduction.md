@@ -25,7 +25,7 @@ math: true
     
     Course Name: Mobile Applications for Engineers/Technologists
 
-    Credits: 20
+    Credits: 15
 
     Module Leader: Seb Blair BEng(H) PGCAP MIET MIHEEM FHEA
 
