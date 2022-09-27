@@ -2,4 +2,4 @@
 
 [Module Introduction](./content/ModuleIntroduction/moduleIntroduction.html)
 
-[Android Studio](content/IntroductionToAndroidStudio/IntroductionToAndroidStudio.html3)
+[Android Studio](content/IntroductionToAndroidStudio/IntroductionToAndroidStudio.html)
