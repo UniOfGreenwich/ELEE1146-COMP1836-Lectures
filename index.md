@@ -3,3 +3,5 @@
 [Module Introduction](./content/ModuleIntroduction/moduleIntroduction.html)
 
 [Android Studio](content/IntroductionToAndroidStudio/IntroductionToAndroidStudio.html)
+
+[Android Studio Interface](content/AndroidStudioUserInterface/AndroidStudioUserInterface.html)
