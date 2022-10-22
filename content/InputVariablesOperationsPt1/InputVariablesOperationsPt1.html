@@ -791,6 +791,7 @@ table, th,tr, td {
         <span class="hljs-keyword">final</span> <span class="hljs-type">Spinner</span> <span class="hljs-variable">group</span> <span class="hljs-operator">=</span> findViewById(R.id.spinner);
         <span class="hljs-keyword">final</span> <span class="hljs-type">Button</span> <span class="hljs-variable">cost</span> <span class="hljs-operator">=</span> findViewById(R.id.button);
         
+        <span class="hljs-type">NumberFormat</span> <span class="hljs-variable">format</span> <span class="hljs-operator">=</span> NumberFormat.getCurrencyInstance(Locale.ENGLISH);
         cost.setOnClickListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">View</span>.OnClickListener() {
             <span class="hljs-keyword">final</span> <span class="hljs-type">TextView</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> findViewById(R.id.txtResult);
             <span class="hljs-meta">@Override</span>
@@ -798,8 +799,7 @@ table, th,tr, td {
                 numberOfTickets = Integer.parseInt(tickets.getText().toString());
                 totalCost = costPerTicket * numberOfTickets;
                 groupChice = group.getSelectedItem( ).toString( );
-                result.setText(<span class="hljs-string">&quot;Cost for &quot;</span> + groupChoice + <span class="hljs-string">&quot; is £&quot;</span> + currency.format(totalCost));
-            }
+                result.setText(<span class="hljs-string">&quot;Cost for &quot;</span> + groupChoice + <span class="hljs-string">&quot; is £&quot;</span> + format.format(totalCost));
         });
     }
 }
