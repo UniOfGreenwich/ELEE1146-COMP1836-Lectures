@@ -1,6 +1,6 @@
 ---
-title: Java - Object Orientated Programmin
-description: Java - Object Orientated Programmin
+title: Java - Object Orientated Programming
+description: Java - Object Orientated Programming
 class: gaia
 _class:
   - lead
@@ -28,7 +28,7 @@ marp: true
 math: true
 ---
 
-# Java - Object Orientated Programmin
+# Java - Object Orientated Programming
 
     Course Code: ELEE1146 and COMP1836
 
