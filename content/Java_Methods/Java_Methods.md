@@ -393,3 +393,54 @@ public class Division {
    }
 }
 ```
+
+--- 
+
+## Java Exception Handling 
+
+- *try block* - encloses the code that may generate an exception
+
+- *catch blocks* - specify the type of exception it can catch and contains an exception handler, which contain code to process an exception
+
+- *finally block* - provides code that always executes regardless of whether or not an exception occurs
+
+- *throws clause* - throws the exception and lets the code run, sometimes with unexpected consequences.
+
+---
+
+![bg h:500 horizontal](../../figures/Java_Error_Handling_1.svg)
+![bg h:400 horizontal](../../figures/Java_Error_Handling_2.svg)
+
+---
+
+## Try/catch blocks
+
+```java
+try  {
+     // code that might generate exceptions
+}
+catch ( Exception1 ex1 )  {
+	// handle exceptions of type Exception1
+}
+catch ( Exception2 ex2 )  {
+	// handle exceptions of type Exception1
+}
+catch ( Exception3 ex3 )  {
+	// handle exceptions of type Exception1
+}…
+finally // optional
+```
+
+---
+## Example Exceptions
+
+- `IOException` - thrown when: 
+  - not sufficient disk space to create a file 
+  - a read-only file is opened for writing
+  - an not existent file is opened for reading
+
+- `NumberFormatException`
+  - entering a non-numeric value for a numeric variable
+
+- `ArithmeticException`
+    - division by zero
