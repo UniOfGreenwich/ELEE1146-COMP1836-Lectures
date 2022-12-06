@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en-US"><head><title>Java - Methods, Exception and Error Handiling</title><meta property="og:title" content="Java - Methods, Exception and Error Handiling"><meta name="description" content="Java - Methods, Exception and Error Handiling"><meta property="og:description" content="Java - Methods, Exception and Error Handiling"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{-webkit-tap-highlight-color:transparent;-webkit-appearance:none;appearance:none;background-color:transparent;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTQwIDcwSDIwVjUwbTIwIDBMMjAgNzBtNDAtNDBoMjB2MjBtLTIwIDAgMjAtMjAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTIwIDUwaDIwdjIwbS0yMCAwIDIwLTIwbTQwIDBINjBWMzBtMjAgMEw2MCA1MCIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iNSIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNMTIgNTBoODBNNTIgOTBWMTAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjUiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNMTIgNTBoODAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjUiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::page-transition-container(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::page-transition-incoming-image(*),::page-transition-outgoing-image(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::page-transition-outgoing-image(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::page-transition-incoming-image(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::page-transition-incoming-image(root),::page-transition-outgoing-image(root){animation-timing-function:linear}::page-transition-incoming-image(__bespoke_marp_transition_osc__),::page-transition-outgoing-image(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::page-transition-incoming-image(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::page-transition-container(*),.bespoke-marp-transition-warming-up::page-transition-incoming-image(*),.bespoke-marp-transition-warming-up::page-transition-outgoing-image(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{page-transition-tag:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{page-transition-tag:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{bottom:0;left:0;position:absolute;right:0;top:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{page-transition-tag:__bespoke_marp_transition_osc__;background:rgba(0,0,0,.65);border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:transparent}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:transparent;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{bottom:0;display:block;left:0;position:absolute;right:0;top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:rgba(0,0,0,.65);border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}}@media screen{body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{word-wrap:break-word;box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;scrollbar-color:hsla(0,0%,93%,.5) transparent;scrollbar-width:thin;white-space:pre-wrap;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:transparent}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:hsla(0,0%,93%,.5);border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>div#p>svg>foreignObject>section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center}div#p>svg>foreignObject>section:after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#p>svg>foreignObject>section:not([data-marpit-pagination]):after{display:none}/* Normalization */div#p>svg>foreignObject>section :is(h1,marp-h1){font-size:2em;margin:0.67em 0}div#p>svg>foreignObject>section video::-webkit-media-controls{will-change:transform}@page{size:1280px 720px;margin:0}@media print{body,html{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#p>svg>foreignObject>section{page-break-before:always;break-before:page}div#p>svg>foreignObject>section,div#p>svg>foreignObject>section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;transition:none!important}div#p>svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#p>svg>foreignObject>section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}
+<!DOCTYPE html><html lang="en-US"><head><title>XML</title><meta property="og:title" content="XML"><meta name="description" content="XML"><meta property="og:description" content="XML"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{-webkit-tap-highlight-color:transparent;-webkit-appearance:none;appearance:none;background-color:transparent;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTQwIDcwSDIwVjUwbTIwIDBMMjAgNzBtNDAtNDBoMjB2MjBtLTIwIDAgMjAtMjAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTIwIDUwaDIwdjIwbS0yMCAwIDIwLTIwbTQwIDBINjBWMzBtMjAgMEw2MCA1MCIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iNSIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNMTIgNTBoODBNNTIgOTBWMTAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjUiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNMTIgNTBoODAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjUiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::page-transition-container(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::page-transition-incoming-image(*),::page-transition-outgoing-image(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::page-transition-outgoing-image(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::page-transition-incoming-image(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::page-transition-incoming-image(root),::page-transition-outgoing-image(root){animation-timing-function:linear}::page-transition-incoming-image(__bespoke_marp_transition_osc__),::page-transition-outgoing-image(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::page-transition-incoming-image(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::page-transition-container(*),.bespoke-marp-transition-warming-up::page-transition-incoming-image(*),.bespoke-marp-transition-warming-up::page-transition-outgoing-image(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{page-transition-tag:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{page-transition-tag:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{bottom:0;left:0;position:absolute;right:0;top:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{page-transition-tag:__bespoke_marp_transition_osc__;background:rgba(0,0,0,.65);border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:transparent}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:transparent;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{bottom:0;display:block;left:0;position:absolute;right:0;top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:rgba(0,0,0,.65);border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}}@media screen{body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{word-wrap:break-word;box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;scrollbar-color:hsla(0,0%,93%,.5) transparent;scrollbar-width:thin;white-space:pre-wrap;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:transparent}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:hsla(0,0%,93%,.5);border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>div#p>svg>foreignObject>section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center}div#p>svg>foreignObject>section:after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#p>svg>foreignObject>section:not([data-marpit-pagination]):after{display:none}/* Normalization */div#p>svg>foreignObject>section :is(h1,marp-h1){font-size:2em;margin:0.67em 0}div#p>svg>foreignObject>section video::-webkit-media-controls{will-change:transform}@page{size:1280px 720px;margin:0}@media print{body,html{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#p>svg>foreignObject>section{page-break-before:always;break-before:page}div#p>svg>foreignObject>section,div#p>svg>foreignObject>section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;transition:none!important}div#p>svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#p>svg>foreignObject>section mjx-container[jax=SVG]{direction:ltr}div#p>svg>foreignObject>section mjx-container[jax=SVG]>svg{overflow:visible;min-height:1px;min-width:1px}div#p>svg>foreignObject>section mjx-container[jax=SVG]>svg a{fill:blue;stroke:blue}div#p>svg>foreignObject>section mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}div#p>svg>foreignObject>section mjx-container[jax=SVG][display=true][width=full]{display:flex}div#p>svg>foreignObject>section mjx-container[jax=SVG][justify=left]{text-align:left}div#p>svg>foreignObject>section mjx-container[jax=SVG][justify=right]{text-align:right}div#p>svg>foreignObject>section g[data-mml-node=merror]>g{fill:red;stroke:red}div#p>svg>foreignObject>section g[data-mml-node=merror]>rect[data-background]{fill:yellow;stroke:none}div#p>svg>foreignObject>section g[data-mml-node=mtable]>line[data-line],div#p>svg>foreignObject>section svg[data-table]>g>line[data-line]{stroke-width:70px;fill:none}div#p>svg>foreignObject>section g[data-mml-node=mtable]>rect[data-frame],div#p>svg>foreignObject>section svg[data-table]>g>rect[data-frame]{stroke-width:70px;fill:none}div#p>svg>foreignObject>section g[data-mml-node=mtable]>.mjx-dashed,div#p>svg>foreignObject>section svg[data-table]>g>.mjx-dashed{stroke-dasharray:140}div#p>svg>foreignObject>section g[data-mml-node=mtable]>.mjx-dotted,div#p>svg>foreignObject>section svg[data-table]>g>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}div#p>svg>foreignObject>section g[data-mml-node=mtable]>g>svg{overflow:visible}div#p>svg>foreignObject>section [jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}div#p>svg>foreignObject>section [jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}div#p>svg>foreignObject>section mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#F8F8F8;color:black;box-shadow:2px 2px 5px #AAAAAA}div#p>svg>foreignObject>section g[data-mml-node=maction][data-toggle]{cursor:pointer}div#p>svg>foreignObject>section mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#F8F8F8;color:black}div#p>svg>foreignObject>section foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}div#p>svg>foreignObject>section mjx-container[jax=SVG] path[data-c],div#p>svg>foreignObject>section mjx-container[jax=SVG] use[data-c]{stroke-width:3}@media print{div#p>svg>foreignObject>section mjx-container[jax=SVG] path[data-c],div#p>svg>foreignObject>section mjx-container[jax=SVG] use[data-c]{stroke-width:0}}div#p>svg>foreignObject>section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}
 /*!
  * Marp default theme.
  *
@@ -40,7 +40,7 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h1>Java - Methods, Exception and Error Handiling</h1>
+<h1>XML</h1>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>Course Code: ELEE1146 and COMP1836
 
 Course Name: Mobile Applications for Engineers/Technologists
@@ -65,7 +65,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="2" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="2" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -81,20 +81,31 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Methods</h2>
+<h2>Markup Languages (ML)</h2>
 <ul>
 <li>
-<p><strong>Method Definition</strong></p>
+<p>Originally used in text formatting and typesetting</p>
+</li>
+<li>
+<p>Markup – tagging e-documents</p>
+</li>
+<li>
+<p>For two purposes:</p>
 <ul>
-<li>Specifies what the method is doing and how to use it consists of method declaration and method body does not execute the statements specified in the method body!</li>
+<li>Modify the look and formatting of the text
+<ul>
+<li>e.g <code>&lt;B&gt;</code>, <code>&lt;I&gt;</code>, <code>&lt;BR&gt;</code>, <code>&lt;FONT&gt;</code> in HTML</li>
+</ul>
+</li>
+<li>Establish the structure and meaning of a document for output
+<ul>
+<li>e.g. <code>&lt;TITLE&gt;</code>, <code>&lt;HEAD&gt;</code>, <code>&lt;BODY&gt;</code>, <code>&lt;UL&gt;</code> in HTML</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
-<p><strong>Method Invocation (Call)</strong></p>
-<ul>
-<li>specifies how the method should be used (invoked, called) in another method<br />
-actually executes the method statements with method arguments provided</li>
-</ul>
+<p>used in many systems: T<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.339ex;" xmlns="http://www.w3.org/2000/svg" width="1.41ex" height="1.088ex" role="img" focusable="false" viewBox="0 -330.8 623.2 480.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"></g><g data-mml-node="mi" transform="translate(33,-150) scale(0.707)"><path data-c="1D438" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path></g></g></g></g></svg></mjx-container>X, RTF word format</p>
 </li>
 </ul>
 </section>
@@ -113,7 +124,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="3" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="3" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -129,28 +140,25 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Method Definition</h2>
+<h2>XML as an ML</h2>
 <ul>
 <li>
-<p><strong>Method Declaration contains:</strong></p>
-<ul>
-<li>access modifiers – optional</li>
-<li>return type - optional</li>
-<li>the method identifier</li>
-<li>any legal identifier name (Camel case)
-<ul>
-<li>method arguments (if present) enclosed in brackets  <code>(</code> and <code>)</code></li>
-<li>even when the method have no arguments you must still keep the brackets</li>
-</ul>
-</li>
-</ul>
+<p>XML:  e<strong>X</strong>tensible <strong>M</strong>arkup <strong>L</strong>anguage</p>
 </li>
 <li>
-<p><strong>Method Body:</strong></p>
-<ul>
-<li>Enclosed in braces <code>{</code> and <code>}</code></li>
-<li>Consists of statements that specify what the method is doing</li>
-</ul>
+<p>Defined by the WWW Consortium (W3C) in 1998</p>
+</li>
+<li>
+<p>A universal method for representing information</p>
+</li>
+<li>
+<p>Fundamental shift in the way the information is distributed over the Internet</p>
+</li>
+<li>
+<p>The goal was to replace HTML as the language for publishing documents on the Web</p>
+</li>
+<li>
+<p>Both a document markup language and a database language</p>
 </li>
 </ul>
 </section>
@@ -169,7 +177,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="4" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="4" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -185,28 +193,25 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Method Declaration</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java">[access modifier] [returnType][<span class="hljs-keyword">static</span>] methodName ([argument list]) 
-{	
-    declarations
-    statements
-}
-
-</code></pre>
+<h2>XML as an ML</h2>
 <ul>
 <li>
-<p><em>returnType</em> is the type of the returned value by the method</p>
+<p>Derived from <strong>SGML</strong> (<strong>S</strong>tandard <strong>G</strong>eneralized <strong>M</strong>arkup <strong>L</strong>anguage)</p>
 <ul>
-<li>a primitive type – <code>int</code>, <code>char</code>, <code>boolean</code>, etc. or</li>
-<li>a predefined class (user defined or from a Java library) – <code>Font</code>, <code>Color</code>, etc. or</li>
-<li><code>void</code> – meaning no value is returned when the method is executed</li>
+<li>established in 1986 as a document exchange format</li>
 </ul>
 </li>
 <li>
-<p><em>argument list = parameter list</em></p>
+<p>Provides structural and semantic information to data</p>
+</li>
+<li>
+<p><em>Extensible</em>, unlike HTML</p>
 <ul>
-<li><code>varType1 varName1</code>, <code>…</code>, <code>varTypeN varNameN</code></li>
+<li>Users can add new tags, and separately specify how the tag should be handled for display</li>
 </ul>
+</li>
+<li>
+<p><em>Metalanguage</em> – can be used to create other languages</p>
 </li>
 </ul>
 </section>
@@ -225,7 +230,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="5" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="5" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -241,24 +246,28 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Method Body Block</h2>
+<h2>Motivation for XML</h2>
 <ul>
 <li>
-<p>Method body is a block of code where declarations and/or statements are enclosed in<br />
-<code>{</code> and <code>}</code>.</p>
+<p>HTML is not flexible, SGML is too complex</p>
 </li>
 <li>
-<p>If the method returns a value, e.g. the method <em>returnValue</em> is not <code>void</code> then the statement <code>return expression;</code> should be present in the method body.</p>
+<p>HTML - insufficient for electronic data interchange</p>
 </li>
 <li>
-<p>The expression type in the <code>return</code> statement must be the same as the <em>returnType</em> – promotion rules apply.</p>
+<p>Need for more powerful linking and style sheets</p>
+<ul>
+<li>XML Linking Language (XLink)</li>
+<li>XML Pointer Language (XPointer)</li>
+</ul>
+</li>
+<li>
+<p>Each application area has its own set of standards for representing information</p>
+</li>
+<li>
+<p>XML allows <em>application-specific</em> document types</p>
 </li>
 </ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">public</span> <span class="hljs-type">float</span> <span class="hljs-title function_">anumber</span><span class="hljs-params">(<span class="hljs-type">int</span> num)</span>
-{
-   <span class="hljs-keyword">return</span> (<span class="hljs-type">float</span>)num;
-} 
-</code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -275,7 +284,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="6" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="6" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -291,24 +300,25 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Method Innvocation (to call)</h2>
+<h2>XML vs HTML</h2>
 <ul>
-<li><strong>Method invocation = method call</strong>
+<li>
+<p>XML</p>
 <ul>
-<li>Actually executes the statements in the body of the method</li>
-<li><code>methodName</code> ( [argument list] )
+<li>Markup for <em>describing</em> data of virtually any type</li>
+<li>Uses new, <em>user-defined</em> tags</li>
+<li>Focus on how information is <em>structured</em></li>
+</ul>
+</li>
+<li>
+<p>HTML</p>
 <ul>
-<li>the values passed as arguments should have the same type as specified in the method declaration - promotion rules</li>
+<li>Markup for <em>displaying</em> data on the Web</li>
+<li>Uses <em>fixed</em> number of tags</li>
+<li>Focus on how information is <em>displayed</em></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">Graphics</span> <span class="hljs-variable">g</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Graphics</span>();
-
-g.drawString(“Hello, World!”, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>);
-
-</code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -325,7 +335,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="7" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="7" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -341,24 +351,18 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Method Innvocation 2</h2>
+<h2>XML Features</h2>
 <ul>
-<li><strong>Method definition</strong></li>
+<li>
+<p>Allows you to separate data from their representation (visualisation)</p>
+</li>
+<li>
+<p>XML document represents a blueprint of an all class of data</p>
+</li>
+<li>
+<p>XML helps exchanging data bases over the Internet</p>
+</li>
 </ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">assessment</span><span class="hljs-params">( <span class="hljs-type">byte</span> logBook, <span class="hljs-type">byte</span> report, <span class="hljs-type">byte</span> test, <span class="hljs-type">byte</span> exam)</span> 
-{
-    <span class="hljs-keyword">return</span> ( <span class="hljs-number">0.2</span> * logBook + <span class="hljs-number">0.15</span> * report +  <span class="hljs-number">0.15</span> * test + <span class="hljs-number">0.5</span> * exam );
-}
-</code></pre>
-<ul>
-<li><strong>Method call</strong></li>
-</ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java">System.out.println(“The result <span class="hljs-keyword">for</span> the assessment of the course is: “ + assessment(<span class="hljs-number">45</span>, <span class="hljs-number">55</span>, <span class="hljs-number">60</span>, <span class="hljs-number">50</span>));
-</code></pre>
-<details>
-<summary>What will be displayed&gt;</summary>
-<p><code>The result of the assessment of the course is: 51.25</code></p>
-</summary>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -375,7 +379,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="8" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="8" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -391,24 +395,19 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Method Innovation 3</h2>
-<ul>
-<li><strong>Method Definition</strong></li>
-</ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">printResult</span><span class="hljs-params">( String s1, <span class="hljs-type">int</span> i1, String s2, <span class="hljs-type">int</span> i2 )</span>
-{
-    System.out.println( s1 + <span class="hljs-string">&quot;: &quot;</span> + i1 + <span class="hljs-string">&quot;, &quot;</span> + s2 + <span class="hljs-string">&quot;: &quot;</span> + i2);
-}
+<h2>XML Example</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">book</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">author</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fname</span>&gt;</span>William<span class="hljs-tag">&lt;/<span class="hljs-name">fname</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">lname</span>&gt;</span>Pardi<span class="hljs-tag">&lt;/<span class="hljs-name">lname</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">author</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>XML in Action<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">publisher</span>&gt;</span>Microsoft Press <span class="hljs-tag">&lt;/<span class="hljs-name">publisher</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">year</span>&gt;</span>1999<span class="hljs-tag">&lt;/<span class="hljs-name">year</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ISBN</span>&gt;</span>0735605629<span class="hljs-tag">&lt;/<span class="hljs-name">ISBN</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">book</span>&gt;</span>
 </code></pre>
-<ul>
-<li><strong>Method Call</strong></li>
-</ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java">printResult(“First number”, -<span class="hljs-number">25</span>, “second number”, <span class="hljs-number">10</span>);
-</code></pre>
-<details>
-<summary>What will be displayed&gt;</summary>
-<p><code>First number: -25, second number: 10</code></p>
-</summary>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -425,7 +424,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="9" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="9" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -441,16 +440,24 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>The <code>main()</code> method</h2>
+<h2>Structure of XML Data</h2>
 <ul>
-<li>Every Java application must contain a main method</li>
+<li>
+<p><strong>Tag</strong>:  label for a section of data</p>
+<ul>
+<li>Start (opening) Tag: <code>&lt;tagname&gt;</code></li>
+<li>End (closing) Tag:    <code>&lt;/tagname&gt;</code></li>
 </ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span>{...}
-</code></pre>
+</li>
+<li>
+<p><strong>Element</strong>: section of data beginning with <code>&lt;tagname&gt;</code> and ending with matching <code>&lt;/tagname&gt;</code></p>
+</li>
+<li>
+<p>Elements can have attributes</p>
 <ul>
-<li><code>public</code> indicates that the <code>main</code> method can be called by any <code>object</code>.</li>
-<li><code>static</code> indicates that the <code>main</code> method is a <code>class</code> method.</li>
-<li><code>void</code> indicates that the <code>main</code> method doesn't <code>return</code> any value.</li>
+<li>Attributes are specified by <code>name=value</code> pairs inside the starting tag of an element</li>
+</ul>
+</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-class="gaia" data-paginate="true" data-style="#img-right{
@@ -468,7 +475,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="10" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="10" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -484,18 +491,17 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>How the <code>main()</code> method gets called?</h2>
+<h2>Attributes</h2>
 <ul>
-<li>
-<p>When the Java interpreter executes an application it starts by calling the class <code>main</code> method</p>
-</li>
-<li>
-<p>The <code>main</code> method then calls all the other methods required to run your application</p>
-</li>
-<li>
-<p>The <code>main</code> method in the Java language is similar to the main function in C,C++ and C# and many others.</p>
-</li>
+<li>Each element may have one or more attributes, but each attribute name can only occur once</li>
 </ul>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">author</span> <span class="hljs-attr">fname</span>=<span class="hljs-string">&quot;Rick&quot;</span>,<span class="hljs-attr">lname</span>=<span class="hljs-string">&quot;Rolled&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">author</span>&gt;</span>
+</code></pre>
+<ul>
+<li>Elements without sub-elements or text content can be abbreviated by ending the start tag with a  /&gt;  and deleting the end tag</li>
+</ul>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">author</span> <span class="hljs-attr">fname</span>=<span class="hljs-string">&quot;Rick&quot;</span> <span class="hljs-attr">lname</span>=<span class="hljs-string">&quot;Rolled&quot;</span>/&gt;</span>
+</code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -512,7 +518,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="11" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="11" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -528,24 +534,24 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Events</h2>
-<p>An <em><strong>event</strong></em> is an action initiated by the user interacting with the program.</p>
+<h2>Attributes Vs. Sub-elements</h2>
 <ul>
-<li><strong>Examples:</strong>
-<ul>
-<li>
-<p>Keyboard events - pressing a key, holding a key, releasing a key</p>
-</li>
-<li>
-<p>Mouse events - moving the mouse, clicking the mouse</p>
-</li>
-<li>
-<p>GUI events - clicking on a button, resizing a window, closing a window, opening a window</p>
-</li>
-<li>
-<p>An <em><strong>event</strong></em> in Java is an object of a particular event class, that represents some user actions to which the GUI might respond</p>
-</li>
+<li>Same information can be represented in two ways</li>
 </ul>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">author</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">fname</span>&gt;</span>William<span class="hljs-tag">&lt;/<span class="hljs-name">fname</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">lname</span>&gt;</span>Pardi<span class="hljs-tag">&lt;/<span class="hljs-name">lname</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">author</span>&gt;</span>
+</code></pre>
+<p>OR</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">author</span> <span class="hljs-attr">fname</span>=<span class="hljs-string">“William”</span> <span class="hljs-attr">lname</span>=<span class="hljs-string">“Pardi”</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">author</span>&gt;</span>
+</code></pre>
+<ul>
+<li>
+<p>Attributes are part of markup, while sub-element contents are part of the basic document contents</p>
+</li>
+<li>
+<p>Suggestion: use <strong>attributes</strong> for <em>identifiers of elements</em>, and use <strong>sub-elements</strong> for <em>contents</em></p>
 </li>
 </ul>
 </section>
@@ -564,7 +570,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="12" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="12" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -580,17 +586,17 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Low Level Events</h2>
+<h2>XML Names</h2>
 <ul>
-<li>Low level events represent direct communication from the user</li>
-<li>Low level event examples (all the event classes listed below belong to the <code>java.awt.event</code> package):
+<li>
+<p>XML is case sensitive like Java and unlike HTML</p>
+</li>
+<li>
+<p>A name (for a tag or attribute) used in XML must:</p>
 <ul>
-<li><em>key event</em> - a keyboard key pressed or released - in the <code>KeyEvent</code> class</li>
-<li><em>focus event</em> – a component got focus, lost focus – in the <code>FocusEvent</code> class</li>
-<li><em>mouse event</em> - the mouse is moved or dragged, a mouse button is pressed or released, the mouse cursor enters or exits a component - in the <code>MouseEvent</code> class</li>
-<li><em>component event</em> - a component is hidden, shown, resized, or moved – in the <code>ComponentEvent</code> class</li>
-<li><em>container event</em> - a component is added to or removed from a container in the <code>ContainerEvent</code> class</li>
-<li><em>window event</em> - a window is opened, closed, activated, deactivated, etc. - in the <code>WindowEvent</code> class</li>
+<li>begin with a <em>letter</em>, <em>underscore</em> or <em>colon</em></li>
+<li>followed by any number of additional <em>letters</em>, <em>digits</em>, <em>underscores</em>, <em>hyphens</em>, <em>periods</em> and <em>colons</em></li>
+<li>not begin with the letters <em>XML</em> (in any combination of upper- and lowercase) – they  are reserved by W3C</li>
 </ul>
 </li>
 </ul>
@@ -610,7 +616,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="13" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="13" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -626,17 +632,26 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>High Level Events</h2>
+<h2>Nesting</h2>
 <ul>
-<li>High level (semantic) events encapsulate the meaning of a user interface component</li>
-<li>High level events usually involve one or more low level events</li>
-<li>High Level Event examples
+<li>
+<p>Nesting is the process of embedding one element within another</p>
 <ul>
-<li><em>action event</em> - do a command – <code>ActionEvent</code> class</li>
-<li><em>adjustment event</em> -  represents scrollbar motions such as a value was adjusted – <code>AdjustmentEvent</code> class</li>
-<li><em>item event</em> - occurs when the user selects a checkbox, choice, or list item, i.e. item state has changed <code>–ItemEvent</code> class</li>
-<li><em>text event</em> – represents a text component content (value) change – <code>TextEvent</code> class</li>
+<li>Example:
+<ul>
+<li>html documents – opening and closing tags</li>
 </ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Nesting sets up a parent/child relationships</p>
+</li>
+<li>
+<p>Children are also called sub-elements</p>
+</li>
+<li>
+<p>Every child element <strong>must</strong> resides completely within its parent element</p>
 </li>
 </ul>
 </section>
@@ -655,7 +670,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="14" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="14" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -671,22 +686,24 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>How Do the Low and High Level Events Work in Java?</h2>
+<h2>Nesting 2</h2>
 <ul>
 <li>
-<p>When the user clicks the mouse on a button, then releases it, the button gets two or three separate, low level mouse events</p>
+<p>Elements must be properly nested</p>
 </li>
 <li>
-<p>one for mouse down</p>
+<p>Every start tag must have a unique matching end tag unlike HTML</p>
 </li>
 <li>
-<p>one for mouse up</p>
+<p>Exceptions from this rule:</p>
+<ul>
+<li>Every document must have a single top-level element</li>
+<li>Special tag – the empty-element tag <code>&lt;tagname/&gt;</code>
+<ul>
+<li>Example: <code>&lt;amount&gt;&lt;/amount&gt;</code> OR <code>&lt;amount/&gt;</code></li>
+</ul>
 </li>
-<li>
-<p>possibly one for mouse drag (if the user moves the mouse while the button is pressed)</p>
-</li>
-<li>
-<p>However, the button then fires one high level event only - <code>ActionEvent</code></p>
+</ul>
 </li>
 </ul>
 </section>
@@ -705,7 +722,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="15" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="15" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -721,18 +738,23 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Event Driven Interfaces</h2>
-<ul>
-<li>An <em>event-driven</em> system waits for something to happen (an event) in the environment.</li>
-<li>Event-driven application - an input-output model in which the application implements an event loop
-<ul>
-<li>waits for an event to occur</li>
-<li>responds to the event</li>
-<li>waits for the next event and so on …</li>
-<li>GUIs are <em>event-driven</em> - they generate events  when the user interacts with the GUI</li>
-</ul>
-</li>
-</ul>
+<h2>Nesting: Example</h2>
+<p>Proper nesting</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">DOCUMENT</span>&gt;</span> 
+  <span class="hljs-tag">&lt;<span class="hljs-name">PARENT</span>&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">CHILD</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">CHILD</span>&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">CHILD</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">CHILD</span>&gt;</span> 
+  <span class="hljs-tag">&lt;/<span class="hljs-name">PARENT</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">DOCUMENT</span>&gt;</span> 
+</code></pre>
+<p>Improper nesting</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">DOCUMENT</span>&gt;</span> 
+  <span class="hljs-tag">&lt;<span class="hljs-name">PARENT</span>&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">CHILD</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">CHILD</span>&gt;</span> 				                            	      
+    <span class="hljs-tag">&lt;<span class="hljs-name">CHILD</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">CHILD</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">DOCUMENT</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">PARENT</span>&gt;</span> 
+</code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -749,7 +771,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="16" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="16" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -765,17 +787,13 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Event Driven Programming</h2>
+<h2>XML Document Structure</h2>
+<p>An XML document is made up of:</p>
 <ul>
-<li>
-<p>In event <em>driven programming</em> the events &quot;drive&quot; the execution of the program, e.g. the code is executed when events are activated</p>
-</li>
-<li>
-<p>The program interacts with the user and  generates events based on the external user actions</p>
-</li>
-<li>
-<p>Java Visual (Graphical) programming is event driven</p>
-</li>
+<li>declarations</li>
+<li>processing instructions</li>
+<li>comments</li>
+<li>elements</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-class="gaia" data-paginate="true" data-style="#img-right{
@@ -793,7 +811,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="17" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="17" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -809,20 +827,27 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Java Event Delegation Model (1)</h2>
+<h2>Declarations</h2>
 <ul>
-<li>
-<p>Java uses <em>delegation-based</em> model for event handling</p>
-</li>
-<li>
-<p>Java uses event listener to register an event and event handler to respond to the event</p>
-</li>
-<li>
-<p>The use of event listeners in event handling is called *delegation event model *</p>
-</li>
+<li>The first element in an XML document is called prolog</li>
+<li>The prolog is optional</li>
+<li>The prolog consists of two basic declarations that are optional too</li>
+<li>The XML Declaration</li>
+<li>The Document Type Declaration (DTD)</li>
 </ul>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-xml"><span class="hljs-meta">&lt;?xml version = <span class="hljs-string">&quot;1.0&quot;</span> encoding = <span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span>
+
+<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">customer_list</span>
+[
+<span class="hljs-meta">&lt;!ELEMENT <span class="hljs-keyword">customer_list</span> (<span class="hljs-keyword">customer</span>)&gt;</span> 
+<span class="hljs-meta">&lt;!ELEMENT <span class="hljs-keyword">customer</span> (<span class="hljs-keyword">name</span>,<span class="hljs-keyword">location</span>)&gt;</span> 
+<span class="hljs-meta">&lt;!ELEMENT <span class="hljs-keyword">name</span> (<span class="hljs-keyword">#PCDATA</span>)&gt;</span> 
+<span class="hljs-meta">&lt;!ELEMENT <span class="hljs-keyword">location</span> (<span class="hljs-keyword">#PCDATA</span>)&gt;</span> 
+]&gt;</span> 
+
+</code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="gaia" data-paginate="true" data-style="#img-right{
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -837,85 +862,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="18" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
-  float: right;
-}
- img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-;--marpit-advanced-background-split:60%;" data-size="16:9" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;.././figures/../../figures/Java_Event_Dele_Mod_Diagram.svg&quot;);background-size:70%;"></figure></div></section></foreignObject><foreignObject width="40%" height="720"><section id="18" data-class="gaia" data-paginate="true" data-style="#img-right{
-  float: right;
-}
- img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-" class="gaia" data-marpit-pagination="18" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
-  float: right;
-}
- img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-;--marpit-advanced-background-split:60%;" data-size="16:9" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
-<h2>Java Event Delegation Model Diagram</h2>
-</section>
-</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-class="gaia" data-paginate="true" data-style="#img-right{
-  float: right;
-}
- img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-" class="gaia" data-marpit-pagination="18" data-marpit-pagination-total="28" style="" data-size="16:9" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-class="gaia" data-paginate="true" data-style="#img-right{
-  float: right;
-}
- img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-" class="gaia" data-marpit-pagination="19" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="18" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -931,22 +878,66 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Exceptions</h2>
-<blockquote>
-<p>&quot;Computer says, no!&quot;</p>
-</blockquote>
+<h2>Declarations 2</h2>
 <ul>
-<li>compilation errors &amp; run-time errors</li>
-<li><em>exception</em> - error in the program that occurs<br />
-during its execution and disrupts the normal<br />
-flow of instructions.</li>
-<li><em>exception</em> is a shorthand for an exceptional event.</li>
-<li>Examples:
-<ul>
-<li>division by zero</li>
-<li>trying to access an out-of-bounds array elements</li>
-<li>trying to open a file that does not exists, etc.</li>
+<li>
+<p>An XML document should start with the XML declaration – gives the XML version being used</p>
+</li>
+<li>
+<p><code>&lt;?xml version=&quot;1.0&quot;?&gt;</code></p>
+</li>
+<li>
+<p>All letters are lower case</p>
+</li>
+<li>
+<p>The document type declaration comes next – indicates the file with the grammar rules for a particular document, optional</p>
+</li>
 </ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-class="gaia" data-paginate="true" data-style="#img-right{
+  float: right;
+}
+ img[alt~=&quot;center&quot;] {
+  display: block;
+  margin: 0 auto;
+}
+table {
+  border-collapse: collapse;
+  font-size: 22px;
+}
+table, th,tr, td {
+  border: none!important;
+  vertical-align: middle;
+}
+" class="gaia" data-marpit-pagination="19" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
+  float: right;
+}
+ img[alt~=&quot;center&quot;] {
+  display: block;
+  margin: 0 auto;
+}
+table {
+  border-collapse: collapse;
+  font-size: 22px;
+}
+table, th,tr, td {
+  border: none!important;
+  vertical-align: middle;
+}
+;" data-size="16:9">
+<h2>Document Elements</h2>
+<ul>
+<li>
+<p>Each XML document starts with a prolog followed by the <strong>root element</strong></p>
+</li>
+<li>
+<p>Each XML document contains one and only one root element</p>
+</li>
+<li>
+<p>Each element might have one or more <strong>sub-elements</strong> or <strong>children</strong></p>
+</li>
+<li>
+<p>An element that contains sub-elements is called <strong>container element</strong> or <strong>parent</strong></p>
 </li>
 </ul>
 </section>
@@ -965,7 +956,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="20" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="20" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -981,19 +972,26 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Exception Handling</h2>
+<h2>Processing Instructions, Comments, Entities</h2>
 <ul>
 <li>
-<p>Enable programs to catch and handle errors</p>
+<p><strong>Processing instructions</strong> are instructions which are passed on to applications processing the document.</p>
 </li>
 <li>
-<p>Used in situations when the system could recover from the malfunction causing the exception</p>
+<p>Processing instructions are enclosed in tags which begin with <code>&lt;?</code> and end with <code>?&gt;</code></p>
 </li>
 <li>
-<p>Exception handling is a recovery (from an error in the program) procedure</p>
+<p><strong>Comments</strong> are enclosed between <code>&lt;!-- and --&gt;</code>, <code>&lt;!--changed 10/1/01--&gt;</code></p>
 </li>
 <li>
-<p><em>Exception handler</em> is the code that executes when an exception has been detected.</p>
+<p><strong>Entities</strong> used to &quot;escape&quot; meaning of XML special symbols, only 5 entities are built-in:</p>
+<ul>
+<li><code>&amp;amp;</code> (&amp;),</li>
+<li><code>&amp;lt;</code> (&lt;),</li>
+<li><code>&amp;gt;</code> (&gt;),</li>
+<li><code>&amp;quot;</code> (&quot;),</li>
+<li><code>&amp;apos;</code> ('),</li>
+</ul>
 </li>
 </ul>
 </section>
@@ -1012,7 +1010,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="21" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="21" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -1028,21 +1026,25 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Exceptions in Java</h2>
-<ul>
-<li>
-<p>An exception in Java is represented by an object</p>
-</li>
-<li>
-<p>Java has various predefined classes for different exceptions that can occur during execution time</p>
-</li>
-<li>
-<p>Exceptions are <em>thrown</em> by a program, and may be caught and handled by another part of the program</p>
-</li>
-<li>
-<p>A program can be separated into a normal execution flow and an <em>exception execution flow</em></p>
-</li>
-</ul>
+<h2>XML Example</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-xml"><span class="hljs-meta">&lt;?xml version =“1.0”?&gt;</span>
+<span class="hljs-comment">&lt;!-- A Lecture formatted using XML --&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">lecture</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>XML<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">place</span>&gt;</span>Nelson 128 C<span class="hljs-tag">&lt;/<span class="hljs-name">place</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">date</span>&gt;</span>13 December 2022<span class="hljs-tag">&lt;/<span class="hljs-name">date</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">time</span>&gt;</span>9:00-11:00am<span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">lecturer</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fname</span>&gt;</span>Seb <span class="hljs-tag">&lt;/<span class="hljs-name">fname</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">lname</span>&gt;</span>Blair<span class="hljs-tag">&lt;/<span class="hljs-name">lname</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">lecturer</span>&gt;</span>                                     
+  <span class="hljs-tag">&lt;<span class="hljs-name">comment</span>&gt;</span>
+    An introductory lecture on XML, delivered to UG
+    students at the School of Engineering, University of Greenwich
+  <span class="hljs-tag">&lt;/<span class="hljs-name">comment</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">lecture</span>&gt;</span>        
+</code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -1059,7 +1061,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="22" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="22" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -1075,18 +1077,28 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Java Exception Handling</h2>
-<ol>
+<h2>Namespaces</h2>
+<ul>
 <li>
-<p>A method detects an error.</p>
+<p>XML data are exchanged between organizations</p>
 </li>
 <li>
-<p>The method <em>throws an exception</em>.</p>
+<p>Same tag name may have different meaning in different organizations, causing confusion on exchanged documents</p>
 </li>
 <li>
-<p>The exception is <em>caught</em> and <em>handled</em> by an exception handler.</p>
+<p>Namespace identify document type declarations so that they do not conflict with other element type declarations with the same name created by other programmers</p>
 </li>
-</ol>
+<li>
+<p>A solution is to use pairs</p>
+<ul>
+<li><code>namespace:local-name</code></li>
+<li>e.g.  <code>unique-name:element-name</code></li>
+</ul>
+</li>
+<li>
+<p>A unique name might be the company URL</p>
+</li>
+</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -1103,7 +1115,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="23" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="23" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -1119,27 +1131,24 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Java Exception Handling Example (1)</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">import</span> javax.swing.*;
-
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Division</span>{
-  	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span>{
-
-	   <span class="hljs-type">int</span> number1, number2, result;
-	   String firstNumber, secondNumber;
-
-        firstNumber = JOptionPane.showInputDialog(<span class="hljs-string">&quot;Enter first integer&quot;</span>);
-	   secondNumber = JOptionPane.showInputDialog(<span class="hljs-string">&quot;Enter second integer&quot;</span>);
-
-	   number1 = Integer.parseInt(firstNumber);
-	   number2 = Integer.parseInt(secondNumber);
-	   result = number1 / number2;
-
-	   JOptionPane.showMessageDialog(<span class="hljs-literal">null</span>, <span class="hljs-string">&quot;The result is &quot;</span> + result, <span class="hljs-string">&quot;Result&quot;</span>, JOptionPane.PLAIN_MESSAGE);
-
- 	   System.exit(<span class="hljs-number">0</span>);
-   }
-}  
+<h2>Namespaces</h2>
+<ul>
+<li>
+<p>Namespaces help avoiding using long unique names all over a document</p>
+</li>
+<li>
+<p>The attribute xmlns defines an XML name space</p>
+</li>
+</ul>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-xml"><span class="hljs-comment">&lt;!--xmlns = xml namespace--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">bank</span> <span class="hljs-attr">xmlns:MB</span>=<span class="hljs-string">‘http://www.MyBank.com’</span>&gt;</span>
+…
+  <span class="hljs-tag">&lt;<span class="hljs-name">MB:branch</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">MB:branchname</span>&gt;</span>MyTown<span class="hljs-tag">&lt;/<span class="hljs-name">MB:branchname</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">MB:branchcity</span>&gt;</span> MyCity<span class="hljs-tag">&lt;/<span class="hljs-name">MB:branchcity</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">MB:branch</span>&gt;</span>
+…
+<span class="hljs-tag">&lt;/<span class="hljs-name">bank</span>&gt;</span>
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-class="gaia" data-paginate="true" data-style="#img-right{
@@ -1157,7 +1166,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="24" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="24" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -1173,38 +1182,18 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Java Exception Handling Example (2)</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">import</span> javax.swing.*;
-
-<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Division</span> {
-
-  	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String args[])</span>{
-
-	   <span class="hljs-type">int</span> number1, number2, result;
-	   String firstNumber, secondNumber;
-	   firstNumber = JOptionPane.showInputDialog(<span class="hljs-string">&quot;Enter first integer&quot;</span>);
-	   secondNumber = JOptionPane.showInputDialog(<span class="hljs-string">&quot;Enter second integer&quot;</span>);
-
-	   <span class="hljs-keyword">try</span> {
-                number1 = Integer.parseInt(firstNumber);
-                number2 = Integer.parseInt(secondNumber);
-                result = number1 / number2;
-                JOptionPane.showMessageDialog(<span class="hljs-literal">null</span>, <span class="hljs-string">&quot;The result is &quot;</span> + result,
-                    <span class="hljs-string">&quot;Result&quot;</span>, JOptionPane.PLAIN_MESSAGE);
-	   }
-	   <span class="hljs-keyword">catch</span>(NumberFormatException nfe){
-                JOptionPane.showMessageDialog( <span class="hljs-literal">null</span>,
-                <span class="hljs-string">&quot;You must enter two integers!&quot;</span>,<span class="hljs-string">&quot;Invalid Number Format&quot;</span>, JOptionPane.ERROR_MESSAGE );
-	   }
-	   <span class="hljs-keyword">catch</span> (ArithmeticException ae){
-                JOptionPane.showMessageDialog( <span class="hljs-literal">null</span>, 
-                <span class="hljs-string">&quot;Second number should not be zero!&quot;</span>, <span class="hljs-string">&quot;Division by zero&quot;</span>,
-                JOptionPane.ERROR_MESSAGE );
-	   }
-	   System.exit ( <span class="hljs-number">0</span> );
-   }
-}
-</code></pre>
+<h2>XML Applications</h2>
+<ul>
+<li>
+<p>XML 1.0 is currently approved as a recommendation by W3C</p>
+</li>
+<li>
+<p>Several applications of XML or enhancements to the language are under consideration</p>
+</li>
+<li>
+<p>For more information on XML visit <a href="http://www.w3.org/XML/">http://www.w3.org/XML/</a></p>
+</li>
+</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -1221,7 +1210,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-" class="gaia" data-marpit-pagination="25" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
+" class="gaia" data-marpit-pagination="25" data-marpit-pagination-total="25" style="--class:gaia;--paginate:true;--style:#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -1237,200 +1226,26 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Java Exception Handling</h2>
+<h2>XML Applications: Scientific Data Interchange</h2>
 <ul>
 <li>
-<p><em>try block</em> - encloses the code that may generate an exception</p>
+<p>Many applications of XML have been developed as customized data languages for structuring data in various fields</p>
 </li>
 <li>
-<p><em>catch blocks</em> - specify the type of exception it can catch and contains an exception handler, which contain code to process an exception</p>
-</li>
-<li>
-<p><em>finally block</em> - provides code that always executes regardless of whether or not an exception occurs</p>
-</li>
-<li>
-<p><em>throws clause</em> - throws the exception and lets the code run, sometimes with unexpected consequences.</p>
+<p>Mathematics: <strong>MathML</strong> for marking up mathematical formulas</p>
 </li>
 </ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="gaia" data-paginate="true" data-style="#img-right{
-  float: right;
-}
- img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-" class="gaia" data-marpit-pagination="26" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
-  float: right;
-}
- img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-;" data-size="16:9" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;../../figures/Java_Error_Handling_1.svg&quot;);background-size:auto 500px;"></figure><figure style="background-image:url(&quot;../../figures/Java_Error_Handling_2.svg&quot;);background-size:auto 400px;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="26" data-class="gaia" data-paginate="true" data-style="#img-right{
-  float: right;
-}
- img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-" class="gaia" data-marpit-pagination="26" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
-  float: right;
-}
- img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-;" data-size="16:9" data-marpit-advanced-background="content"></section>
-</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-class="gaia" data-paginate="true" data-style="#img-right{
-  float: right;
-}
- img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-" class="gaia" data-marpit-pagination="26" data-marpit-pagination-total="28" style="" data-size="16:9" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-class="gaia" data-paginate="true" data-style="#img-right{
-  float: right;
-}
- img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-" class="gaia" data-marpit-pagination="27" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
-  float: right;
-}
- img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-;" data-size="16:9">
-<h2>Try/catch blocks</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">try</span>  {
-     <span class="hljs-comment">// code that might generate exceptions</span>
-}
-<span class="hljs-keyword">catch</span> ( Exception1 ex1 )  {
-	<span class="hljs-comment">// handle exceptions of type Exception1</span>
-}
-<span class="hljs-keyword">catch</span> ( Exception2 ex2 )  {
-	<span class="hljs-comment">// handle exceptions of type Exception1</span>
-}
-<span class="hljs-keyword">catch</span> ( Exception3 ex3 )  {
-	<span class="hljs-comment">// handle exceptions of type Exception1</span>
-}…
-<span class="hljs-keyword">finally</span> <span class="hljs-comment">// optional</span>
-</code></pre>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-class="gaia" data-paginate="true" data-style="#img-right{
-  float: right;
-}
- img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-" class="gaia" data-marpit-pagination="28" data-marpit-pagination-total="28" style="--class:gaia;--paginate:true;--style:#img-right{
-  float: right;
-}
- img[alt~=&quot;center&quot;] {
-  display: block;
-  margin: 0 auto;
-}
-table {
-  border-collapse: collapse;
-  font-size: 22px;
-}
-table, th,tr, td {
-  border: none!important;
-  vertical-align: middle;
-}
-;" data-size="16:9">
-<h2>Example Exceptions</h2>
+<p>Chemistry: <strong>ChemML</strong> – for marking up the molecular structure of chemicals</p>
 <ul>
-<li>
-<p><code>IOException</code> - thrown when:</p>
-<ul>
-<li>not sufficient disk space to create a file</li>
-<li>a read-only file is opened for writing</li>
-<li>an not existent file is opened for reading</li>
-</ul>
-</li>
-<li>
-<p><code>NumberFormatException</code></p>
-<ul>
-<li>entering a non-numeric value for a numeric variable</li>
-</ul>
-</li>
-<li>
-<p><code>ArithmeticException</code></p>
-<ul>
-<li>division by zero</li>
-</ul>
-</li>
+<li>Genetics: <strong>BSML</strong> (Bio Sequence Markup Language)</li>
 </ul>
 </section>
 <script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{constructor(){super(),this.svgPreserveAspectRatio="xMinYMid meet";const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver(((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()}))}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){var t,s,o,r,a;this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=null!==(t=this.shadowRoot.querySelector(`div[${e}]`))&&void 0!==t?t:void 0;const l=this.svg;this.svg=null!==(o=null===(s=this.wrapper)||void 0===s?void 0:s.querySelector(`svg[${i}]`))&&void 0!==o?o:void 0,this.svg!==l&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=null!==(a=null===(r=this.svg)||void 0===r?void 0:r.querySelector(`span[${n}]`))&&void 0!==a?a:void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame((()=>{t.style.display=""})))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){var t,e,i,n,s,o,r;let a=Math.ceil(null!==(e=null===(t=this.containerSize)||void 0===t?void 0:t.width)&&void 0!==e?e:0);const l=Math.ceil(null!==(n=null===(i=this.containerSize)||void 0===i?void 0:i.height)&&void 0!==n?n:0);void 0!==this.dataset.downscaleOnly&&(a=Math.max(a,null!==(o=null===(s=this.wrapperSize)||void 0===s?void 0:s.width)&&void 0!==o?o:0));const c=null===(r=this.svg)||void 0===r?void 0:r.querySelector(":scope > foreignObject");if(null==c||c.setAttribute("width",`${a}`),null==c||c.setAttribute("height",`${l}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${a} ${l}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=a<=0||l<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const o=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this.attachShadow({mode:"open"})}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_update(){const t=i?`<style>:host { ${i} }</style>`:"";let e="<slot></slot>";const{autoScaling:n}=this.dataset;if(void 0!==n){e=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===n?"data-downscale-only":""}>${e}</marp-auto-scaling>`}this.shadowRoot.innerHTML=t+e}};let r;const a=Symbol(),l="marpitSVGPolyfill:setZoomFactor,",c=Symbol();let d,p;function h(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[c]||(Object.defineProperty(window,c,{configurable:!0,value:!0}),window.addEventListener("message",(({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(l)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(p=i)}}catch(t){console.error(t)}})));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,s,o,r;t.style.transform||(t.style.transform="translateZ(0)");const a=i||p||t.currentScale||1;d!==a&&(d=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(r=null===(o=n.y)||void 0===o?void 0:o.baseVal.value)&&void 0!==r?r:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}})),!1!==n&&Array.from(e.querySelectorAll("iframe"),(({contentWindow:t})=>{null==t||t.postMessage(`${l}${n}`,"null"===window.origin?"*":window.origin)}))}function g({once:t=!1,target:e=document}={}){const i="Apple Computer, Inc."===navigator.vendor?[h]:[];let n=!t;const s=()=>{for(const t of i)t({target:e});n&&window.requestAnimationFrame(s)};return s(),()=>{n=!1}}d=1,p=void 0;const m=Symbol(),v=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[a];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,a=t[n].proto();null!=r||(r=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is")),r&&a!==HTMLElement?i||customElements.define(s,o(a,{style:t[n].style}),{extends:n}):(i||customElements.define(s,o(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach((t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)})))}window[a]=!0})(e),e[m])return e[m];const i=g({target:e}),n=()=>{i(),delete e[m]},l=Object.assign(n,{cleanup:n,update:()=>v(e)});return Object.defineProperty(e,m,{configurable:!0,value:l}),l},u=document.currentScript;v(u?u.getRootNode():document)}();
-</script></foreignObject></svg></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@2.1.4/lib/bespoke.js.LICENSE.txt */
+</script></foreignObject></svg></div><div class="bespoke-marp-note" data-index="20" tabindex="0"><p>First XML Declaration
+Second Comment
+
+&lt;lecture&gt; Root element
+
+&lt;lecturer&gt; Container element
+&lt;fname&gt; sub element</p></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@2.1.4/lib/bespoke.js.LICENSE.txt */
 !function(){"use strict";"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self&&self;const e=document.body,t=(...e)=>history.replaceState(...e),n="presenter",r="next",o=["",n,r],a="data-bespoke-marp-",i=(e,{protocol:t,host:n,pathname:r,hash:o}=location)=>{const a=e.toString();return`${t}//${n}${r}${a?"?":""}${a}${o}`},s=()=>e.dataset.bespokeView,l=e=>new URLSearchParams(location.search).get(e),c=(e,n={})=>{var r;const o={location,setter:t,...n},a=new URLSearchParams(o.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?a.set(t,n):a.delete(t)}try{o.setter({...null!==(r=window.history.state)&&void 0!==r?r:{}},"",i(a,o.location))}catch(e){console.error(e)}},d=(()=>{const e="bespoke-marp";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(e){return!1}})(),u=e=>{try{return localStorage.getItem(e)}catch(e){return null}},f=(e,t)=>{try{return localStorage.setItem(e,t),!0}catch(e){return!1}},m=e=>{try{return localStorage.removeItem(e),!0}catch(e){return!1}},g=(e,t)=>{const n="aria-hidden";t?e.setAttribute(n,"true"):e.removeAttribute(n)},p=e=>{e.parent.classList.add("bespoke-marp-parent"),e.slides.forEach((e=>e.classList.add("bespoke-marp-slide"))),e.on("activate",(t=>{const n="bespoke-marp-active",r=t.slide,o=r.classList,a=!o.contains(n);if(e.slides.forEach((e=>{e.classList.remove(n),g(e,!0)})),o.add(n),g(r,!1),a){const e=`${n}-ready`;o.add(e),document.body.clientHeight,o.remove(e)}}))},v=e=>{let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map((e=>[null,...e.querySelectorAll("[data-marpit-fragment]")]))});const r=r=>void 0!==e.fragments[t][n+r],o=(r,o)=>{t=r,n=o,e.fragments.forEach(((e,t)=>{e.forEach(((e,n)=>{if(null==e)return;const i=t<r||t===r&&n<=o;e.setAttribute(`${a}fragment`,(i?"":"in")+"active");const s=`${a}current-fragment`;t===r&&n===o?e.setAttribute(s,"current"):e.removeAttribute(s)}))})),e.fragmentIndex=o;const i={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:o};e.fire("fragment",i)};e.on("next",(({fragment:a=!0})=>{if(a){if(r(1))return o(t,n+1),!1;const a=t+1;e.fragments[a]&&o(a,0)}else{const r=e.fragments[t].length;if(n+1<r)return o(t,r-1),!1;const a=e.fragments[t+1];a&&o(t+1,a.length-1)}})),e.on("prev",(({fragment:a=!0})=>{if(r(-1)&&a)return o(t,n-1),!1;const i=t-1;e.fragments[i]&&o(i,e.fragments[i].length-1)})),e.on("slide",(({index:t,fragment:n})=>{let r=0;if(void 0!==n){const o=e.fragments[t];if(o){const{length:e}=o;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}o(t,r)})),o(0,0)},h=document,y=()=>!(!h.fullscreenEnabled&&!h.webkitFullscreenEnabled),b=()=>!(!h.fullscreenElement&&!h.webkitFullscreenElement),w=e=>{e.fullscreen=()=>{y()&&(async()=>{return b()?null===(e=h.exitFullscreen||h.webkitExitFullscreen)||void 0===e?void 0:e.call(h):((e=h.body)=>{var t;return null===(t=e.requestFullscreen||e.webkitRequestFullscreen)||void 0===t?void 0:t.call(e)})();var e})()},document.addEventListener("keydown",(t=>{"f"!==t.key&&"F11"!==t.key||t.altKey||t.ctrlKey||t.metaKey||!y()||(e.fullscreen(),t.preventDefault())}))},x="bespoke-marp-inactive",k=(e=2e3)=>({parent:t,fire:n})=>{const r=t.classList,o=e=>n(`marp-${e?"":"in"}active`);let a;const i=()=>{a&&clearTimeout(a),a=setTimeout((()=>{r.add(x),o()}),e),r.contains(x)&&(r.remove(x),o(!0))};for(const e of["mousedown","mousemove","touchend"])document.addEventListener(e,i);setTimeout(i,0)},E=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"],$=e=>{e.parent.addEventListener("keydown",(e=>{if(!e.target)return;const t=e.target;(E.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()}))},L=e=>{window.addEventListener("load",(()=>{for(const t of e.slides){const e=t.querySelector("marp-auto-scaling, [data-auto-scaling], [data-marp-fitting]");t.setAttribute(`${a}load`,e?"":"hideable")}}))},S=({interval:e=250}={})=>t=>{document.addEventListener("keydown",(e=>{if(" "===e.key&&e.shiftKey)t.prev();else if("ArrowLeft"===e.key||"ArrowUp"===e.key||"PageUp"===e.key)t.prev({fragment:!e.shiftKey});else if(" "!==e.key||e.shiftKey)if("ArrowRight"===e.key||"ArrowDown"===e.key||"PageDown"===e.key)t.next({fragment:!e.shiftKey});else if("End"===e.key)t.slide(t.slides.length-1,{fragment:-1});else{if("Home"!==e.key)return;t.slide(0)}else t.next();e.preventDefault()}));let n,r,o=0;t.parent.addEventListener("wheel",(a=>{let i=!1;const s=(e,t)=>{e&&(i=i||((e,t)=>((e,t)=>{const n="X"===t?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]})(e,t)&&((e,t)=>{const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r})(getComputedStyle(e),t))(e,t)),(null==e?void 0:e.parentElement)&&s(e.parentElement,t)};if(0!==a.deltaX&&s(a.target,"X"),0!==a.deltaY&&s(a.target,"Y"),i)return;a.preventDefault();const l=Math.sqrt(a.deltaX**2+a.deltaY**2);if(void 0!==a.wheelDelta){if(void 0===a.webkitForce&&Math.abs(a.wheelDelta)<40)return;if(a.deltaMode===a.DOM_DELTA_PIXEL&&l<4)return}else if(a.deltaMode===a.DOM_DELTA_PIXEL&&l<12)return;r&&clearTimeout(r),r=setTimeout((()=>{n=0}),e);const c=Date.now()-o<e,d=l<=n;if(n=l,c||d)return;let u;(a.deltaX>0||a.deltaY>0)&&(u="next"),(a.deltaX<0||a.deltaY<0)&&(u="prev"),u&&(t[u](),o=Date.now())}))},P=(e=".bespoke-marp-osc")=>{const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[${a}osc=${JSON.stringify(e)}]`).forEach(n)};return y()||n("fullscreen",(e=>e.style.display="none")),d||n("presenter",(e=>{e.disabled=!0,e.title="Presenter view is disabled due to restricted localStorage."})),e=>{t.addEventListener("click",(t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;n&&t.target.blur();const r={fragment:!t.shiftKey};"next"===n?e.next(r):"prev"===n?e.prev(r):"fullscreen"===n?null==e||e.fullscreen():"presenter"===n&&e.openPresenterView()}})),e.parent.appendChild(t),e.on("activate",(({index:t})=>{n("page",(n=>n.textContent=`Page ${t+1} of ${e.slides.length}`))})),e.on("fragment",(({index:t,fragments:r,fragmentIndex:o})=>{n("prev",(e=>e.disabled=0===t&&0===o)),n("next",(n=>n.disabled=t===e.slides.length-1&&o===r.length-1))})),e.on("marp-active",(()=>g(t,!1))),e.on("marp-inactive",(()=>g(t,!0))),y()&&(e=>{for(const t of["","webkit"])h.addEventListener(t+"fullscreenchange",e)})((()=>n("fullscreen",(e=>e.classList.toggle("exit",y()&&b())))))}},T=e=>{window.addEventListener("message",(t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let o=Number.parseInt(t,10),a=Number.parseInt(n,10)+1;a>=e.fragments[o].length&&(o+=1,a=0),e.slide(o,{fragment:a})}}))};var _,I,A,M,D,O,C={exports:{}};C.exports=(_=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"],I=function(e){return String(e).replace(/[&<>"']/g,(function(e){return"&"+A[e]+";"}))},A={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},M="dangerouslySetInnerHTML",D={className:"class",htmlFor:"for"},O={},function(e,t){var n=[],r="";t=t||{};for(var o=arguments.length;o-- >2;)n.push(arguments[o]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(var a in t)!1!==t[a]&&null!=t[a]&&a!==M&&(r+=" "+(D[a]?D[a]:I(a))+'="'+I(t[a])+'"');r+=">"}if(-1===_.indexOf(e)){if(t[M])r+=t[M].__html;else for(;n.length;){var i=n.pop();if(i)if(i.pop)for(var s=i.length;s--;)n.push(i[s]);else r+=!0===O[i]?i:I(i)}r+=e?"</"+e+">":""}return O[r]=!0,r});var N=C.exports;const B=({children:e})=>N(null,null,...e),q="bespoke-marp-presenter-",K={container:`${q}container`,dragbar:`${q}dragbar-container`,next:`${q}next`,nextContainer:`${q}next-container`,noteContainer:`${q}note-container`,noteWrapper:`${q}note-wrapper`,noteButtons:`${q}note-buttons`,infoContainer:`${q}info-container`,infoPage:`${q}info-page`,infoPageText:`${q}info-page-text`,infoPagePrev:`${q}info-page-prev`,infoPageNext:`${q}info-page-next`,noteButtonsBigger:`${q}note-bigger`,noteButtonsSmaller:`${q}note-smaller`,infoTime:`${q}info-time`,infoTimer:`${q}info-timer`},F=e=>{const{title:t}=document;document.title="[Presenter view]"+(t?` - ${t}`:"");const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=K.container,t.appendChild(e),t.insertAdjacentHTML("beforeend",N(B,null,N("div",{class:K.nextContainer},N("iframe",{class:K.next,src:"?view=next"})),N("div",{class:K.dragbar}),N("div",{class:K.noteContainer},N("div",{class:K.noteWrapper}),N("div",{class:K.noteButtons},N("button",{class:K.noteButtonsSmaller,tabindex:"-1",title:"Smaller notes font size"},"Smaller notes font size"),N("button",{class:K.noteButtonsBigger,tabindex:"-1",title:"Bigger notes font size"},"Bigger notes font size"))),N("div",{class:K.infoContainer},N("div",{class:K.infoPage},N("button",{class:K.infoPagePrev,tabindex:"-1",title:"Previous"},"Previous"),N("span",{class:K.infoPageText}),N("button",{class:K.infoPageNext,tabindex:"-1",title:"Next"},"Next")),N("time",{class:K.infoTime,title:"Current time"}),N("time",{class:K.infoTimer,title:"Timer"})))),t})(e.parent)),(e=>{let t=!1;r(K.dragbar).addEventListener("mousedown",(()=>{t=!0,r(K.dragbar).classList.add("active")})),window.addEventListener("mouseup",(()=>{t=!1,r(K.dragbar).classList.remove("active")})),window.addEventListener("mousemove",(e=>{if(!t)return;const n=e.clientX/document.documentElement.clientWidth*100;r(K.container).style.setProperty("--bespoke-marp-presenter-split-ratio",`${Math.max(0,Math.min(100,n))}%`)})),r(K.nextContainer).addEventListener("click",(()=>e.next()));const n=r(K.next),o=(a=n,(e,t)=>{var n;return null===(n=a.contentWindow)||void 0===n?void 0:n.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin)});var a;n.addEventListener("load",(()=>{r(K.nextContainer).classList.add("active"),o(e.slide(),e.fragmentIndex),e.on("fragment",(({index:e,fragmentIndex:t})=>o(e,t)))}));const i=document.querySelectorAll(".bespoke-marp-note");i.forEach((e=>{e.addEventListener("keydown",(e=>e.stopPropagation())),r(K.noteWrapper).appendChild(e)})),e.on("activate",(()=>i.forEach((t=>t.classList.toggle("active",t.dataset.index==e.slide())))));let s=0;const l=e=>{s=Math.max(-5,s+e),r(K.noteContainer).style.setProperty("--bespoke-marp-note-font-scale",(1.2**s).toFixed(4))},c=()=>l(1),d=()=>l(-1),u=r(K.noteButtonsBigger),f=r(K.noteButtonsSmaller);u.addEventListener("click",(()=>{u.blur(),c()})),f.addEventListener("click",(()=>{f.blur(),d()})),document.addEventListener("keydown",(e=>{"+"===e.key&&c(),"-"===e.key&&d()}),!0),e.on("activate",(({index:t})=>{r(K.infoPageText).textContent=`${t+1} / ${e.slides.length}`}));const m=r(K.infoPagePrev),g=r(K.infoPageNext);m.addEventListener("click",(t=>{m.blur(),e.prev({fragment:!t.shiftKey})})),g.addEventListener("click",(t=>{g.blur(),e.next({fragment:!t.shiftKey})})),e.on("fragment",(({index:t,fragments:n,fragmentIndex:r})=>{m.disabled=0===t&&0===r,g.disabled=t===e.slides.length-1&&r===n.length-1}));let p=new Date;const v=()=>{const e=new Date,t=e=>`${Math.floor(e)}`.padStart(2,"0"),n=e.getTime()-p.getTime(),o=t(n/1e3%60),a=t(n/1e3/60%60),i=t(n/36e5%24);r(K.infoTime).textContent=e.toLocaleTimeString(),r(K.infoTimer).textContent=`${i}:${a}:${o}`};v(),setInterval(v,250),r(K.infoTimer).addEventListener("click",(()=>{p=new Date}))})(e)},j=e=>{if(!(e=>e.syncKey&&"string"==typeof e.syncKey)(e))throw new Error("The current instance of Bespoke.js is invalid for Marp bespoke presenter plugin.");Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:U},presenterUrl:{enumerable:!0,get:V}}),d&&document.addEventListener("keydown",(t=>{"p"!==t.key||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())}))};function U(){const{max:e,floor:t}=Math,n=e(t(.85*window.innerWidth),640),r=e(t(.85*window.innerHeight),360);return window.open(this.presenterUrl,q+this.syncKey,`width=${n},height=${r},menubar=no,toolbar=no`)}function V(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),i(e)}const X=e=>{const t=s();return t===r&&e.appendChild(document.createElement("span")),{"":j,[n]:F,[r]:T}[t]},H=e=>{e.on("activate",(t=>{document.querySelectorAll(".bespoke-progress-parent > .bespoke-progress-bar").forEach((n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"}))}))},R=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t},W=(e={})=>{const t={history:!0,...e};return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},o=(t={fragment:!0})=>{((t,n)=>{const{min:r,max:o}=Math,{fragments:a,slides:i}=e,s=o(0,r(t,i.length-1)),l=o(0,r(n||0,a[s].length-1));s===e.slide()&&l===e.fragmentIndex||e.slide(s,{fragment:l})})((R(location.hash.slice(1))||1)-1,t.fragment?R(l("f")||""):null)};e.on("fragment",(({index:e,fragmentIndex:r})=>{n||c({f:0===r||r.toString()},{location:{...location,hash:`#${e+1}`},setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})})),setTimeout((()=>{o(),window.addEventListener("hashchange",(()=>r((()=>{o({fragment:!1}),c({f:void 0})})))),window.addEventListener("popstate",(()=>{n||r((()=>o()))})),n=!1}),0)}},J=(e={})=>{var n;const r=e.key||(null===(n=window.history.state)||void 0===n?void 0:n.marpBespokeSyncKey)||Math.random().toString(36).slice(2),o=`bespoke-marp-sync-${r}`;var a;a={marpBespokeSyncKey:r},c({},{setter:(e,...n)=>t({...e,...a},...n)});const i=()=>{const e=u(o);return e?JSON.parse(e):Object.create(null)},s=e=>{const t=i(),n={...t,...e(t)};return f(o,JSON.stringify(n)),n},l=()=>{window.removeEventListener("pageshow",l),s((e=>({reference:(e.reference||0)+1})))};return e=>{l(),Object.defineProperty(e,"syncKey",{value:r,enumerable:!0});let t=!0;setTimeout((()=>{e.on("fragment",(e=>{t&&s((()=>({index:e.index,fragmentIndex:e.fragmentIndex})))}))}),0),window.addEventListener("storage",(n=>{if(n.key===o&&n.oldValue&&n.newValue){const r=JSON.parse(n.oldValue),o=JSON.parse(n.newValue);if(r.index!==o.index||r.fragmentIndex!==o.fragmentIndex)try{t=!1,e.slide(o.index,{fragment:o.fragmentIndex,forSync:!0})}finally{t=!0}}}));const n=()=>{const{reference:e}=i();void 0===e||e<=1?m(o):s((()=>({reference:e-1})))};window.addEventListener("pagehide",(e=>{e.persisted&&window.addEventListener("pageshow",l),n()})),e.on("destroy",n)}},{PI:Y,abs:z,sqrt:G,atan2:Q}=Math,Z={passive:!0},ee=({slope:e=-.7,swipeThreshold:t=30}={})=>n=>{let r;const o=n.parent,a=e=>{const t=o.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};o.addEventListener("touchstart",(({touches:e})=>{r=1===e.length?a(e[0]):void 0}),Z),o.addEventListener("touchmove",(e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=a(e.touches[0]),n=t.x-r.x,o=t.y-r.y;r.delta=G(z(n)**2+z(o)**2),r.radian=Q(n,o)}else r=void 0})),o.addEventListener("touchend",(o=>{if(r){if(r.delta&&r.delta>=t&&r.radian){const t=(r.radian-e+Y)%(2*Y)-Y;n[t<0?"next":"prev"](),o.stopPropagation()}r=void 0}}),Z)},te=new Map;te.clear(),te.set("none",{backward:{both:void 0,incoming:void 0,outgoing:void 0},forward:{both:void 0,incoming:void 0,outgoing:void 0}});const ne={both:"",outgoing:"outgoing-",incoming:"incoming-"},re={forward:"",backward:"-backward"},oe=e=>`--marp-bespoke-transition-animation-${e}`,ae=e=>`--marp-transition-${e}`,ie=oe("name"),se=oe("duration"),le=e=>new Promise((t=>{const n={},r=document.createElement("div"),o=e=>{r.remove(),t(e)};r.addEventListener("animationstart",(()=>o(n))),Object.assign(r.style,{animationName:e,animationDuration:"1s",animationFillMode:"both",animationPlayState:"paused",position:"absolute",pointerEvents:"none"}),document.body.appendChild(r);const a=getComputedStyle(r).getPropertyValue(ae("duration"));a&&(n.defaultDuration=a),((e,t)=>{requestAnimationFrame((()=>{e.style.animationPlayState="running",requestAnimationFrame((()=>t(void 0)))}))})(r,o)})),ce=async e=>te.has(e)?te.get(e):(e=>{const t={},n=[];for(const[r,o]of Object.entries(ne))for(const[a,i]of Object.entries(re)){const s=`marp-${o}transition${i}-${e}`;n.push(le(s).then((e=>{t[a]=t[a]||{},t[a][r]=e?{...e,name:s}:void 0})))}return Promise.all(n).then((()=>t))})(e).then((t=>(te.set(e,t),t))),de=e=>Object.values(e).flatMap(Object.values).every((e=>!e)),ue=(e,{type:t,backward:n})=>{const r=e[n?"backward":"forward"],o=(()=>{const e=r[t],n=e=>({[ie]:e.name});if(e)return n(e);if(r.both){const e=n(r.both);return"incoming"===t&&(e[oe("direction")]="reverse"),e}})();return!o&&n?ue(e,{type:t,backward:!1}):o||{[ie]:"__bespoke_marp_transition_no_animation__"}},fe=e=>{if(e)try{const t=JSON.parse(e);if((e=>{if("object"!=typeof e)return!1;const t=e;return"string"==typeof t.name&&(void 0===t.duration||"string"==typeof t.duration)})(t))return t}catch(e){}},me="_tSId",ge="_tA",pe="bespoke-marp-transition-warming-up",ve=window.matchMedia("(prefers-reduced-motion: reduce)"),he="__bespoke_marp_transition_reduced_outgoing__",ye="__bespoke_marp_transition_reduced_incoming__",be={forward:{both:void 0,incoming:{name:ye},outgoing:{name:he}},backward:{both:void 0,incoming:{name:ye},outgoing:{name:he}}},we=e=>{if(!document.createDocumentTransition)return;const t=t=>(void 0!==t&&(e._tD=t),e._tD);let n;t(!1);const r=(e,n)=>{requestAnimationFrame((async()=>{t(e);try{await n()}catch(e){console.warn(e)}finally{t(!1)}}))};((...e)=>{const t=[...new Set(e).values()];return Promise.all(t.map((e=>ce(e)))).then()})(...Array.from(document.querySelectorAll("section[data-transition], section[data-transition-back]")).flatMap((e=>[e.dataset.transition,e.dataset.transitionBack].flatMap((e=>{const t=fe(e);return[null==t?void 0:t.name,(null==t?void 0:t.builtinFallback)?`__builtin__${t.name}`:void 0]})).filter((e=>!!e))))).then((()=>{document.querySelectorAll("style").forEach((e=>{e.innerHTML=e.innerHTML.replace(/--marp-transition-duration:[^;}]*[;}]/g,(e=>e.slice(0,-1)+"!important"+e.slice(-1)))}))}));const o=(n,{back:o,cond:a})=>i=>{var s;const l=t();if(l)return!!i._tA||!("object"!=typeof l||(l.abandon(),!i.forSync));if(!a(i))return!0;const c=e.slides[e.slide()],d=()=>{var e;return null!==(e=i.back)&&void 0!==e?e:o},u="data-transition"+(d()?"-back":""),f=c.querySelector(`section[${u}]`);if(!f)return!0;const m=fe(null!==(s=f.getAttribute(u))&&void 0!==s?s:void 0);return!m||((async(e,{builtinFallback:t=!0}={})=>{let n=await ce(e);if(de(n)){if(!t)return;return n=await ce(`__builtin__${e}`),de(n)?void 0:n}return n})(m.name,{builtinFallback:m.builtinFallback}).then((e=>{if(!e)return r(!0,(()=>n(i)));let o=e;ve.matches&&(console.warn("Use a constant animation to transition because preferring reduced motion by viewer has detected. "),o=be);const a=document.getElementById(me);a&&a.remove();const s=document.createElement("style");s.id=me,document.head.appendChild(s),((e,t)=>{const n=[`:root{${ae("direction")}:${t.backward?-1:1};}`],r=t=>{var n,o,a;const i=(null===(n=e[t].both)||void 0===n?void 0:n.defaultDuration)||(null===(o=e[t].outgoing)||void 0===o?void 0:o.defaultDuration)||(null===(a=e[t].incoming)||void 0===a?void 0:a.defaultDuration);return"forward"===t?i:i||r("forward")},o=t.duration||r(t.backward?"backward":"forward");void 0!==o&&n.push(`::page-transition-container(*){${se}:${o};}`);const a=e=>Object.entries(e).map((([e,t])=>`${e}:${t};`)).join("");return n.push(`::page-transition-outgoing-image(root){${a(ue(e,{...t,type:"outgoing"}))}}`,`::page-transition-incoming-image(root){${a(ue(e,{...t,type:"incoming"}))}}`),n})(o,{backward:d(),duration:m.duration}).forEach((e=>{var t;return null===(t=s.sheet)||void 0===t?void 0:t.insertRule(e)}));try{const e=document.createDocumentTransition(),t=document.documentElement.classList;t.add(pe);let o=!1;const a=()=>{o||(n(i),o=!0,t.remove(pe))};r(e,(async()=>{try{await e.start(a)}catch(e){console.error(e),a()}finally{s.remove(),t.remove(pe)}}))}catch(e){t(!1)}})),!1)};e.on("prev",o((t=>e.prev({...t,[ge]:!0})),{back:!0,cond:e=>{var t;return e.index>0&&!((null===(t=e.fragment)||void 0===t||t)&&n.fragmentIndex>0)}})),e.on("next",o((t=>e.next({...t,[ge]:!0})),{cond:t=>t.index+1<e.slides.length&&!(n.fragmentIndex+1<n.fragments.length)})),setTimeout((()=>{e.on("slide",o((t=>e.slide(t.index,{...t,[ge]:!0})),{cond:t=>{const n=e.slide();return t.index!==n&&(t.back=t.index<n,!0)}}))}),0),e.on("fragment",(e=>{n=e}))};let xe;const ke=()=>(void 0===xe&&(xe="wakeLock"in navigator&&navigator.wakeLock),xe),Ee=async()=>{const e=ke();if(e)try{return await e.request("screen")}catch(e){console.warn(e)}return null},$e=async()=>{if(!ke())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&Ee()};for(const e of["visibilitychange","fullscreenchange"])document.addEventListener(e,t);return e=await Ee(),e};((t=document.getElementById("p"))=>{(()=>{const t=l("view");e.dataset.bespokeView=t===r||t===n?t:""})();const a=(e=>{const t=l(e);return c({[e]:void 0}),t})("sync")||void 0;var i,d,u,f,m,g,h,y,b,x,E,T;i=t,d=((...e)=>{const t=o.findIndex((e=>s()===e));return e.map((([e,n])=>e[t]&&n)).filter((e=>e))})([[1,1,0],J({key:a})],[[1,1,1],X(t)],[[1,1,0],$],[[1,1,1],p],[[1,0,0],k()],[[1,1,1],L],[[1,1,1],W({history:!1})],[[1,1,0],S()],[[1,1,0],w],[[1,0,0],H],[[1,1,0],ee()],[[1,0,0],P()],[[1,0,0],we],[[1,1,1],v],[[1,1,0],$e]),f=1===(i.parent||i).nodeType?i.parent||i:document.querySelector(i.parent||i),m=[].filter.call("string"==typeof i.slides?f.querySelectorAll(i.slides):i.slides||f.children,(function(e){return"SCRIPT"!==e.nodeName})),g={},h=function(e,t){return(t=t||{}).index=m.indexOf(e),t.slide=e,t},x=function(e,t){m[e]&&(u&&b("deactivate",h(u,t)),u=m[e],b("activate",h(u,t)))},E=function(e,t){var n=m.indexOf(u)+e;b(e>0?"next":"prev",h(u,t))&&x(n,t)},T={off:y=function(e,t){g[e]=(g[e]||[]).filter((function(e){return e!==t}))},on:function(e,t){return(g[e]||(g[e]=[])).push(t),y.bind(null,e,t)},fire:b=function(e,t){return(g[e]||[]).reduce((function(e,n){return e&&!1!==n(t)}),!0)},slide:function(e,t){if(!arguments.length)return m.indexOf(u);b("slide",h(m[e],t))&&x(e,t)},next:E.bind(null,1),prev:E.bind(null,-1),parent:f,slides:m,destroy:function(e){b("destroy",h(u,e)),g={}}},(d||[]).forEach((function(e){e(T)})),u||x(0)})()}();</script></body></html>
