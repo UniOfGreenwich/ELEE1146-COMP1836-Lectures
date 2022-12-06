@@ -297,6 +297,8 @@ An ***event*** is an action initiated by the user interacting with the program.
   - trying to access an out-of-bounds array elements
   - trying to open a file that does not exists, etc. 
 
+--- 
+
 ## Exception Handling
 
 - Enable programs to catch and handle errors

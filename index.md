@@ -11,3 +11,5 @@
 [Java OOP Pt1](content/Java_OOP/Java_OOP.html)
 
 [Java Methods Pt2](content/Java_Methods/Java_Methods.html)
+
+[XML](content/XML/XML.html)
