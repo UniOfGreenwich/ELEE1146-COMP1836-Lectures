@@ -87,6 +87,20 @@ math: true
 
 ## Motivation for XML
 
+- Used to be that C structs were used to access stored data, and that data was always stored as binary and then is interpreted.   
+  
+```c
+struct dataStore 
+(
+  char author[] = {'A','.','Name'};
+  int age = 50;
+  char ISBN[10] = {'I',...} ;
+)
+```
+---
+
+## Motivation for XML
+
 - HTML is not flexible, SGML is too complex
 
 - HTML - insufficient for electronic data interchange
@@ -120,9 +134,9 @@ math: true
 - Allows you to separate data from their representation (visualisation)
 
 - XML document represents a blueprint of an all class of data
-
+    <fname>Seb </fname>
+        <lname>Blair</lname>
 - XML helps exchanging data bases over the Internet
-
 
 ---
 
@@ -170,8 +184,7 @@ math: true
 ```xml
 <author fname="Rick" lname="Rolled"/>
 ```
-
----
+--- 
 
 ## Attributes Vs. Sub-elements
 
@@ -420,4 +433,129 @@ Chemistry: **ChemML** – for marking up the molecular structure of chemicals
 
 - Genetics: **BSML** (Bio Sequence Markup Language)
 
+---
 
+## Whay about other structures.. JSON and YAML?
+
+- YAML stands for “YAML Aint Markup Language“.
+- JSON stands for “JavaScript Object Notation“.
+- YAML uses indentation to define structured data. So each block in the YAML is differentiated by the number of white spaces.
+- All three mentioned serialization language has same extension as their name. (.yaml for YAML, .json for JSON, .xml for XML). So it is easy to remember.
+- In fact, file extensions are arbitrary for all the three data serialization standard. It is useful for the application and users to know what files format, type of the content and their data structure.
+
+---
+
+ ## JSON
+
+ ```json
+{
+"EmpRecord": {
+  "Employee": [
+      {
+        "-id": "emp01",
+        "name": "Alex",
+        "job": "Developer",
+        "skills": "python, C/C++, paskal"
+      },
+      {
+        "-id": "emp02",
+        "name": "Bob",
+        "job": "Tester",
+        "skills": "lips, forton, REST APIs"
+      }
+    ]
+  }
+}
+ ```
+
+ ---
+
+## XML
+
+ ```xml
+<?xml version="1.0"?>
+<EmpRecord>
+<Employee id="emp01">
+<name>Alex</name>
+<job>Developer</job>
+<skills>python, C/C++, paskal</skills>
+</Employee>
+
+<Employee id="emp02">
+<name>Bob</name>
+<job>Tester</job>
+<skills>lips, forton, REST APIs</skills>
+</Employee>
+
+</EmpRecord>
+ ```
+
+---
+
+## YAML
+
+```yaml
+---
+EmpRecord:
+  Employee:
+  -
+    "-id": emp01
+    name: Alex
+    job: Developer
+    skills: python, C/C++, paskal
+  -
+    "-id": emp02
+    name: Bob
+    job: Tester
+    skills: lips, forton, REST APIs
+```
+
+---
+
+## XML Adv and Disadv
+
+**Advantages of XML**
+
+- XML is a generalized language that easily allows different formats to be realized from a common syntax.
+
+- Schemas exist for validation and creation of custom types, while namespaces avoid collisions between elements.
+
+- XPath and XQuery facilitate complex queries into XML documents.
+
+**Disadvantages of XML**
+
+- The XML language is verbose and often contains redundant syntax.
+
+- Higher verbosity increases storage capacity and bandwidth needs.
+
+- Not considered easily human-readable due to the descriptive nature of elements.
+
+--- 
+
+## JSON Adv and Disadv
+
+**Advantages of JSON**
+- In contrast to XML, far more human-readable due to a more compact syntax.
+- Simpler syntax with limited markup.
+- Quick for systems and languages to parse.
+- JSONPath, like XPath, is available for complex queries.
+
+**Disadvantages of JSON**
+- Limited data type support containing only strings, numbers, JSON object, array, boolean, and null.
+- No namespace, comment, or attribute support.
+- Simple structures may not support complex configurations.
+
+--- 
+
+## YAML Adv and Disadv
+
+**Advantages of YAML**
+- Exceptionally human-readable syntax.
+- Compact syntax, which uses Python-style indentation to denote structure.
+- Supports language-independent object types. Scalers such as `int`, `binary`, `str`, and `bool` or collections such as `map`, `set`, `pairs`, and `seq`.
+
+**Disadvantages of YAML**
+- Indentation format is prone to syntax and validation errors.
+- Portability with certain types may not exist due to a lack of features across all languages.
+- Debugging is difficult, due to the declarative nature of YAML.
+- Breakpoints and similar functionality do not exist.
