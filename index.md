@@ -13,3 +13,5 @@
 [Java Methods Pt2](content/Java_Methods/Java_Methods.html)
 
 [XML](content/XML/XML.html)
+
+[Permissions](content/Permissions/Permissions.html)
