@@ -15,3 +15,5 @@
 [XML](content/XML/XML.html)
 
 [Permissions](content/Permissions/Permissions.html)
+
+[Sensors 1](content/Sensors/Sensors.html)

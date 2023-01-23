@@ -169,4 +169,142 @@ The sensors' possible architectures vary by sensor type:
 
 ---
 
-## 
+## Java `Field`'s 
+
+A Java field is a variable inside a class. For instance, in a class representing an employee, the Employee class might contain the following fields:
+- name
+- position
+- salary
+- hiredDate
+
+The corresponding Java class could be defined like this:
+
+```java
+public class Employee {
+  String  name     ;
+  String  position ;
+  int     salary   ;
+  Date    hiredDate;
+}
+```
+
+---
+##  Java `Field`'s 2: Declaration Syntax
+
+Java field is declared using the following syntax:
+
+```java
+[access_modifier] [static] [final] type name [= initial value] ;
+```
+
+- `type` and `name` are mandatory
+- `[]` are optional keywords
+
+```java
+public class Customer {
+ // [access_modifier] [static] [final] type   name [= initial value]
+    private            static  final  String field1 = "Fixed Value"; 
+}
+```
+---
+
+## `Sensor` `Field`'s
+
+- There are numerous variables that provide information about a sensor.
+- accessible through functions like...
+```java
+private int android.hardware.Sensor.mFifoMaxEventCount
+...
+public int getFifoReservedEventCount (){
+ 
+ return android.hardware.Sensor.mFifoMaxEventCount
+}
+```
+![bg right:50% 45% ](../../figures/Sensor_Orientation.png)
+
+*In the lab will be using Fields to always get the same data from each sensor*
+<!--
+Number of events reserved for this sensor in the batch mode FIFO. 
+
+This gives a guarantee on the minimum number of events that can be batched. 
+-->
+
+---
+
+## `StringBuilder` Class
+
+- a **mutable** sequence of characters. 
+- `String` Class in Java creates an **immutable** sequence of characters, 
+- Constructs a string builder with no characters in it and an initial capacity of 16 characters
+
+```java
+StringBuilder str = new StringBuilder();
+
+str.append("Hello");
+str.append("World!");
+// print string
+System.out.println("String = " + str.toString());
+```
+
+<details>
+<summary>Output?</summary>
+
+```
+String = HelloWorld!
+```
+
+</details>
+
+---
+
+## `Pattern` Clas
+
+- is class used in regular expression(regex)
+- is a type of object that is used to help you extract information from any string data by searching through text to find what you need
+- you will with high probabilty encounter regex many times in your career and by then this daunting set of characters grouped together will be a breeze:
+
+```
+(\b[A-Z][a-z]*\s*\b)+$
+```
+
+<details>
+
+<summary>Means?</summary>
+
+Search for *Title Case*
+
+![Searching for Title case](../../../../../CCCU/PhD/Databases/Diagrams/Regex_Title.svg)
+
+</details>
+
+---
+
+## `Pattern` Class
+
+```java
+Pattern pattern = Pattern.compile("^(.+)@example.com$");
+   
+  // Input list
+  List<String> emails = Arrays.asList("anemail@example.com", "whouses@yahoo.com", 
+            "sellout@google.com", "youremail@example.com");
+    
+  for(String email : emails)
+  {
+      Matcher matcher = pattern.matcher(email);
+       
+      if(matcher.matches()) 
+      {
+        System.out.println(email);
+      }
+  }
+```
+
+<details>
+<summary>Output?</summary>
+
+```
+anemail@example.com
+youemail@example.com
+```
+
+</details>
