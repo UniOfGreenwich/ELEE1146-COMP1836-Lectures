@@ -1,0 +1,83 @@
+
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" version="1.1" width="690.541015625" height="126">
+            <defs>
+              <style type="text/css">
+                svg {
+                  background-color: #fff;
+                }
+
+                .root text,
+                .root tspan {
+                  font: 12px Arial;
+                }
+
+                .root path {
+                  fill-opacity: 0;
+                  stroke-width: 2px;
+                  stroke: #000;
+                }
+
+                .root circle {
+                  fill: #6b6659;
+                  stroke-width: 2px;
+                  stroke: #000;
+                }
+
+                .anchor text,
+                .any-character text {
+                  fill: #fff;
+                }
+
+                .anchor rect,
+                .any-character rect {
+                  fill: #6b6659;
+                }
+
+                .escape text,
+                .charset-escape text,
+                .literal text {
+                  fill: #000;
+                }
+
+                .escape rect,
+                .charset-escape rect {
+                  fill: #bada55;
+                }
+
+                .literal rect {
+                  fill: #dae9e5;
+                }
+
+                .charset .charset-box {
+                  fill: #cbcbba;
+                }
+
+                .subexp .subexp-label tspan,
+                .charset .charset-label tspan,
+                .match-fragment .repeat-label tspan {
+                  font-size: 10px;
+                }
+
+                .repeat-label {
+                  cursor: help;
+                }
+
+                .subexp .subexp-label tspan,
+                .charset .charset-label tspan {
+                  dominant-baseline: text-after-edge;
+                }
+
+                .subexp .subexp-box {
+                  stroke: #908c83;
+                  stroke-dasharray: 6, 2;
+                  stroke-width: 2px;
+                  fill-opacity: 0;
+                }
+
+                .quote {
+                  fill: #908c83;
+                }
+              </style>
+            </defs>
+          <desc>Created with Snap</desc><g class="root" transform="matrix(1,0,0,1,15,10)"><g class="regexp match" transform="matrix(1,0,0,1,10,0)"><path d="M535.507775,59H570.5078"></path><g class="match-fragment" transform="matrix(1,0,0,1,0,0)"><path d="M10,59q-10,0 -10,10v27q0,10 10,10h535.5078125q10,0 10,-10v-27q0,-10 -10,-10M555.5078125,74l5,-5m-5,5l-5,-5"></path><g class="subexp" transform="matrix(1,0,0,1,10,0)"><rect rx="3" ry="3" class="subexp-box" transform="matrix(1,0,0,1,0,11)" width="535.5078125" height="85"></rect><text x="0" y="0" class="subexp-label" transform="matrix(1,0,0,1,0,11)"><tspan>group #1</tspan></text><g class="regexp match" transform="matrix(1,0,0,1,10,21)"><path d="M93.296875,38H103.2969M180.73436948242187,38H205.7343M280.51554999999996,38H320.5156M397.2109125,38H422.2109"></path><g class="match-fragment escape" transform="matrix(1,0,0,1,0,26)"><g class="label"><rect width="93.296875" height="24" rx="3" ry="3"></rect><text x="0" y="0" transform="matrix(1,0,0,1,5,17)"><tspan>word boundary</tspan></text></g></g><g class="match-fragment charset" transform="matrix(1,0,0,1,103.2969,10)"><rect rx="3" ry="3" class="charset-box" transform="matrix(1,0,0,1,0,11)" width="77.43746948242188" height="34"></rect><text x="0" y="0" class="charset-label" transform="matrix(1,0,0,1,0,11)"><tspan>One of:</tspan></text><g transform="matrix(1,0,0,1,5,16)"><g class="charset-range" transform="matrix(1,0,0,1,0,0)"><text x="0" y="0" transform="matrix(1,0,0,1,31.9063,16)">-</text><g class="literal" transform="matrix(1,0,0,1,0,0)"><g class="label"><rect width="26.90625" height="24" rx="3" ry="3"></rect><text x="0" y="0" transform="matrix(1,0,0,1,5,17)"><tspan class="quote">“</tspan><tspan>A</tspan><tspan class="quote">”</tspan></text></g></g><g class="literal" transform="matrix(1,0,0,1,41.2031,0)"><g class="label"><rect width="26.234375" height="24" rx="3" ry="3"></rect><text x="0" y="0" transform="matrix(1,0,0,1,5,17)"><tspan class="quote">“</tspan><tspan>Z</tspan><tspan class="quote">”</tspan></text></g></g></g></g></g><g class="match-fragment" transform="matrix(1,0,0,1,190.7343,0)"><path d="M0,38q10,0 10,-10v-18q0,-10 10,-10h64.78125q10,0 10,10v18q0,10 10,10M15,38q-10,0 -10,10v7q0,10 10,10h74.78125q10,0 10,-10v-7q0,-10 -10,-10M99.78125,53l5,-5m-5,5l-5,-5"></path><g class="charset" transform="matrix(1,0,0,1,15,10)"><rect rx="3" ry="3" class="charset-box" transform="matrix(1,0,0,1,0,11)" width="74.78125" height="34"></rect><text x="0" y="0" class="charset-label" transform="matrix(1,0,0,1,0,11)"><tspan>One of:</tspan></text><g transform="matrix(1,0,0,1,5,16)"><g class="charset-range" transform="matrix(1,0,0,1,0,0)"><text x="0" y="0" transform="matrix(1,0,0,1,30.5781,16)">-</text><g class="literal" transform="matrix(1,0,0,1,0,0)"><g class="label"><rect width="25.578125" height="24" rx="3" ry="3"></rect><text x="0" y="0" transform="matrix(1,0,0,1,5,17)"><tspan class="quote">“</tspan><tspan>a</tspan><tspan class="quote">”</tspan></text></g></g><g class="literal" transform="matrix(1,0,0,1,39.875,0)"><g class="label"><rect width="24.90625" height="24" rx="3" ry="3"></rect><text x="0" y="0" transform="matrix(1,0,0,1,5,17)"><tspan class="quote">“</tspan><tspan>z</tspan><tspan class="quote">”</tspan></text></g></g></g></g></g></g><g class="match-fragment" transform="matrix(1,0,0,1,305.5156,16)"><path d="M0,22q10,0 10,-10v-2q0,-10 10,-10h66.6953125q10,0 10,10v2q0,10 10,10M15,22q-10,0 -10,10v2q0,10 10,10h76.6953125q10,0 10,-10v-2q0,-10 -10,-10M101.6953125,37l5,-5m-5,5l-5,-5"></path><g class="escape" transform="matrix(1,0,0,1,15,10)"><g class="label"><rect width="76.6953125" height="24" rx="3" ry="3"></rect><text x="0" y="0" transform="matrix(1,0,0,1,5,17)"><tspan>white space</tspan></text></g></g></g><g class="match-fragment escape" transform="matrix(1,0,0,1,422.2109,26)"><g class="label"><rect width="93.296875" height="24" rx="3" ry="3"></rect><text x="0" y="0" transform="matrix(1,0,0,1,5,17)"><tspan>word boundary</tspan></text></g></g></g></g></g><g class="match-fragment" transform="matrix(1,0,0,1,570.5078,47)"><g class="label anchor"><rect width="70.03319931030273" height="24"></rect><text x="0" y="0" transform="matrix(1,0,0,1,5,17)"><tspan>End of line</tspan></text></g></g></g><path d="M30,59H0M650.541003125,59H660.541015625"></path><circle cx="0" cy="59" r="5"></circle><circle cx="660.541015625" cy="59" r="5"></circle></g></svg>
+        

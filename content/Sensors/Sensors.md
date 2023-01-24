@@ -46,15 +46,15 @@ math: true
 
 - Measuring some phenomena 
 
-- Passive (Which require and external signal)
-- Active (Which require an external signal)
+- Passive (require and external signal)
+- Active (require an external signal)
 
 - Analogue (produce an anlaogue output; ie a continous signal)
-- Digital (which work with discrete, digital data)
+- Digital (work with discrete, digital data)
 
 ----
 
-## Arduino `SensorManager`
+## Android `SensorManager`
 
 - The is an abstract class that extends the `Object` class.
 
@@ -257,7 +257,7 @@ String = HelloWorld!
 
 ---
 
-## `Pattern` Clas
+## `Pattern` Class
 
 - is class used in regular expression(regex)
 - is a type of object that is used to help you extract information from any string data by searching through text to find what you need
@@ -273,7 +273,7 @@ String = HelloWorld!
 
 Search for *Title Case*
 
-![Searching for Title case](../../../../../CCCU/PhD/Databases/Diagrams/Regex_Title.svg)
+![center](../../figures/Regex_Title.svg)
 
 </details>
 
@@ -304,7 +304,7 @@ Pattern pattern = Pattern.compile("^(.+)@example.com$");
 
 ```
 anemail@example.com
-youemail@example.com
+youremail@example.com
 ```
 
 </details>
