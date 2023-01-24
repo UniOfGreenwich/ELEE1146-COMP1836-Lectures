@@ -255,6 +255,9 @@ String = HelloWorld!
 
 </details>
 
+<!--
+modifying the `String` creates a new String object in the heap memory with the latest content, and the original String is never changed.
+-->
 ---
 
 ## `Pattern` Class
@@ -284,19 +287,19 @@ Search for *Title Case*
 ```java
 Pattern pattern = Pattern.compile("^(.+)@example.com$");
    
-  // Input list
-  List<String> emails = Arrays.asList("anemail@example.com", "whouses@yahoo.com", 
-            "sellout@google.com", "youremail@example.com");
-    
-  for(String email : emails)
-  {
-      Matcher matcher = pattern.matcher(email);
-       
-      if(matcher.matches()) 
-      {
-        System.out.println(email);
-      }
-  }
+// Input list
+List<String> emails = Arrays.asList("anemail@example.com", "whouses@yahoo.com", 
+          "sellout@google.com", "youremail@example.com");
+  
+for(String email : emails)
+{
+    Matcher matcher = pattern.matcher(email);
+      
+    if(matcher.matches()) 
+    {
+      System.out.println(email);
+    }
+}
 ```
 
 <details>
@@ -308,3 +311,10 @@ youremail@example.com
 ```
 
 </details>
+
+<!-- 
+^ asserts position at start of a line
+. matches any character (except for line terminators)
++ matches the previous token between one and unlimited times, as many times as possible, giving back as needed (greedy)
+$ asserts position at the end of a line
+--->
