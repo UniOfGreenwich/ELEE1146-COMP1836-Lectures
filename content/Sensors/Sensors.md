@@ -58,7 +58,7 @@ math: true
 
 - The is an abstract class that extends the `Object` class.
 
-- Lets you access the device's **sensors**/
+- Lets you access the device's **sensors**
 
 - `Sensor` are their own class that also extends `Object`
 
