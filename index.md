@@ -17,3 +17,5 @@
 [Permissions](content/Permissions/Permissions.html)
 
 [Sensors 1](content/Sensors/Sensors.html)
+
+[Sensors 2](content/Sensors_2/Sensors_2.html)

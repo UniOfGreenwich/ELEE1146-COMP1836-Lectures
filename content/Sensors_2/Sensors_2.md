@@ -126,3 +126,37 @@ After the `onCreate()` method finishes execution, the activity enters the Starte
 > if `onDestroy()` is called as the result of a configuration change, the system immediately creates a new activity instance and then calls `onCreate()` on that new instance in the new configuration.
 
 ---
+
+
+## Sensors - Emulator Extended Controls
+
+![center](https://i.stack.imgur.com/G2DK6.gif)
+
+---
+
+## Battery/power usage
+
+![w:1000](https://i.stack.imgur.com/avmyf.png)
+
+--- 
+
+## Battery/ power usage Accelerometer
+
+- Accelerometer/magnetic sensors
+  - Normal: 10mA (used for orientation detection)
+  - UI: 15mA (about 1 per second)
+  - Game: 80mA
+  - Fastest: 90mA
+- Same cost for accelerometer, magnetic, orientation
+
+---
+
+## Battery/power usage location services
+
+- Use coarse network location, it's much cheaper
+  - GPS: 25 seconds * 140mA = 1mAh
+  - Network: 2 seconds * 180mA = 0.1mAh
+- 1.5 uses AGPS when network available
+- GPS time-to-fix varies wildly based on environment, and desired accuracy, and might outright fail
+  - Just like wake-locks, location updates can continue after `onPause()`, so make sure to unregister
+  - If all apps unregister correctly, user can leave GPS enabled in Settings
