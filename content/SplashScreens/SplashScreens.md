@@ -120,3 +120,9 @@ Send and notify state changes of your objects to other applications using an Eve
 ## `Handler` Class Diagram
 
 ![ h:600 center](https://java-design-patterns.com/assets/eda-ca4599f6.png)
+
+---
+
+## Threads/Runnerable
+
+![](../../figures/Runnerable.png)

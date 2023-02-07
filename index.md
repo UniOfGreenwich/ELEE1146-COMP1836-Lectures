@@ -5,4 +5,3 @@
 |[Java Methods Pt2](content/Java_Methods/Java_Methods.html)|[XML](content/XML/XML.html)|
 |[Permissions](content/Permissions/Permissions.html)|[Sensors 1](content/Sensors/Sensors.html)|
 |[Sensors 2](content/Sensors_2/Sensors_2.html)|[Splash Screens](content/SplashScreens/SplashScreens.html)|
-
