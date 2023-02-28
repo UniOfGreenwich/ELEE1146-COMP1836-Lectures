@@ -42,14 +42,12 @@ math: true
 
 ## What is a Software Development Kit (SDK)?
 
-- is a collection of software development tools in one installable package.
+- Is a collection of software development tools in one installable package.
 
 - Can come with:
   - compiler
   - debugger
   - software framework
-    - provides generic functionality
-    - user code can augment code base
     - **inversion of control**- behavioural design,
     - **extensibility** - overriding, or adding specialised user code
     - **non-modifiable framework code** - user can extend the code, not modify the base
@@ -75,19 +73,30 @@ math: true
 
 ---
 
+
+## Appilcation Development Tools (ADT)
+
+- Android developers use an ADT that includes:
+  - Android Platform-tools
+  - Android SDK Tools
+  - Eclipse + ADT plug-in
+
+---
+
+
 ## Average SDKs in Mobile Apps
 
 ![](https://assets-global.website-files.com/5ee715da7b6fbc3bf68c6bfe/61e005f615a0214b8a8470d9_how-social-sdks-revolutionize-app-development-for-software-teams-1.jpg)
 
 ---
 
-## SDK, is safe?
+## SDK - Malicious Code?
 **Mintegratal SDK**
 
-- tap an ad  
+- tap an advertisment  
 - SDK hijacks the click referral process, 
-- making it appear to the underlying iOS operating
-- system that the user clicked on one of its ads, instead of a competitor's, effectively robbing revenue from other SDKs and advertising networks.
+- making it appear to the underlying iOS OS that the user clicked on one of its ads.
+- effectively robbing revenue from other SDKs and advertising networks.
 
 ![bg right:50% 100%](https://www.zdnet.com/a/img/resize/441b5d42569a00aad5979f3e5a60477a6c22799a/2020/08/24/b6e74a91-0d9d-465c-95b0-180c0ed07589/mintegral-sdk.png?auto=webp&width=1280)
 
@@ -103,7 +112,7 @@ or even cause apps to be banned from Google Play or the App Store
 
 ## [Open] Java Development Kit ([Open]JDK)
 
-**JDK***
+**JDK**
 - Implements Java Language Specifications (JLS)
 - Implements Java Virtual Machine Specifications (JVMS)
 - Provides Standard Edition (SE) of the Java API.
@@ -117,7 +126,7 @@ or even cause apps to be banned from Google Play or the App Store
 
 
 ---
-## SDK vs APK
+## APK vs SDK
 
 - A **SDK** is typically a set of software development tools that allows the creation of applications for a certain software package, software framework, hardware platform, computer system, video game console, operating system, or similar development platform.
 
@@ -132,16 +141,6 @@ or even cause apps to be banned from Google Play or the App Store
 &nbsp; &nbsp; &nbsp; &nbsp;
   <img alt="Dark" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*bjQLLYpzN7VK8_6SxOHD0Q.jpeg" width="45%">
 </p>
-
----
-
-## Appilcation Development Tools (ADT)
-
-- Android developers use an ADT that includes:
-  - Android Platform-tools
-  - Android SDK Tools
-  - Eclipse + ADT plug-in
-
 
 ---
 
@@ -165,7 +164,7 @@ or even cause apps to be banned from Google Play or the App Store
 
 ---
 
-## Making your own SDK
+## Developing,Maintaining and Releasing SDKs 
 
 ![bg right:30% 100%](https://miro.medium.com/v2/resize:fit:720/0*lh-qVjpSpQtrsGqz)
 
