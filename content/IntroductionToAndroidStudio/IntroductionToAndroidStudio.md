@@ -55,7 +55,7 @@ math: true
 ## Meet Android
 
 - **Android Phone Devices**
-  - Most popular are Moto X, Galaxy, Droid, Xperia, OnePlus, Nexus and HTC One
+  - Most popular are Galaxy family, fold, etc
   - OS also powers tablets, netbooks, e-readers, MP4 players and  Internet TVs
 - **Emulator**
   - Duplicates how the app looks and feels on a particular device
@@ -89,7 +89,7 @@ math: true
 |---|---|
 |Multi-tasking |User can jump from one task to another and same time various application can run simultaneously.|
 |Resizable widgets|Widgets are resizable, so users can expand them to show more content or shrink them to save space.|
-|Multi-Language|Supports single direction and bi-directional text.0|
+|Multi-Language|Supports single direction and bi-directional text.|
 |GCM|Google Cloud Messaging (GCM) is a service that lets developers send short message data to their users on Android devices, without needing a proprietary sync solution.|
 |Wi-Fi Direct|A technology that lets apps discover and pair directly, over a high-bandwidth peer-to-peer connection.|
 |Android Beam|A popular NFC-based technology that lets users instantly share, just by touching two NFC-enabled phones together..|
@@ -100,18 +100,21 @@ math: true
 
 ## Versions
 
-- 31 Platform Versions and 23 API levels 
+- 14 Platform Versions and 34 API levels 
 
 <div align=center >
 
 |Platform Version|	API Level|	VERSION_CODE|
 |--|--|--|	
-|Android 6.0	|23	|MARSHMALLOW|	
-|Android 5.1	|22	|LOLLIPOP_MR1|	
-|Android 5.0	|21	|LOLLIPOP	|
-|Android 4.4W |20 |	KITKAT_WATCH 	(KitKat for Wearables Only)|
-|Android 4.4	|19	|KITKAT	|
-|Android 4.3	|18	|JELLY_BEAN_MR2|
+|Android 14.0	|34	|UPDSIDE DOWN CAKE|	
+|Android 13.0	|33	|TIRAMSU|
+|Android 12.0	|31 - 32	|SNOW CONE|	
+|Android 11.0	|30	|RED VELVET CAKE|	
+|Android 10.0	|29	|QUINCE TART|
+|Android 9.0	|28	|PIE|	
+|Android 8.0	|27	|OREO|	
+|Android 7.0	|26	|NOUGAT|	
+
 
 </div>
 
@@ -120,7 +123,7 @@ math: true
 ## Programming and Environment
 
 - **Writing Android Apps**
-  - `Java` is an Object-oriented programming language patterned after the `C++` language
+  - `Java` and `Kotlin` are  Object-oriented programming languages patterned after the `C++` language
 - **Android Studio**
   - An `integrated development environment (IDE)` for building and integrating application development tools and open-source projects. 
   - Android Studio `IDE` is exclusively dedicated to the purpose of creating Android applications
@@ -185,7 +188,7 @@ math: true
 
 ## Opening Android Studio to Create a New Project (cont’d)
 
-![w:900 center](../../figures/selectDefaultActivity.png)
+![w:800 center](../../figures/selectDefaultActivity.png)
 
 ---
 
