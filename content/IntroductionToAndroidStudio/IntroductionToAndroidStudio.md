@@ -147,7 +147,7 @@ math: true
 
 - It is a language that combines Object Oriented Programming (OOPs) and functional programming in an unrestricted, self-sufficient and distinctive platform.
 - In 2019, Google announced Kotlin as its preferred programming language for Android application developers
-- However, Java is still the prodominent programming language for Android App development
+
 
 ---
 
@@ -205,7 +205,7 @@ math: true
 
 - **Must** be intuitive
 - Interface **must** not distract from functionality
-- Java code or XML layout files are needed 
+- Java / Kotlin code or XML layout files are needed 
   - Can design interface without writing large amounts of code
 
 ---
@@ -213,7 +213,7 @@ math: true
 ## Taking a Tour of the Android Project View
 
 
-- **Java folder** – contains Java source code
+- **Java folder** – contains Java / Kotlin source code
 - **Res folder** – contains images, music, and video
 - **Manifests folder** – contains the `Android Manifest.xml`, which contains information about the application that Android needs to run
 
@@ -232,9 +232,9 @@ math: true
 
 ## Designing the User Interface Layout within the Virtual Device (Cont’d.)
 
-Click AVD Manager on the menu and Create Virtual Device at the bottom of the screen 
+Click Device Manager on the menu and Create Virtual Device at the bottom of the screen 
 
-![w:900 center](../../figures/avd.png)
+![bg right:50% 90% center](../../figures/avd.png)
 
 ---
 ## Designing the User Interface Layout within the Virtual Device (Cont’d.)
@@ -245,6 +245,11 @@ Click AVD Manager on the menu and Create Virtual Device at the bottom of the scr
 ## Designing the User Interface Layout within the Virtual Device (Cont’d.)
 
 ![w:850 center](../../figures/selectingAVDImage.png)
+
+---
+## Downloading SDK
+
+![w:850 center](../../figures/downloadingSDK.png)
 
 ---
 ## Designing the User Interface Layout within the Virtual Device (Cont’d.)
@@ -273,54 +278,15 @@ Step 2: Click on the text in the middle to display the Attributes window
 
 ## Modifying the Text in the TextView Control
 
-
-- Step 1: In the Android project view, click the expand arrow for the  values subfolder in the res folder to expand the folder’s contents
-
-- Double-click the strings.xml file to display the strings.xml tab in the Project window
-
 ![w:850 center](../../figures/stringsXML.png)
 
 ---
 
-## Modifying the Text in the TextView Control
+## Referencing the String
 
-- Step 2: Tap or click the Open editor link on the right side of the Project window to display the Translations Editor tab
-
-- Click on the `+` button on the upper left corner of the Translations Editor
-
-![w:800 center](../../figures/translationEditor.png)
+![w:850 center](../../figures/referenceString.png)
 
 ---
-
-## Modifying the Text in the TextView Control
-
-A dialog box will appear. In the Key: text box type `hello` and in the Default Value: textbox, type in `Hello` followed by `your name`
-
-![center](../../figures/addKey.png)
-
----
-## Modifying the Text in the TextView Control
-
-Now your Translations Editor and strings.xml file looks like this:
-
-![center](../../figures/translationEditorAndStringsXML.png)
-
----
-
-## Modifying the Text in the TextView Control
-
-Step 4: Now click on activity_main.xml tab and then on Hello World the text property in the Attributes window and then the vertical bar next to the text property   
-
-![w:850 center](../../figures/attributeWindow.png)
-
----
-
-## Modifying the Text in the TextView Control
-
-![w:700 center](../../figures/resourcePicker.png)
-
----
-
 ## Testing the Application in the Emulator
 
 - Step 1:  Tap or click the Run ‘app’ button on the toolbar 
