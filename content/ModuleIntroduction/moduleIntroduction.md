@@ -57,6 +57,27 @@ Encapsulation and Information Hiding, Constructors, Inheritance, Polymorphism, I
 
 --- 
 
+ 
+
+## Programming/Markup Languages
+
+-  Kotlin
+   -  Now the preferred programming lanaguage for Android development
+-  Java
+   -  Still widely in use due to its' maturity and early adoption for Android development
+-  XML
+   -  Extensible Markup Langauge, for design in Android Studio
+
+![bg right:40% 100%](https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-program/img/3bbebda874e6003b.png)
+
+![bg vertical right:40% 75%](https://ubiqum.com/assets/uploads/2021/12/learn-java-with-ubiqum-logo.png)
+
+
+![bg vertical right:40% 75%](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Xml_logo.svg/241px-Xml_logo.svg.png?20080508104026)
+
+
+---
+
 ## Teaching and Learning Activities
 
 This module will be taught based on a problem-solving approach. [You] will be given specific problems to solve with the underpinning material supplied by lectures and tutorials.
