@@ -115,7 +115,6 @@ math: true
 |Android 8.0	|27	|OREO|	
 |Android 7.0	|26	|NOUGAT|	
 
-
 </div>
 
 ---
@@ -287,7 +286,7 @@ Step 2: Click on the text in the middle to display the Attributes window
 
 ## Referencing the String
 
-![w:850 center](../../figures/referenceString.png)
+![w:800 center](../../figures/referenceString.png)
 
 ---
 ## Testing the Application in the Emulator
