@@ -106,7 +106,7 @@ Remember this is a second year module it is more technical than first year.
 ---
 
 ## Assessments  COMP1836
-Remember this is a second year module it is more technical than first year.
+Remember this is a level five module it is more technical than level 4.
 
 1. Practical & Report 
    1. 1500 words.
@@ -115,5 +115,5 @@ Remember this is a second year module it is more technical than first year.
 
 2. Practical & Report  
    1. 1500 words.
-   1. Implementation of a mobile application based on a detailed specification.
-   2. Weighting: 70%
+   2. Implementation of a mobile application based on a detailed specification.
+   3. Weighting: 70%
