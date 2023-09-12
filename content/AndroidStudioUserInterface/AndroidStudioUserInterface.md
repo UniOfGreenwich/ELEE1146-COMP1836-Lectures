@@ -216,7 +216,7 @@ public void onCreate(Bundle savedInstanceState){
 
 ---
 
-## Creating Button Event Handler
+## Java: Creating Button Event Handler
 
 - An **event handler** is part of a program coded to respond to a specific event
 - Tapping the button is called a click event
@@ -249,3 +249,43 @@ public class MainActivity extends ActionBarActivity {
 }
 
 ```
+
+---
+
+## Kotlin: Creating Button Event Handler
+
+- An **event handler** is part of a program coded to respond to a specific event
+- Tapping the button is called a click event
+- Java code must contain the following sections
+    - Class property to hold a reference to the Button object
+`button : Button = findViewbyId(R.id.button);`
+  
+- `Button button = findViewbyId(R.id.button);`
+  - `setOnClickListener{}` method to await the button click action
+  - `setOnClick{}` method to respond to the click event
+
+
+---
+
+## Kotlin
+
+```kt
+public class MainActivity extends ActionBarActivity {
+  public void onCreate(Bundle savedInstanceState){
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+    button : Button = findViewById(R.id.btnRecipe)
+    button.setOnClickListener{
+      val intent = Intent(this, Recipe::class.java)
+      // start your next activity
+      startActivity(intent)
+    }  
+  }
+}
+
+```
+---
+
+## Now do the lab!
+
+![w:1000 center](https://imgs.xkcd.com/comics/academia_vs_business.png)
