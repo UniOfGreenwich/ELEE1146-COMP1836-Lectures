@@ -173,9 +173,7 @@ math: true
 - Download and install the Android Studio from https://developer.android.com/studio/archive. 
 - Search for th "Android Studio Giraffe | 2022.3.1 Canary 8 March 6, 2023"
 - Make sure you have enough space on the disk, it takes 2.6GB and you would also need extra space to run it.
-- **Creating the Hello World Project**
-  - Open the Android Studio program
-  - Create a new project, name it, supply a company domain and location
+![bg right:40% w:500](../../figures/download.png)
 
 ---
 
