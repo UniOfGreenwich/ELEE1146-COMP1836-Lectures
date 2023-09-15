@@ -116,6 +116,9 @@ math: true
 |Android 7.0	|26	|NOUGAT|	
 
 </div>
+<!--
+14 is in beta
+-->
 
 ---
 
@@ -166,8 +169,9 @@ math: true
 
 ## Opening Android Studio to Create a New Project
 
-- We will be using the latest stable Android Studio release (June 2021) version 4.2.2
+- We will be using Android Studio Giraffe | 2022.3.1 Canary 8 March 6, 2023
 - Download and install the Android Studio from https://developer.android.com/studio/archive. 
+- Search for th "Android Studio Giraffe | 2022.3.1 Canary 8 March 6, 2023"
 - Make sure you have enough space on the disk, it takes 2.6GB and you would also need extra space to run it.
 - **Creating the Hello World Project**
   - Open the Android Studio program
