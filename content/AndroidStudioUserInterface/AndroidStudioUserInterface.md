@@ -80,7 +80,7 @@ math: true
 
 ## Constraint Layout – the Default Layout 
 
-- llows you to create large and complex layouts with a flat view hierarchy (no nested view groups)
+- Allows you to create large and complex layouts with a flat view hierarchy (no nested view groups)
 - Similar to **Relative Layout** in that all views are laid out according to relationship between sibling views and the parent layout
 - It is more flexible then the Relative Layout and easier to use with Android Studio’s Layout Editor
 - In this layout, you add at least one horizontal and one vertical constraint for each view
@@ -200,9 +200,9 @@ The preferred unit of measurement is often `sp`, which stands for scaled-indepen
 
 ---
 
-## Coding the Java Activity
+## Coding the Java /Kotlin Activity
 
-- A **method** is a set of Java statements that can be included inside a Java class to perform specific tasks
+- A **method** is a set of Java/Kotlin statements that can be included inside a Java/Kotlin class to perform specific tasks
 - The **method body** contains a collection of statements that defines what the method does.
 - Coding an `onCreate` Method
 - Requires corresponding `setContentView` Java code to display a specific screen
@@ -211,6 +211,13 @@ The preferred unit of measurement is often `sp`, which stands for scaled-indepen
 public void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+}
+```
+
+```kt
+override fun onCreate(Bundle savedInstanceState : Bundle?){
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
 }
 ```
 
@@ -258,9 +265,9 @@ public class MainActivity extends ActionBarActivity {
 - Tapping the button is called a click event
 - Java code must contain the following sections
     - Class property to hold a reference to the Button object
-`button : Button = findViewbyId(R.id.button);`
+`button : Button = findViewbyId(R.id.button)`
   
-- `Button button = findViewbyId(R.id.button);`
+- `button : Button = findViewbyId(R.id.button)`
   - `setOnClickListener{}` method to await the button click action
   - `setOnClick{}` method to respond to the click event
 
@@ -270,13 +277,17 @@ public class MainActivity extends ActionBarActivity {
 ## Kotlin
 
 ```kt
-public class MainActivity extends ActionBarActivity {
-  public void onCreate(Bundle savedInstanceState){
+class MainActivity : ActionBarActivity {
+  override fun onCreate(Bundle savedInstanceState : Bundle?){
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
+    
     button : Button = findViewById(R.id.btnRecipe)
+    
     button.setOnClickListener{
+
       val intent = Intent(this, Recipe::class.java)
+        
       // start your next activity
       startActivity(intent)
     }  
