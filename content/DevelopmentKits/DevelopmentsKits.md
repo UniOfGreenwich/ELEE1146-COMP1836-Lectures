@@ -86,7 +86,12 @@ math: true
 
 ## Average SDKs in Mobile Apps
 
+<details>
+<summary>Average SDK per App (Android & iOS)</summary>
+
 ![](https://assets-global.website-files.com/5ee715da7b6fbc3bf68c6bfe/61e005f615a0214b8a8470d9_how-social-sdks-revolutionize-app-development-for-software-teams-1.jpg)
+
+</details>
 
 ---
 
@@ -159,8 +164,8 @@ or even cause apps to be banned from Google Play or the App Store
 
 - Used for developing drivers
 
-![bg right:50% 100%](https://www.usefullcode.net/2006/12/02/ddk01-thumb.gif)
-![bg right:50% 80% vertical](https://resources.infosecinstitute.com/wp-content/uploads/040813_1645_WritingaWin7.png)
+![bg right:50% 80%](https://www.usefullcode.net/2006/12/02/ddk01-thumb.gif)
+![bg right:50% 70% vertical](https://sysprogs.com/legacy/articles/visualddk/firstdriver/unload.png)
 
 ---
 
@@ -177,7 +182,7 @@ or even cause apps to be banned from Google Play or the App Store
     - Fixing bugs, improvements, new features
 
 3. **Release management**
-   - You have track each change... 5 different lanuages, 10 updates... 50 versions of SDK
+   - You have track each change... 5 different languages, 10 updates... 50 versions of SDK
 <!--
 1.
    -  generating or writing the code, 
