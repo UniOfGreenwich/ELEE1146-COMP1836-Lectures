@@ -52,8 +52,8 @@ math: true
     - The style specifies the visual properties of the elements that make up a user interface, such as colour, height, padding, and font size
     - Some themes change the background wallpaper of the Activity, while others hide the title bar or display an action bar
     - Some themes display a background depending on the size of the mobile device
-  - You can preview themes in the emulator in activity_main.xml
-  - By changing the theme in the emulator in activity_main.xml file, you can preview what the theme looks like, but to change it permanently in the application, you must define the themes in the themes.xml file within the values subfolder of the Activity
+  - You can preview themes in the emulator in `activity_main.xml`
+  - By changing the theme in the emulator in `activity_main.xml` file, you can preview what the theme looks like, but to change it permanently in the application, you must define the themes in the `themes.xml` file within the values subfolder of the Activity
 ---
 
 ## Android Themes
@@ -172,13 +172,13 @@ text (called a watermark)
 **Final** variables can be initialized but cannot be changed
 **EditText** code assigns input value to variable named **tickets**
 
-```java
-final EditText tickets = findViewById(R.id.editTextNumber);
+```kt
+val tickets : EditText = findViewById(R.id.editTextNumber)
 ```
 The Spinner assigns the value from the user’s input to the variable named group
 
-```java
-final Spinner group = findViewById(R.id.spinner);
+```kt
+val group : Spinner = findViewById<Spinner>(R.id.spinner)
 ```
 ---
 
@@ -202,8 +202,8 @@ final Spinner group = findViewById(R.id.spinner);
 
 ## What about Strings
 
-```java
-String groupChoice;
+```kt
+var groupChoice: String? = null
 ```
 
 - String Data Type
@@ -214,42 +214,41 @@ String groupChoice;
   - Typically declared at the beginning of an Activity
   - Variables must be declared before you can use them
 
-```java
-double costPertTicket = 79.99
-int numberOfTickets;
-double totalCost;
+```kt
+val costPerTicket : Double = 79.99
+var numberOfTickets : Int = 0
+var totalCost : Double = 0.0
+var groupChoice: String? = null
 ```
 
 ---
 
 ## Full code
 
-```java
-public class MainActivity extends AppCompatActivity {
-    
-    double costPerTicket = 79.99;
-    int numberOfTickets;
-    double totalCost;
-    String groupChoice;
+```kt
+class MainActivity : AppCompatActivity() {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        final EditText tickets = findViewById(R.id.editTextNumber);
-        final Spinner group = findViewById(R.id.spinner);
-        final Button cost = findViewById(R.id.button);
-        
-        NumberFormat format = NumberFormat.getCurrencyInstance(Locale.ENGLISH);
-        cost.setOnClickListener(new View.OnClickListener() {
-            final TextView result = findViewById(R.id.txtResult);
-            @Override
-            public void onClick(View v){
-                numberOfTickets = Integer.parseInt(tickets.getText().toString());
-                totalCost = costPerTicket * numberOfTickets;
-                groupChice = group.getSelectedItem( ).toString( );
-                result.setText("Cost for " + groupChoice + " is £" + format.format(totalCost));
-        });
+    val costPerTicket : Double = 79.99
+    var numberOfTickets : Int = 0
+    var totalCost : Double = 0.0
+    var groupChoice: String? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val group = findViewById<Spinner>(R.id.spinner)
+        val costBtn = findViewById<Button>(R.id.button)
+        val tickets = findViewById<EditText>(R.id.editTextText)
+        val result = findViewById<TextView>(R.id.textView)
+        val format: NumberFormat = NumberFormat.getCurrencyInstance(Locale.ENGLISH)
+
+        costBtn.setOnClickListener{
+            numberOfTickets = Integer.parseInt(tickets.getText().toString());
+            totalCost = costPerTicket * numberOfTickets;
+            groupChoice = group.getSelectedItem( ).toString( );
+            result.setText("Cost for " + groupChoice + " is £" + currency.format(totalCost)); 
+        }
     }
 }
 ```
@@ -281,7 +280,7 @@ public class MainActivity extends AppCompatActivity {
 - The `getText()` method extracts the text from EditText tickets and converts it to String 
 - The `parseInt()` method converts a string to integer
 
-```java
+```kt
 numberOfTickets = Integer.parseInt(tickets.getText().toString());
 ```
 
