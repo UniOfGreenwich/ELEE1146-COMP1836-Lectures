@@ -242,7 +242,7 @@ table, th,tr, td {
 ;" data-size="16:9">
 <h2>Constraint Layout – the Default Layout</h2>
 <ul>
-<li>llows you to create large and complex layouts with a flat view hierarchy (no nested view groups)</li>
+<li>Allows you to create large and complex layouts with a flat view hierarchy (no nested view groups)</li>
 <li>Similar to <strong>Relative Layout</strong> in that all views are laid out according to relationship between sibling views and the parent layout</li>
 <li>It is more flexible then the Relative Layout and easier to use with Android Studio’s Layout Editor</li>
 <li>In this layout, you add at least one horizontal and one vertical constraint for each view</li>
@@ -851,9 +851,9 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Coding the Java Activity</h2>
+<h2>Coding the Java /Kotlin Activity</h2>
 <ul>
-<li>A <strong>method</strong> is a set of Java statements that can be included inside a Java class to perform specific tasks</li>
+<li>A <strong>method</strong> is a set of Java/Kotlin statements that can be included inside a Java/Kotlin class to perform specific tasks</li>
 <li>The <strong>method body</strong> contains a collection of statements that defines what the method does.</li>
 <li>Coding an <code>onCreate</code> Method</li>
 <li>Requires corresponding <code>setContentView</code> Java code to display a specific screen</li>
@@ -861,6 +861,11 @@ table, th,tr, td {
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span>{
     <span class="hljs-built_in">super</span>.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+}
+</code></pre>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState : <span class="hljs-type">Bundle</span>?)</span></span>{
+    <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
 }
 </code></pre>
 </section>
@@ -1011,11 +1016,11 @@ table, th,tr, td {
 <p>Java code must contain the following sections</p>
 <ul>
 <li>Class property to hold a reference to the Button object<br />
-<code>button : Button = findViewbyId(R.id.button);</code></li>
+<code>button : Button = findViewbyId(R.id.button)</code></li>
 </ul>
 </li>
 <li>
-<p><code>Button button = findViewbyId(R.id.button);</code></p>
+<p><code>button : Button = findViewbyId(R.id.button)</code></p>
 <ul>
 <li><code>setOnClickListener{}</code> method to await the button click action</li>
 <li><code>setOnClick{}</code> method to respond to the click event</li>
@@ -1055,13 +1060,17 @@ table, th,tr, td {
 }
 ;" data-size="16:9">
 <h2>Kotlin</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> <span class="hljs-title">extends</span> <span class="hljs-title">ActionBarActivity</span> {
-  <span class="hljs-keyword">public</span> void onCreate(Bundle savedInstanceState){
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> : <span class="hljs-type">ActionBarActivity</span> {
+  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState : <span class="hljs-type">Bundle</span>?)</span></span>{
     <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
+    
     button : Button = findViewById(R.id.btnRecipe)
+    
     button.setOnClickListener{
+
       <span class="hljs-keyword">val</span> intent = Intent(<span class="hljs-keyword">this</span>, Recipe::<span class="hljs-keyword">class</span>.java)
+        
       <span class="hljs-comment">// start your next activity</span>
       startActivity(intent)
     }  
