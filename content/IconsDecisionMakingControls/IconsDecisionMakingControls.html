@@ -341,30 +341,25 @@ table, th,tr, td {
 }
 ;" data-size="16:9">
 <h2>Coding a <code>RadioButton</code> Control</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">package</span> com.example.medicalcalculator;
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MainActivity</span> : <span class="hljs-type">AppCompatActivity</span>() {
 
-<span class="hljs-keyword">import</span> ...
+  <span class="hljs-keyword">val</span> conversionRate : <span class="hljs-built_in">Double</span> = <span class="hljs-number">2.2</span>
+  <span class="hljs-keyword">var</span> weightEntered :  <span class="hljs-built_in">Double</span> = <span class="hljs-number">0.0</span>
+  <span class="hljs-keyword">var</span> convertedWeight : <span class="hljs-built_in">Double</span> = <span class="hljs-number">0.0</span>
 
-...
+  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(savedInstanceState: <span class="hljs-type">Bundle</span>?)</span></span> {
+    <span class="hljs-keyword">super</span>.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+    supportActionBar?.setDisplayShowCustomEnabled(<span class="hljs-literal">true</span>)
+    supportActionBar?.setLogo(R.mipmap.ic_launcher_foreground)
+    supportActionBar?.setDisplayShowTitleEnabled(<span class="hljs-literal">true</span>)
+    supportActionBar?.setDisplayUseLogoEnabled(<span class="hljs-literal">true</span>)
 
-  <span class="hljs-type">double</span> <span class="hljs-variable">conversionRate</span> <span class="hljs-operator">=</span> <span class="hljs-number">2.2</span>;
-  <span class="hljs-type">double</span> weightEntered;
-  <span class="hljs-type">double</span> convertedWeight;
+    <span class="hljs-keyword">val</span> kiloToLb = findViewById&lt;RadioButton&gt;(R.id.radiobutton)
+    <span class="hljs-keyword">val</span> lbToKilo = findViewById&lt;RadioButton&gt;(R.id.radiobutton2)
 
-  <span class="hljs-meta">@Override</span>
-  <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> {
-    <span class="hljs-built_in">super</span>.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-    getSupportActionBar().setDisplayShowEnabled(<span class="hljs-literal">true</span>);
-    getSupportActionBar().setLogo(R.mipmap.ic_launcher_foreground);
-    getSupportActionBar().setDisplayShowTitleEnabled(<span class="hljs-literal">true</span>);
-    getSupportActionBar().setDisplayShowUseLogoEnabled(<span class="hljs-literal">true</span>);
-    <span class="hljs-keyword">final</span> <span class="hljs-type">RadioButton</span> <span class="hljs-variable">kiloToLb</span> <span class="hljs-operator">=</span> findViewById(R.id.radiobutton);
-    <span class="hljs-keyword">final</span> <span class="hljs-type">RadioButton</span> <span class="hljs-variable">lbToKil</span> <span class="hljs-operator">=</span> findViewById(R.id.radiobutton2);
-
-  ...
+    ...
   }
-
 }
 </code></pre>
 </section>
@@ -399,11 +394,11 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Java Controls Statements</h2>
+<h2>Control Statements</h2>
 <ul>
 <li>To branch the program execution - selection statements
 <ul>
-<li><code>if, if/else, switch</code></li>
+<li><code>if, if/else, when</code></li>
 </ul>
 </li>
 <li>To repeat actions - loops
@@ -534,7 +529,7 @@ table, th,tr, td {
 }
 ;" data-size="16:9">
 <h2>Logical Operators</h2>
-<div align=center>
+<div align=center style="font-size: 24pt">
 <table>
 <thead>
 <tr>
@@ -693,16 +688,18 @@ table, th,tr, td {
 }
 ;" data-size="16:9">
 <h2>Logical Operators Example</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java">{
-  <span class="hljs-type">int</span> <span class="hljs-variable">i1</span> <span class="hljs-operator">=</span> <span class="hljs-number">20</span>, i2 = <span class="hljs-number">7</span>, i3 = <span class="hljs-number">7</span>;
-  <span class="hljs-type">boolean</span> result; <span class="hljs-comment">// default value is false</span>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt">{
+    <span class="hljs-keyword">val</span> i1 : <span class="hljs-built_in">Int</span> = <span class="hljs-number">20</span>
+    <span class="hljs-keyword">val</span> i2 : <span class="hljs-built_in">Int</span> = <span class="hljs-number">7</span>
+    <span class="hljs-keyword">val</span> i3 : <span class="hljs-built_in">Int</span> = <span class="hljs-number">7</span>
+    <span class="hljs-keyword">var</span> result: <span class="hljs-built_in">Boolean</span> <span class="hljs-comment">// default value is false</span>
 
-  result = !(i1 == i2);
-  result = i1 != i2; <span class="hljs-comment">// same as !(i1 == i2)</span>
+    result = i1 != i2
+    result = i1 != i2 <span class="hljs-comment">// same as !(i1 == i2)</span>
 
-  result = i1 == i3;
-  result = i1 &gt; i2 &amp;&amp; i1 == i3;
-  result = i1 &gt; i2 || i1 == i3;
+    result = i1 == i3
+    result = i1 &gt; i2 &amp;&amp; i1 == i3
+    result = i1 &gt; i2 || i1 == i3
 }
 </code></pre>
 </section>
@@ -738,10 +735,12 @@ table, th,tr, td {
 }
 ;" data-size="16:9">
 <h2>Logical Operators Example 2</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java">{
-  <span class="hljs-type">int</span> <span class="hljs-variable">i1</span> <span class="hljs-operator">=</span> <span class="hljs-number">20</span>, i2 = <span class="hljs-number">7</span>, i3 = <span class="hljs-number">7</span>;
-  <span class="hljs-type">boolean</span> result; <span class="hljs-comment">// default value is false</span>
-
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt">{
+  <span class="hljs-keyword">val</span> i1 : <span class="hljs-built_in">Int</span> = <span class="hljs-number">20</span>
+  <span class="hljs-keyword">val</span> i2 : <span class="hljs-built_in">Int</span> = <span class="hljs-number">7</span>
+  <span class="hljs-keyword">val</span> i3 : <span class="hljs-built_in">Int</span> = <span class="hljs-number">7</span>
+  <span class="hljs-keyword">var</span> result: <span class="hljs-built_in">Boolean</span> <span class="hljs-comment">// default value is false</span>
+    
   result = !(i1 == i2); <span class="hljs-comment">// true</span>
   result = i1 != i2; <span class="hljs-comment">// true</span>
 
@@ -932,18 +931,18 @@ table, th,tr, td {
 }
 ;" data-size="16:9">
 <h2>The <code>if</code> Statement: Examples</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">if</span> ( countNumbers == <span class="hljs-number">10</span> ) System.out.println( );
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt"><span class="hljs-keyword">if</span> ( countNumbers == <span class="hljs-number">10</span> ) printf( )
 
 <span class="hljs-keyword">if</span> ( grade &gt;= <span class="hljs-number">90</span> ) 
-  System.out.println( “You are an excellent student!” );
+  printf( “You are an excellent student!” )
 
 <span class="hljs-keyword">if</span> ( account &lt;= creditLimit )
-   System.out.println( “You have insufficient credit!” );
+   printf( “You have insufficient credit!” )
 
 <span class="hljs-keyword">if</span> ( dayOfTheWeek &gt; <span class="hljs-number">5</span> )
 {
-    System.out.println( “Time to relax…” );
-    System.out.println( “Weekend.”);
+    printf( “Time to relax…” )
+    printf( “Weekend.”)
 }
 </code></pre>
 </section>
@@ -980,7 +979,7 @@ table, th,tr, td {
 ;" data-size="16:9">
 <h2>Double Selection Statement</h2>
 <ul>
-<li><code>if( booleanExpr ) statement1; else statement2;</code></li>
+<li><code>if( booleanExpr ) statement1 else statement2</code></li>
 <li><strong>Example</strong>
 <ul>
 <li>If you are hungry - go for lunch, otherwise take a cup of coffee.</li>
@@ -1022,15 +1021,15 @@ table, th,tr, td {
 }
 ;" data-size="16:9">
 <h2>The <code>if/else</code> Statement Examples</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">if</span> ( dayOfTheWeek &gt; <span class="hljs-number">5</span> )
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt"><span class="hljs-keyword">if</span> ( dayOfTheWeek &gt; <span class="hljs-number">5</span> )
 {
-  System.out.println( “Weekend.”);
-  System.out.println( “Time to relax…” );
+  printf( “Weekend.”)
+  printf( “Time to relax…” )
 }
 <span class="hljs-keyword">else</span> 
 {
-  ystem.out.println( “Workday.”);
-  System.out.println( “Go to work!” );
+  printf( “Workday.”)
+  printf( “Go to work!” )
 }
 </code></pre>
 </section>
@@ -1066,20 +1065,20 @@ table, th,tr, td {
 }
 ;" data-size="16:9">
 <h2>Statement Example</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">char</span> <span class="hljs-variable">grade</span> <span class="hljs-operator">=</span> ‘A’;
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt"><span class="hljs-keyword">val</span> grade : <span class="hljs-built_in">Char</span> = ‘A’;
 
 <span class="hljs-keyword">if</span> ( grade == ‘A’) 
-  System.out.println( “Excellent mark”);
+  printf( “Excellent mark”)
 <span class="hljs-keyword">else</span> 
    <span class="hljs-keyword">if</span> ( grade == ‘B’ ) 
-     System.out.println( “Very good mark”);
+     printf( “Very good mark”)
    <span class="hljs-keyword">else</span>
      <span class="hljs-keyword">if</span> ( grade == ‘C’ )
-       System.out.println( “Average mark”);
+       printf( “Average mark”)
      <span class="hljs-keyword">else</span>
        <span class="hljs-keyword">if</span> ( grade == ‘D’ ) 
-         System.out.println( “Below average mark”);
-       <span class="hljs-keyword">else</span> System.out.println(“Failing mark”);
+         printf( “Below average mark”)
+       <span class="hljs-keyword">else</span> printf(“Failing mark”)
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-class="gaia" data-paginate="true" data-style="#img-right{
@@ -1114,13 +1113,14 @@ table, th,tr, td {
 }
 ;" data-size="16:9">
 <h2>Multiple Selection Statment</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">switch</span> ( Expression )
-{
-  <span class="hljs-keyword">case</span> value1 : statement1; <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">case</span> value2 : statement2; <span class="hljs-keyword">break</span>;
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt"><span class="hljs-keyword">when</span> ( Expression ){
+  case_value -&gt; statement1
+  case_value -&gt; statement2
   …
-  <span class="hljs-keyword">case</span> valueN : statementN; <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">default</span>     : statementD; <span class="hljs-keyword">break</span>;
+  case_valueN -&gt; statementN
+  <span class="hljs-keyword">else</span> -&gt; { 
+    statementD
+  }
 }
 
 </code></pre>
@@ -1156,20 +1156,17 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>The <code>switch</code> Statement: Example</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">switch</span> ( grade )
-{ 
-  <span class="hljs-keyword">case</span> ‘A’ : System.out.println( “Excellent mark”);
-     <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">case</span> ‘B’ : System.out.println( “Very good mark”)
-     <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">case</span> ‘C’ : System.out.println( “Average mark”);
-     <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">case</span> ‘D’ : System.out.println( “Below average mark”);
-     <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">default</span>  : System.out.println(“Failing mark”);
-     <span class="hljs-keyword">break</span>;
+<h2>The <code>when</code> Statement: Example</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt"><span class="hljs-keyword">when</span> (grade) {
+    <span class="hljs-string">&#x27;A&#x27;</span> -&gt; print(<span class="hljs-string">&quot;Excellent mark&quot;</span>)
+    <span class="hljs-string">&#x27;B&#x27;</span> -&gt; print(<span class="hljs-string">&quot;Very good mark&quot;</span>)
+    <span class="hljs-string">&#x27;C&#x27;</span> -&gt; print(<span class="hljs-string">&quot;Average mark&quot;</span>)
+    <span class="hljs-string">&#x27;D&#x27;</span> -&gt; print(<span class="hljs-string">&quot;Below average mark&quot;</span>)
+    <span class="hljs-keyword">else</span> -&gt; {
+        print(<span class="hljs-string">&quot;Failing mark&quot;</span>)
+    }
 }
+
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-class="gaia" data-paginate="true" data-style="#img-right{
@@ -1258,9 +1255,9 @@ table, th,tr, td {
 </ul>
 </li>
 </ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">Toast</span> <span class="hljs-variable">toast</span> <span class="hljs-operator">=</span> Toast.makeText(context, text, duration).show();
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt">Toast toast = Toast.makeText(context, text, duration).show()
 ...
-Toast.makeText(MainActivity.<span class="hljs-built_in">this</span>, <span class="hljs-string">&quot;Pounds must be less than 500&quot;</span>, Toast.LENGTH_LONG).show();
+Toast.makeText(<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;Pounds must be less than 500&quot;</span>, Toast.LENGTH_LONG).show()
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-class="gaia" data-paginate="true" data-style="#img-right{
@@ -1339,17 +1336,13 @@ table, th,tr, td {
 ;" data-size="16:9">
 <h2>Coding the Button Event</h2>
 <ul>
-<li>The syntax <code>Double.parseDouble()</code> converts input to a <code>Double</code> data type and <code>Integer.parseInt()</code> converts input to an <code>Int</code> data type</li>
+<li>The syntax <code>weight.getText().toString().toDouble()</code> converts input to a <code>Double</code> data type</li>
 </ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java">  convert.setOnClickListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">View</span>.OnClickListener()){
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">onClick</span><span class="hljs-params">(View v)</span>{
-      weightEntered=Double.parseDouble(weight.getText().toString());
-      <span class="hljs-type">DecimalFormat</span> <span class="hljs-variable">tenth</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DecimalFormat</span>(<span class="hljs-string">&quot;#.#);
-    }
-  });
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt">convert.setOnClickListener {
+    <span class="hljs-keyword">val</span> weightEntered : <span class="hljs-built_in">Double</span>  = weight.getText().toString().toDouble()
+    ...
 }
-</span></code></pre>
+</code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -1386,21 +1379,21 @@ table, th,tr, td {
 <ul>
 <li>If statements are embedded/nested when one if statement is inside of another if statement</li>
 </ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java">convert.setOnClickListener((v)-&gt; {
-  weightEntered = Double.parseDouble(weight.getText().toString());
-  <span class="hljs-type">DecimalFormat</span> <span class="hljs-variable">tenth</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DecimalFormat</span> (<span class="hljs-string">&quot;#.#&quot;</span>);
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt">convert.setOnClickListener {
+  weightEntered = weight.getText().toString().toDouble()
+  <span class="hljs-keyword">val</span> tenth : DecimalFormat = DecimalFormat(<span class="hljs-string">&quot;#.#&quot;</span>)
 
-  <span class="hljs-keyword">if</span>(lbToKilo.isChecked()){
-    <span class="hljs-keyword">if</span> (weightEntered &lt;= <span class="hljs-number">500</span>){
-      convertedWeight = weightEntered / conversionRate;
-      result.setText(tenth.format(convertedWeight)+ <span class="hljs-string">&quot; kilograms&quot;</span>);
-    } <span class="hljs-keyword">else</span>{
-      Toast.makeText(MainActivity.<span class="hljs-built_in">this</span>, <span class="hljs-string">&quot;Pounds must be less than 500&quot;</span>, Toast.LENGHT_LONG).show();
-    }
-    lbToKilo.setChecked(<span class="hljs-literal">false</span>);
+  <span class="hljs-keyword">if</span> (lbToKilo.isChecked()) {
+      <span class="hljs-keyword">if</span> (weightEntered &lt;= <span class="hljs-number">500</span>) {
+          convertedWeight = weightEntered / conversionRate
+          result.setText(tenth.format(convertedWeight) + <span class="hljs-string">&quot; kilograms&quot;</span>)
+      } <span class="hljs-keyword">else</span> {
+          Toast.makeText(<span class="hljs-keyword">this</span>,<span class="hljs-string">&quot;Pounds must be less than 500&quot;</span>,Toast.LENGTH_LONG
+          ).show()
+      }
+      ...
   }
-})
-
+}
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-class="gaia" data-paginate="true" data-style="#img-right{
@@ -1435,13 +1428,13 @@ table, th,tr, td {
 }
 ;" data-size="16:9">
 <h2>Coding the Nested <code>if</code> Statements</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java">
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt">
  <span class="hljs-keyword">if</span>(lbToKilo.isChecked()){
     <span class="hljs-keyword">if</span> (weightEntered &lt;= <span class="hljs-number">500</span>){
       convertedWeight = weightEntered / conversionRate;
       result.setText(tenth.format(convertedWeight)+ <span class="hljs-string">&quot; kilograms&quot;</span>);
     } <span class="hljs-keyword">else</span>{
-      Toast.makeText(MainActivity.<span class="hljs-built_in">this</span>, <span class="hljs-string">&quot;Pounds must be less than 500&quot;</span>, Toast.LENGHT_LONG).show();
+      Toast.makeText(<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;Pounds must be less than 500&quot;</span>, Toast.LENGHT_LONG).show();
     }
     lbToKilo.setChecked(<span class="hljs-literal">false</span>);
  }
@@ -1451,7 +1444,7 @@ table, th,tr, td {
       convertedWeight = weightEntered / conversionRate;
       result.setText(tenth.format(convertedWeight)+ <span class="hljs-string">&quot; pounds&quot;</span>);
     } <span class="hljs-keyword">else</span>{
-      Toast.makeText(MainActivity.<span class="hljs-built_in">this</span>, <span class="hljs-string">&quot;Kilos must be less than 225&quot;</span>, Toast.LENGHT_LONG).show();
+      Toast.makeText(<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;Kilos must be less than 225&quot;</span>, Toast.LENGHT_LONG).show();
     }
     lbToKilo.setChecked(<span class="hljs-literal">false</span>);
  }</code></pre>
