@@ -96,38 +96,33 @@ A `RadioButton` control selects or deselects an option
 
 ## Coding a `RadioButton` Control
 
-```java
-package com.example.medicalcalculator;
+```kt
+class MainActivity : AppCompatActivity() {
 
-import ...
+  val conversionRate : Double = 2.2
+  var weightEntered :  Double = 0.0
+  var convertedWeight : Double = 0.0
 
-...
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+    supportActionBar?.setDisplayShowCustomEnabled(true)
+    supportActionBar?.setLogo(R.mipmap.ic_launcher_foreground)
+    supportActionBar?.setDisplayShowTitleEnabled(true)
+    supportActionBar?.setDisplayUseLogoEnabled(true)
 
-  double conversionRate = 2.2;
-  double weightEntered;
-  double convertedWeight;
+    val kiloToLb = findViewById<RadioButton>(R.id.radiobutton)
+    val lbToKilo = findViewById<RadioButton>(R.id.radiobutton2)
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-    getSupportActionBar().setDisplayShowEnabled(true);
-    getSupportActionBar().setLogo(R.mipmap.ic_launcher_foreground);
-    getSupportActionBar().setDisplayShowTitleEnabled(true);
-    getSupportActionBar().setDisplayShowUseLogoEnabled(true);
-    final RadioButton kiloToLb = findViewById(R.id.radiobutton);
-    final RadioButton lbToKil = findViewById(R.id.radiobutton2);
-
-  ...
+    ...
   }
-
 }
 ```
 ---
-## Java Controls Statements
+## Control Statements
 
 - To branch the program execution - selection statements
-  - `if, if/else, switch`
+  - `if, if/else, when`
 - To repeat actions - loops
   - `while, do ... while, for`
 - Boolean expressions to make decisions `true` and `false`
@@ -155,7 +150,7 @@ import ...
 
 ## Logical Operators
 
-<div align=center>
+<div align=center style="font-size: 24pt">
 
 |Logical Operator | Meaning | Example|
 |---|---|---|
@@ -203,27 +198,31 @@ import ...
 
 ## Logical Operators Example
 
-```java
+```kt
 {
-  int i1 = 20, i2 = 7, i3 = 7;
-  boolean result; // default value is false
+    val i1 : Int = 20
+    val i2 : Int = 7
+    val i3 : Int = 7
+    var result: Boolean // default value is false
 
-  result = !(i1 == i2);
-  result = i1 != i2; // same as !(i1 == i2)
+    result = i1 != i2
+    result = i1 != i2 // same as !(i1 == i2)
 
-  result = i1 == i3;
-  result = i1 > i2 && i1 == i3;
-  result = i1 > i2 || i1 == i3;
+    result = i1 == i3
+    result = i1 > i2 && i1 == i3
+    result = i1 > i2 || i1 == i3
 }
 ```
 ---
 ## Logical Operators Example 2
 
-```java
+```kt
 {
-  int i1 = 20, i2 = 7, i3 = 7;
-  boolean result; // default value is false
-
+  val i1 : Int = 20
+  val i2 : Int = 7
+  val i3 : Int = 7
+  var result: Boolean // default value is false
+    
   result = !(i1 == i2); // true
   result = i1 != i2; // true
 
@@ -273,19 +272,19 @@ Flowchart
 
 ## The `if` Statement: Examples
 
-```java
-if ( countNumbers == 10 ) System.out.println( );
+```kt
+if ( countNumbers == 10 ) printf( )
 
 if ( grade >= 90 ) 
-  System.out.println( “You are an excellent student!” );
+  printf( “You are an excellent student!” )
 
 if ( account <= creditLimit )
-   System.out.println( “You have insufficient credit!” );
+   printf( “You have insufficient credit!” )
 
 if ( dayOfTheWeek > 5 )
 {
-    System.out.println( “Time to relax…” );
-    System.out.println( “Weekend.”);
+    printf( “Time to relax…” )
+    printf( “Weekend.”)
 }
 ```
 
@@ -293,7 +292,7 @@ if ( dayOfTheWeek > 5 )
 
 ## Double Selection Statement
 
-- `if( booleanExpr ) statement1; else statement2;`
+- `if( booleanExpr ) statement1 else statement2`
 - **Example**
   - If you are hungry - go for lunch, otherwise take a cup of coffee. 
 - **Flowchart**
@@ -302,16 +301,16 @@ if ( dayOfTheWeek > 5 )
 ---
 ## The `if/else` Statement Examples
 
-```java
+```kt
 if ( dayOfTheWeek > 5 )
 {
-  System.out.println( “Weekend.”);
-  System.out.println( “Time to relax…” );
+  printf( “Weekend.”)
+  printf( “Time to relax…” )
 }
 else 
 {
-  ystem.out.println( “Workday.”);
-  System.out.println( “Go to work!” );
+  printf( “Workday.”)
+  printf( “Go to work!” )
 }
 ```
 
@@ -319,55 +318,53 @@ else
 
 ## Statement Example
 
-```java
-char grade = ‘A’;
+```kt
+val grade : Char = ‘A’;
 
 if ( grade == ‘A’) 
-  System.out.println( “Excellent mark”);
+  printf( “Excellent mark”)
 else 
    if ( grade == ‘B’ ) 
-     System.out.println( “Very good mark”);
+     printf( “Very good mark”)
    else
      if ( grade == ‘C’ )
-       System.out.println( “Average mark”);
+       printf( “Average mark”)
      else
        if ( grade == ‘D’ ) 
-         System.out.println( “Below average mark”);
-       else System.out.println(“Failing mark”);
+         printf( “Below average mark”)
+       else printf(“Failing mark”)
 ```
 ---
 
 ## Multiple Selection Statment
 
-```java
-switch ( Expression )
-{
-  case value1 : statement1; break;
-  case value2 : statement2; break;
+```kt
+when ( Expression ){
+  case_value -> statement1
+  case_value -> statement2
   …
-  case valueN : statementN; break;
-  default     : statementD; break;
+  case_valueN -> statementN
+  else -> { 
+    statementD
+  }
 }
 
 ```
 
 ---
-## The `switch` Statement: Example
+## The `when` Statement: Example
 
-```java
-switch ( grade )
-{ 
-  case ‘A’ : System.out.println( “Excellent mark”);
-     break;
-  case ‘B’ : System.out.println( “Very good mark”)
-     break;
-  case ‘C’ : System.out.println( “Average mark”);
-     break;
-  case ‘D’ : System.out.println( “Below average mark”);
-     break;
-  default  : System.out.println(“Failing mark”);
-     break;
+```kt
+when (grade) {
+    'A' -> print("Excellent mark")
+    'B' -> print("Very good mark")
+    'C' -> print("Average mark")
+    'D' -> print("Below average mark")
+    else -> {
+        print("Failing mark")
+    }
 }
+
 ```
 
 ---
@@ -390,10 +387,10 @@ switch ( grade )
 - **Toast Notification**
   - A toast notification communicates messages to the user (message slides upward into view like toast popping out of a toaster)
 
-```java
-Toast toast = Toast.makeText(context, text, duration).show();
+```kt
+Toast toast = Toast.makeText(context, text, duration).show()
 ...
-Toast.makeText(MainActivity.this, "Pounds must be less than 500", Toast.LENGTH_LONG).show();
+Toast.makeText(this, "Pounds must be less than 500", Toast.LENGTH_LONG).show()
 ```
 ---
 
@@ -414,17 +411,13 @@ else{
 
 ## Coding the Button Event
 
-- The syntax `Double.parseDouble()` converts input to a `Double` data type and `Integer.parseInt()` converts input to an `Int` data type 
+- The syntax `weight.getText().toString().toDouble()` converts input to a `Double` data type 
 
 
-```java
-  convert.setOnClickListener(new View.OnClickListener()){
-    @Override
-    public void onClick(View v){
-      weightEntered=Double.parseDouble(weight.getText().toString());
-      DecimalFormat tenth = new DecimalFormat("#.#);
-    }
-  });
+```kt
+convert.setOnClickListener {
+    val weightEntered : Double  = weight.getText().toString().toDouble()
+    ...
 }
 ```
 ---
@@ -433,34 +426,34 @@ else{
 
 - If statements are embedded/nested when one if statement is inside of another if statement
 
-```java
-convert.setOnClickListener((v)-> {
-  weightEntered = Double.parseDouble(weight.getText().toString());
-  DecimalFormat tenth = new DecimalFormat ("#.#");
+```kt
+convert.setOnClickListener {
+  weightEntered = weight.getText().toString().toDouble()
+  val tenth : DecimalFormat = DecimalFormat("#.#")
 
-  if(lbToKilo.isChecked()){
-    if (weightEntered <= 500){
-      convertedWeight = weightEntered / conversionRate;
-      result.setText(tenth.format(convertedWeight)+ " kilograms");
-    } else{
-      Toast.makeText(MainActivity.this, "Pounds must be less than 500", Toast.LENGHT_LONG).show();
-    }
-    lbToKilo.setChecked(false);
+  if (lbToKilo.isChecked()) {
+      if (weightEntered <= 500) {
+          convertedWeight = weightEntered / conversionRate
+          result.setText(tenth.format(convertedWeight) + " kilograms")
+      } else {
+          Toast.makeText(this,"Pounds must be less than 500",Toast.LENGTH_LONG
+          ).show()
+      }
+      ...
   }
-})
-
+}
 ```
 ---
 ## Coding the Nested `if` Statements
 
-```java
+```kt
 
  if(lbToKilo.isChecked()){
     if (weightEntered <= 500){
       convertedWeight = weightEntered / conversionRate;
       result.setText(tenth.format(convertedWeight)+ " kilograms");
     } else{
-      Toast.makeText(MainActivity.this, "Pounds must be less than 500", Toast.LENGHT_LONG).show();
+      Toast.makeText(this, "Pounds must be less than 500", Toast.LENGHT_LONG).show();
     }
     lbToKilo.setChecked(false);
  }
@@ -470,7 +463,7 @@ convert.setOnClickListener((v)-> {
       convertedWeight = weightEntered / conversionRate;
       result.setText(tenth.format(convertedWeight)+ " pounds");
     } else{
-      Toast.makeText(MainActivity.this, "Kilos must be less than 225", Toast.LENGHT_LONG).show();
+      Toast.makeText(this, "Kilos must be less than 225", Toast.LENGHT_LONG).show();
     }
     lbToKilo.setChecked(false);
  }
