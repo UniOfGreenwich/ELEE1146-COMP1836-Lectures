@@ -157,7 +157,7 @@ The preferred unit of measurement is often `sp`, which stands for scaled-indepen
 
 ---
 
-## Creating Activies
+## Creating Activities
 
 - An **Activity** is one of the core components of an Android application
 - Each screen is considered an **activity**
@@ -231,7 +231,7 @@ override fun onCreate(Bundle savedInstanceState : Bundle?){
     - Class property to hold a reference to the Button object
 `Button button = findViewbyId(R.id.button);`
   
-- `Button button = findViewbyId(R.id.button);`
+- `button` object has methods from the class `Button` that are accessible
   - `onClickListener()` method to await the button click action
   - `onClick()` method to respond to the click event
 
