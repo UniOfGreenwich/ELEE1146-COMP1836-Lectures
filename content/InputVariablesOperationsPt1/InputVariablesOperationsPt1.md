@@ -15,7 +15,7 @@ style: |
     }
     table {
       border-collapse: collapse;
-      font-size: 22px;
+      font-size: 24px;
     }
     table, th,tr, td {
       border: none!important;
@@ -41,7 +41,10 @@ math: true
 ---
 
 ## The result of the lab
-![center](../../figures/concertTicketAppCompleted.png)
+
+![bg right:60% 90% ](../../figures/concertAppFinished.png)
+
+![bg right:60% 90% horizontal](../../figures/concertAppFinishedPrice2.png)
 
 ---
 
@@ -54,23 +57,6 @@ math: true
     - Some themes display a background depending on the size of the mobile device
   - You can preview themes in the emulator in `activity_main.xml`
   - By changing the theme in the emulator in `activity_main.xml` file, you can preview what the theme looks like, but to change it permanently in the application, you must define the themes in the `themes.xml` file within the values subfolder of the Activity
----
-
-## Android Themes
-
-
- - The default for Nexus 6 shows the title bar displaying the app name with a white background when running the app
-
-- More on change of app theme on:
-  - https://developer.android.com/codelabs/basic-android-kotlin-training-change-app-theme#0
-
----
-
-## Previewing a Theme
-
-- Check the `activity_main.xml` file in the emulator to see what your screen looks like:
-
-![h:530 center](../../figures/themePreviewing.png)
 
 ---
 
@@ -94,14 +80,14 @@ math: true
 - Text Fields are the most common type of mobile 
     - input
     - Can be free-form plain text
-    - Numbers
+    - Numbers (whole/decimals)
     - A person’s name, 
     - password, email, 
     - phone number
     - A date and time
     - Multiline text
 
-![bg right:40% 70%](../../figures/widgets1.png)
+![bg right:40% 90%](../../figures/widgets1.png)
 
 ---
 
@@ -138,8 +124,8 @@ math: true
         <item>Linkin Park</item>
         <item>Hollywood Undead</item>
         <item>Man with a Mission</item>
+        <item>Written by Wolves</item>
     </string-array>
-
 </resources>
 ```
 
@@ -151,7 +137,7 @@ text (called a watermark)
 - When the user clicks the control, the hint is removed, and the user is free to type the requested input
 
 
-![center](../../figures/waterMark.png)
+![center w:500](../../figures/waterMark.png)
 
 ---
 
@@ -161,7 +147,7 @@ text (called a watermark)
 - The spinner control displays a list of strings called **items** in a pop-up window
 - A **prompt**, which can be used to display instructions at the top of the Spinner control, also is stored in strings.xml and is named prompt
 - The Spinner property called **entries** connects the String Array to the Spinner control for display in the application
-- The prompt property of the Spinner connects to the resource named @string/prompt`
+- The prompt property of the Spinner connects to the resource named `@string/prompt`
 - The entries property of the Spinner connects to the resources of the string array `@array/txtGroup`
 - The actual groups are displayed in the Spinner when the app is executed in the emulator
 ---
@@ -169,7 +155,7 @@ text (called a watermark)
 ## Coding the widget Classes
 
 - A **variable** is used in programming to contain data that changes during the execution of a program
-**Final** variables can be initialized but cannot be changed
+- `val` variables can be initialized but cannot be changed
 **EditText** code assigns input value to variable named **tickets**
 
 ```kt
@@ -194,96 +180,107 @@ val group : Spinner = findViewById<Spinner>(R.id.spinner)
 
 ---
 
-## Primitive Data Types
-
-![h:500 center](../../figures/primitiveDataTypes.png)
-
----
-
-## What about Strings
-
-```kt
-var groupChoice: String? = null
-```
-
-- String Data Type
-  - The String type is a class and not  a primitive data type
-  - A string can be a character, word, or phrase
-
-- Declaring the Variables
+## Declaring the Variables
   - Typically declared at the beginning of an Activity
   - Variables must be declared before you can use them
+  - `val` immutable
+  - `var` mutable
 
 ```kt
-val costPerTicket : Double = 79.99
-var numberOfTickets : Int = 0
-var totalCost : Double = 0.0
-var groupChoice: String? = null
+private val costPerTicket : Double = 79.99 // immutable
+private var numberOfTickets : Int = 0 // mutable
+private var totalCost : Double = 0.0
+private var groupChoice: String? = null
 ```
 
 ---
 
-## Full code
+## Primitive Data Types
 
-```kt
-class MainActivity : AppCompatActivity() {
+|Type| Size | Signed | Unsigned|
+|----|----|----|----|
+| `Byte`   | $2^8$    | -127 to 128                | 0 to 255 |
+| `Short`  | $2^{16}$ | -32,768 to 32,767            | 0 to 65,535|
+| `Int`    | $2^{32}$ | -2,147,483,648 to 2,147,483,647 | 0 to 4,294,967,295| 
+| `Long`   | $2^{64}$ | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807  | 0 to 18,446,744,073,709,551,615| 
+| `Float`  | $2^{32}$ | -2,147,483,648 to 2,147,483,647  | 0 to 4,294,967,295| 
+| `Double` | $2^{64}$ | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807  | 0 to 18,446,744,073,709,551,615|
 
-    val costPerTicket : Double = 79.99
-    var numberOfTickets : Int = 0
-    var totalCost : Double = 0.0
-    var groupChoice: String? = null
+> $2^{128}$ IPv6 340 undecillion
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        val group = findViewById<Spinner>(R.id.spinner)
-        val costBtn = findViewById<Button>(R.id.button)
-        val tickets = findViewById<EditText>(R.id.editTextText)
-        val result = findViewById<TextView>(R.id.textView)
-        val format: NumberFormat = NumberFormat.getCurrencyInstance(Locale.ENGLISH)
-
-        costBtn.setOnClickListener{
-            numberOfTickets = Integer.parseInt(tickets.getText().toString());
-            totalCost = costPerTicket * numberOfTickets;
-            groupChoice = group.getSelectedItem( ).toString( );
-            result.setText("Cost for " + groupChoice + " is £" + currency.format(totalCost)); 
-        }
-    }
-}
-```
 ---
 
-## `getText()` Method
+## Prespective: $2^{128}$ || 340 Undecillion using Encryption
 
-- Read data stored in the EditText control with the `getText()` method
-- Data is read in as a string, by default
-- A `Parse` class is used to convert strings into numbers
+AES-128 uses a 128-bit key, which means there are $2^{128}$ (approximately $3.4 \cdot 10^{38}$) possible keys. It would take to try all of them at a trillion combinations per second:
 
+<div style="font-size:24px">
 
-
-<div align=center>
-
-|Numerical Data Type| Parse Types|
-|---|---|
-|Integer| `Integer.parseInt()`|
-|Float| `Float.parseFloat()`|
-|Double| `Double.parseDouble()`|
-|Long| `Long.parseLong()`|
+$$
+\begin{equation*}
+ Time (in seconds) = \frac{Number of Possible Keys}{Combinations per Second} = \frac{2^{128}}{1,000,000,000,000} 
+\end{equation*}
+$$
 
 </div>
 
+Let's calculate this:
+
+<div style="font-size:24px">
+
+$$
+\begin{equation*}
+\frac{2^{128}}{1,000,000,000,000} \approx 3.4 \cdot 10^{38} \text{ seconds}
+\end{equation*}
+$$
+
+</div>
+
+To convert this to years, you can use the fact that there are 31,536,000 seconds in a year:
+
+<div style="font-size:24px">
+
+$$
+\begin{equation*}
+\frac{3.4 \times 10^{38}}{31,536,000} \approx 1.08 \cdot 10^{30} \text{ years}
+\end{equation*}
+$$
+
+</div>
+
+
+
+<!--
+-  AES-128 is considered a strong encryption algorithm, and it's designed to resist brute force attacks. Brute force attacks involve trying every possible combination of keys until the correct one is found.
+
+- So, it would take approximately \(1.08 \times 10^{30}\) years to crack AES-128 encryption at a rate of a trillion combinations per second. This is an astronomically long period of time, far exceeding the age of the universe, making AES-128 a very secure encryption standard against brute force attacks with today's technology.
+-->
+---
+## What about Strings
+
+```kt
+private var groupChoice: String? = null
+```
+
+- String Data Type
+  - The String type is a class and not a primitive data type
+  - A string can be a character, word, or phrase
+  - `?` this is a Nullable type, meaning it can be either a `String` or `null`
+
+
 ---
 
 ## `getText()` Method
 
-- The `getText()` method extracts the text from EditText tickets and converts it to String 
-- The `parseInt()` method converts a string to integer
+- Read data stored in the `EditText` control with the `getText()` method
 
-```kt
-numberOfTickets = Integer.parseInt(tickets.getText().toString());
-```
-
+  ```kt 
+  numberOfTickets = tickets.getText().toString().toIntOrNull() ?: 0
+  ```
+- Data is read in as a `String`, by default, hence `toString()` is the only conversion method.
+- the extended method, `toIntOrNull() ?` 
+  - Parses the `String` as an `Int` number and returns the result or `null` if the string is not a valid representation of a number.
+  - or by adding `?: 0` returns zero if `null`
 ---
 
 ## Working with Mathematical Operations
@@ -295,10 +292,12 @@ numberOfTickets = Integer.parseInt(tickets.getText().toString());
 | + | Addition | `value = itemPrice + itemTax;`|
 | - | Subrtaction | `score = previousScore - 2;`|
 | * | Multiplication | `totalCost = costPerTicket * numberOfTickets;`|
+| ** | Power | `squared = 10**2`
 | / | Division | `average = totalGrade / 5.0;`|
 | % | Remainder | `leftOver = widgetAmount % 3;`|
 | ++ | Increment (adds 1) | `score++`|
-| -- | Decrement (subtracts 1 | `score--`|
+| -- | Decrement (subtracts 1) | `score--`|
+
 </div>
 
 ---
@@ -308,14 +307,39 @@ numberOfTickets = Integer.parseInt(tickets.getText().toString());
 - **`getSelectedItem()` Method**
   - The `getSelectedItem()` method returns the text label of the currently selected Spinner item.
 
-```java
-groupChoice = group.getSelectedItem().toString();
+```kt
+groupChoice = group.getSelectedItem().toString()
 ```
 
+- **`selectedItemPosition`**
+  - Returns the selected items position between 0 and *n*
 
--**`setText()` Method**
+```kt
+val index = spinner.selectedItemPosition
+```
+
+---
+
+## `NumberFormat` and `setText()`
+
+- `NumberFormat`
+```kt
+val format: NumberFormat = NumberFormat.getCurrencyInstance()
+
+format.currency = Currency.getInstance("GBP") // 230 currencies 
+format.maximumFractionDigits = 2
+format.minimumFractionDigits = 2
+```
+
+- **`setText()` Method**
   - The `setText()` method displays text in a TextView control
 
-```java
-result.setText("Cost for "+ groupChoice + " is " + totalCost);
+  ```kt
+  result.setText("Cost for " + groupChoice + " is " + format.format(totalCost))
+  ```
+
+**Output**
+
+```
+Cost for Written By Wolves is £39.98 
 ```
