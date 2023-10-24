@@ -467,3 +467,95 @@ convert.setOnClickListener {
     }
     lbToKilo.setChecked(false);
  }
+```
+ ---
+
+ ## `Map`
+
+ - `Map` is a **collection** that contains pairs of objects (key, value)
+- The first value of the pair is the key and the second is the value of the corresponding key.
+- If multiple pair have same key then map will return the last pair value.
+- The map entries is traversed in the specified order.
+ - ```kt
+   fun main(args : Array<String>)
+   {
+	    // declaring a map of integer to string
+	    val map = mapOf(1 to "University", 2 to "of", 3 to "Greenwich")
+		  // printing the map
+		  println(map)
+   }
+   ```
+   ```
+   {1=University, 2=of, 3=Greenwich}
+   ```
+
+
+--- 
+
+## `map`
+
+```kt
+
+fun main(args: Array<String>)
+{
+    //declaring a map of integer to string
+    val map = mapOf(1 to "Proud", 2 to "to" , 3 to "be", 4 to "Gre")
+    println("Map Entries : "+map)
+    println("Map Keys: "+map.keys )
+    println("Map Values: "+map.values )
+}
+```
+
+<details>
+
+<summary>Output</summary>
+
+```
+Map Entries : {1=Proud, 2=to, 3=be, 4=Gre}
+Map Keys: [1, 2, 3, 4]
+Map Values: [Proud, To, Be, Gre] 
+```
+
+</details>
+
+--- 
+
+## `map` and `repeat()`
+
+```kt
+val lyricalGenius = mapOf("Greeting" to "Hi,", "Statement" to "my name is,",
+    "InterrogativeProNoun" to "What?","InterrogativeProNoun2" to "Who?",
+    "Alliteration" to "chka-chka,","Name" to "Slim Shady" )
+
+print(lyricalGenius["Greeting"])
+
+// Use a repeat function to iterate over the collection three times
+repeat(2) { i ->
+    if (i == 0) {
+        print(lyricalGenius["Statement"])
+    }
+    else {
+        // Print the greeting and statement values
+        print(lyricalGenius["Statement"].toString().capitalize())
+        // Print the interrogative pronoun value based on the iteration index
+        print(lyricalGenius[if (i % 2 == 0) "InterrogativeProNoun" else "InterrogativeProNoun2"] + " ")
+    }
+}
+// Print the alliteration and name values
+print( "\n"+lyricalGenius["Statement"].toString().capitalize()+ " " 
+        + lyricalGenius["Alliteration"] + " " + lyricalGenius["Name"] +"\n")
+```
+
+<details>
+<summary>Output</summary>
+
+<div style="font-size:20px">
+
+```
+Hi,my name is,My name is,Who? 
+My name is, chka-chka, Slim Shady
+```
+
+</div>
+
+</details>
