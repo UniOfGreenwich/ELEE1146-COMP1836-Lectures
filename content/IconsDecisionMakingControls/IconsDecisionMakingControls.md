@@ -523,7 +523,7 @@ Map Values: [Proud, To, Be, Gre]
 ## `map` and `repeat()`
 
 ```kt
-val lyricalGenius = mapOf("Greeting" to "Hi,", "Statement" to "my name is,",
+val lyricalGenius = mapOf("Greeting" to "Hi, ", "Statement" to "my name is, ",
     "InterrogativeProNoun" to "What?","InterrogativeProNoun2" to "Who?",
     "Alliteration" to "chka-chka,","Name" to "Slim Shady" )
 
@@ -552,7 +552,7 @@ print( "\n"+lyricalGenius["Statement"].toString().capitalize()+ " "
 <div style="font-size:20px">
 
 ```
-Hi,my name is,My name is,Who? 
+Hi, my name is, My name is, Who? 
 My name is, chka-chka, Slim Shady
 ```
 
