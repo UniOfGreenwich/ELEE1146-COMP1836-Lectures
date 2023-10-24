@@ -273,18 +273,18 @@ Flowchart
 ## The `if` Statement: Examples
 
 ```kt
-if ( countNumbers == 10 ) printf( )
+if ( countNumbers == 10 ) print( )
 
 if ( grade >= 90 ) 
-  printf( “You are an excellent student!” )
+  print( “You are an excellent student!” )
 
 if ( account <= creditLimit )
-   printf( “You have insufficient credit!” )
+   print( “You have insufficient credit!” )
 
 if ( dayOfTheWeek > 5 )
 {
-    printf( “Time to relax…” )
-    printf( “Weekend.”)
+    print( “Time to relax…” )
+    print( “Weekend.”)
 }
 ```
 
@@ -304,13 +304,13 @@ if ( dayOfTheWeek > 5 )
 ```kt
 if ( dayOfTheWeek > 5 )
 {
-  printf( “Weekend.”)
-  printf( “Time to relax…” )
+  print( “Weekend.”)
+  print( “Time to relax…” )
 }
 else 
 {
-  printf( “Workday.”)
-  printf( “Go to work!” )
+  print( “Workday.”)
+  print( “Go to work!” )
 }
 ```
 
@@ -322,17 +322,17 @@ else
 val grade : Char = ‘A’;
 
 if ( grade == ‘A’) 
-  printf( “Excellent mark”)
+  print( “Excellent mark”)
 else 
    if ( grade == ‘B’ ) 
-     printf( “Very good mark”)
+     print( “Very good mark”)
    else
      if ( grade == ‘C’ )
-       printf( “Average mark”)
+       print( “Average mark”)
      else
        if ( grade == ‘D’ ) 
-         printf( “Below average mark”)
-       else printf(“Failing mark”)
+         print( “Below average mark”)
+       else print(“Failing mark”)
 ```
 ---
 
