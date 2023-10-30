@@ -122,7 +122,8 @@ class MainActivity : AppCompatActivity() {
 ## Control Statements
 
 - To branch the program execution - selection statements
-  - `if, if/else, when`
+  - `if, if/else`
+  - `when`
 - To repeat actions - loops
   - `while, do ... while, for`
 - Boolean expressions to make decisions `true` and `false`
@@ -182,12 +183,12 @@ class MainActivity : AppCompatActivity() {
 </td>
 <td>
 
-|Operand1| Operand2| Logocal AND (`&&`)|
-|---|---|---|
-|`false`|`false`|`false`|
-|`false`|`true`|`false`|
-|`true`|`false`|`false`|
-|`true`|`true`|`true`|
+|Operand1| Operand2| Logocal AND (`&&`)|Logical OR (`\|\|`)|
+|:---:|:---:|:---:|:---:|
+|`false`|`false`|`false`|`false`|
+|`false`|`true`|`false`|`true`|
+|`true`|`false`|`false`|`true`|
+|`true`|`true`|`true`|`true`|
 </td>
 </tr>
 </table>
@@ -205,7 +206,7 @@ class MainActivity : AppCompatActivity() {
     val i3 : Int = 7
     var result: Boolean // default value is false
 
-    result = i1 != i2
+    result = !(i1 == i2)
     result = i1 != i2 // same as !(i1 == i2)
 
     result = i1 == i3
@@ -255,7 +256,7 @@ class MainActivity : AppCompatActivity() {
 - Double Selection 
   - the `if/else` statement 
 - Multiple Selection 
-  - the `switch` statement 
+  - the `when` statement 
 
 ---
 
@@ -467,3 +468,57 @@ convert.setOnClickListener {
     }
     lbToKilo.setChecked(false);
  }
+```
+
+----
+## Introduction to Maps
+ 
+Maps, also known as dictionaries or associative arrays, are a fundamental data structure used in programming. They allow you to store and manage data in key-value pairs.
+
+- **Key**: A unique identifier for the data
+- **Value**: The associated data
+
+Maps provide efficient data retrieval and storage, making them a valuable tool in various programming scenarios.
+
+---
+## Map Example 1
+
+Here's a simple example of a map in a Kotlin code snippet:
+
+```kt
+val studentGrades = mapOf("Elena" to 95, "Ahmed" to 87, "Sofia" to 78, 
+                          "Ravi" to 91, "Seb" to 100)
+
+for ((name, grade) in studentGrades) {
+    println("Student: $name, Grade: $grade")
+}
+```
+
+**Output:**
+
+```
+Student: Elena, Grade: 95
+Student: Ahmed, Grade: 87
+Student: Sofia, Grade: 78
+Student: Ravi, Grade: 91
+Student: Seb Grade: 100 
+```
+--- 
+
+## Map Example 2
+
+Here's another example of a map in a Kotlin code snippet:
+
+```kotlin
+val countryCapitals = mapOf( "France" to "Paris","India" to "New Delhi",
+                          "Japan" to "Tokyo","Brazil" to "Brasília")
+
+println(countryCapitals.getValue("Japan")) // Accessing the capital of Japan
+println( countryCapitals.getKey("Paris")) // Accessing the country for Paris
+```
+**Output:**
+
+```
+Capital of Japan: Tokyo
+Country for Paris: France
+```
