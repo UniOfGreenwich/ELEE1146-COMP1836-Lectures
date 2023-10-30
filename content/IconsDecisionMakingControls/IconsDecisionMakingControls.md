@@ -274,18 +274,18 @@ Flowchart
 ## The `if` Statement: Examples
 
 ```kt
-if ( countNumbers == 10 ) printf( )
+if ( countNumbers == 10 ) print( )
 
 if ( grade >= 90 ) 
-  printf( “You are an excellent student!” )
+  print( “You are an excellent student!” )
 
 if ( account <= creditLimit )
-   printf( “You have insufficient credit!” )
+   print( “You have insufficient credit!” )
 
 if ( dayOfTheWeek > 5 )
 {
-    printf( “Time to relax…” )
-    printf( “Weekend.”)
+    print( “Time to relax…” )
+    print( “Weekend.”)
 }
 ```
 
@@ -305,13 +305,13 @@ if ( dayOfTheWeek > 5 )
 ```kt
 if ( dayOfTheWeek > 5 )
 {
-  printf( “Weekend.”)
-  printf( “Time to relax…” )
+  print( “Weekend.”)
+  print( “Time to relax…” )
 }
 else 
 {
-  printf( “Workday.”)
-  printf( “Go to work!” )
+  print( “Workday.”)
+  print( “Go to work!” )
 }
 ```
 
@@ -323,17 +323,17 @@ else
 val grade : Char = ‘A’;
 
 if ( grade == ‘A’) 
-  printf( “Excellent mark”)
+  print( “Excellent mark”)
 else 
    if ( grade == ‘B’ ) 
-     printf( “Very good mark”)
+     print( “Very good mark”)
    else
      if ( grade == ‘C’ )
-       printf( “Average mark”)
+       print( “Average mark”)
      else
        if ( grade == ‘D’ ) 
-         printf( “Below average mark”)
-       else printf(“Failing mark”)
+         print( “Below average mark”)
+       else print(“Failing mark”)
 ```
 ---
 
@@ -469,56 +469,88 @@ convert.setOnClickListener {
     lbToKilo.setChecked(false);
  }
 ```
+ ---
 
-----
-## Introduction to Maps
- 
-Maps, also known as dictionaries or associative arrays, are a fundamental data structure used in programming. They allow you to store and manage data in key-value pairs.
+ ## `Map`
 
-- **Key**: A unique identifier for the data
-- **Value**: The associated data
+ - `Map` is a **collection** that contains pairs of objects (key, value)
+- The first value of the pair is the key and the second is the value of the corresponding key.
+- If multiple pair have same key then map will return the last pair value.
+- The map entries is traversed in the specified order.
+ - ```kt
+   fun main(args : Array<String>)
+   {
+	    // declaring a map of integer to string
+	    val map = mapOf(1 to "University", 2 to "of", 3 to "Greenwich")
+		  // printing the map
+		  println(map)
+   }
+   ```
+   ```
+   {1=University, 2=of, 3=Greenwich}
+   ```
+--- 
 
-Maps provide efficient data retrieval and storage, making them a valuable tool in various programming scenarios.
-
----
-## Map Example 1
-
-Here's a simple example of a map in a Kotlin code snippet:
+## `map`
 
 ```kt
-val studentGrades = mapOf("Elena" to 95, "Ahmed" to 87, "Sofia" to 78, 
-                          "Ravi" to 91, "Seb" to 100)
 
-for ((name, grade) in studentGrades) {
-    println("Student: $name, Grade: $grade")
+fun main(args: Array<String>)
+{
+    //declaring a map of integer to string
+    val map = mapOf(1 to "Proud", 2 to "to" , 3 to "be", 4 to "Gre")
+    println("Map Entries : "+map)
+    println("Map Keys: "+map.keys )
+    println("Map Values: "+map.values )
 }
 ```
 
-**Output:**
+<details>
+
+<summary>Output</summary>
 
 ```
-Student: Elena, Grade: 95
-Student: Ahmed, Grade: 87
-Student: Sofia, Grade: 78
-Student: Ravi, Grade: 91
-Student: Seb Grade: 100 
+Map Entries : {1=Proud, 2=to, 3=be, 4=Gre}
+Map Keys: [1, 2, 3, 4]
+Map Values: [Proud, To, Be, Gre] 
 ```
+
+</details>
+
 --- 
 
-## Map Example 2
+## `map` and `repeat()`
 
-Here's another example of a map in a Kotlin code snippet:
+```kt
+val lyricalGenius = mapOf("Greeting" to "Hi, ", "Statement" to "my name is, ", "InterrogativeProNoun" to "what?",
+"InterrogativeProNoun2" to "Who?", "Alliteration" to "chka-chka,","Name" to "Slim Shady" )
 
-```kotlin
-val countryCapitals = mapOf( "France" to "Paris","India" to "New Delhi",
-                          "Japan" to "Tokyo","Brazil" to "Brasília")
+print(lyricalGenius["Greeting"])
 
-println(countryCapitals.getValue("Japan")) // Accessing the capital of Japan
-println( countryCapitals.getKey("Paris")) // Accessing the country for Paris
+repeat(2) { i ->
+    if (i == 0) print(lyricalGenius["Statement"])
+    else {
+        // Print the greeting and statement values
+        print(lyricalGenius["Statement"].toString().capitalize())
+        // Print the interrogative pronoun value based on the iteration index
+        print(lyricalGenius[if (i % 2 == 0) "InterrogativeProNoun" else "InterrogativeProNoun2"] + " ")
+    }
+}
+// Print the alliteration and name values
+print( "\n"+lyricalGenius["Statement"].toString().capitalize()+ " " 
+        + lyricalGenius["Alliteration"] + " " + lyricalGenius["Name"] +"\n")
 ```
-**Output:**
+
+<details>
+<summary>Output</summary>
+
+<div style="font-size:20px">
 
 ```
-Capital of Japan: Tokyo
-Country for Paris: France
+Hi, my name is, what? My name is, Who? 
+My name is, chka-chka, Slim Shady
 ```
+
+</div>
+
+</details>
