@@ -1590,22 +1590,24 @@ table, th,tr, td {
 ;" data-size="16:9">
 <h2><code>map</code> and <code>repeat()</code></h2>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt"><span class="hljs-keyword">val</span> lyricalGenius = mapOf(<span class="hljs-string">&quot;Greeting&quot;</span> to <span class="hljs-string">&quot;Hi, &quot;</span>, <span class="hljs-string">&quot;Statement&quot;</span> to <span class="hljs-string">&quot;my name is, &quot;</span>, <span class="hljs-string">&quot;InterrogativeProNoun&quot;</span> to <span class="hljs-string">&quot;what?&quot;</span>,
-<span class="hljs-string">&quot;InterrogativeProNoun2&quot;</span> to <span class="hljs-string">&quot;Who?&quot;</span>, <span class="hljs-string">&quot;Alliteration&quot;</span> to <span class="hljs-string">&quot;chka-chka,&quot;</span>,<span class="hljs-string">&quot;Name&quot;</span> to <span class="hljs-string">&quot;Slim Shady&quot;</span> )
+      <span class="hljs-string">&quot;InterrogativeProNoun2&quot;</span> to <span class="hljs-string">&quot;Who?&quot;</span>, <span class="hljs-string">&quot;Alliteration&quot;</span> to <span class="hljs-string">&quot;chka-chka,&quot;</span>,<span class="hljs-string">&quot;Name&quot;</span> to <span class="hljs-string">&quot;Slim Shady&quot;</span> )
 
-print(lyricalGenius[<span class="hljs-string">&quot;Greeting&quot;</span>])
+  print(lyricalGenius[<span class="hljs-string">&quot;Greeting&quot;</span>])
 
-repeat(<span class="hljs-number">2</span>) { i -&gt;
-    <span class="hljs-keyword">if</span> (i == <span class="hljs-number">0</span>) print(lyricalGenius[<span class="hljs-string">&quot;Statement&quot;</span>])
-    <span class="hljs-keyword">else</span> {
-        <span class="hljs-comment">// Print the greeting and statement values</span>
-        print(lyricalGenius[<span class="hljs-string">&quot;Statement&quot;</span>].toString().capitalize())
-        <span class="hljs-comment">// Print the interrogative pronoun value based on the iteration index</span>
-        print(lyricalGenius[<span class="hljs-keyword">if</span> (i % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) <span class="hljs-string">&quot;InterrogativeProNoun&quot;</span> <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;InterrogativeProNoun2&quot;</span>] + <span class="hljs-string">&quot; &quot;</span>)
-    }
-}
-<span class="hljs-comment">// Print the alliteration and name values</span>
-print( <span class="hljs-string">&quot;\n&quot;</span>+lyricalGenius[<span class="hljs-string">&quot;Statement&quot;</span>].toString().capitalize()+ <span class="hljs-string">&quot; &quot;</span> 
-        + lyricalGenius[<span class="hljs-string">&quot;Alliteration&quot;</span>] + <span class="hljs-string">&quot; &quot;</span> + lyricalGenius[<span class="hljs-string">&quot;Name&quot;</span>] +<span class="hljs-string">&quot;\n&quot;</span>)
+  repeat(<span class="hljs-number">2</span>) { i -&gt;
+      <span class="hljs-keyword">if</span> (i == <span class="hljs-number">0</span>) print(<span class="hljs-string">&quot;<span class="hljs-subst">${lyricalGenius[<span class="hljs-string">&quot;Statement&quot;</span>]}</span><span class="hljs-subst">${lyricalGenius[<span class="hljs-string">&quot;InterrogativeProNoun&quot;</span>]}</span>&quot;</span>)
+      <span class="hljs-keyword">else</span> {
+          <span class="hljs-comment">// Print the greeting and statement values</span>
+          print(<span class="hljs-string">&quot; <span class="hljs-subst">${lyricalGenius[<span class="hljs-string">&quot;Statement&quot;</span>].toString()
+              .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }</span>}&quot;</span>)
+          <span class="hljs-comment">// Print the interrogative pronoun value based on the iteration index</span>
+          print(<span class="hljs-string">&quot;<span class="hljs-subst">${lyricalGenius[if (i % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) <span class="hljs-string">&quot;InterrogativeProNoun&quot;</span> else <span class="hljs-string">&quot;InterrogativeProNoun2&quot;</span>]}</span>&quot;</span>)
+      }
+  }
+  <span class="hljs-comment">// Print the alliteration and name values</span>
+  print( <span class="hljs-string">&quot;\n <span class="hljs-subst">${lyricalGenius[<span class="hljs-string">&quot;Statement&quot;</span>].toString().
+    replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }</span>}&quot;</span> +
+          <span class="hljs-string">&quot;<span class="hljs-subst">${lyricalGenius[<span class="hljs-string">&quot;Alliteration&quot;</span>]}</span> <span class="hljs-subst">${lyricalGenius[<span class="hljs-string">&quot;Name&quot;</span>]}</span> \n&quot;</span>)
 </code></pre>
 <details>
 <summary>Output</summary>
