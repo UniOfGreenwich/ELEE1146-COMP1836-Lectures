@@ -523,22 +523,24 @@ Map Values: [Proud, To, Be, Gre]
 
 ```kt
 val lyricalGenius = mapOf("Greeting" to "Hi, ", "Statement" to "my name is, ", "InterrogativeProNoun" to "what?",
-"InterrogativeProNoun2" to "Who?", "Alliteration" to "chka-chka,","Name" to "Slim Shady" )
+      "InterrogativeProNoun2" to "Who?", "Alliteration" to "chka-chka,","Name" to "Slim Shady" )
 
-print(lyricalGenius["Greeting"])
+  print(lyricalGenius["Greeting"])
 
-repeat(2) { i ->
-    if (i == 0) print(lyricalGenius["Statement"])
-    else {
-        // Print the greeting and statement values
-        print(lyricalGenius["Statement"].toString().capitalize())
-        // Print the interrogative pronoun value based on the iteration index
-        print(lyricalGenius[if (i % 2 == 0) "InterrogativeProNoun" else "InterrogativeProNoun2"] + " ")
-    }
-}
-// Print the alliteration and name values
-print( "\n"+lyricalGenius["Statement"].toString().capitalize()+ " " 
-        + lyricalGenius["Alliteration"] + " " + lyricalGenius["Name"] +"\n")
+  repeat(2) { i ->
+      if (i == 0) print("${lyricalGenius["Statement"]}${lyricalGenius["InterrogativeProNoun"]}")
+      else {
+          // Print the greeting and statement values
+          print(" ${lyricalGenius["Statement"].toString()
+              .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }}")
+          // Print the interrogative pronoun value based on the iteration index
+          print("${lyricalGenius[if (i % 2 == 0) "InterrogativeProNoun" else "InterrogativeProNoun2"]}")
+      }
+  }
+  // Print the alliteration and name values
+  print( "\n ${lyricalGenius["Statement"].toString().
+    replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }}" +
+          "${lyricalGenius["Alliteration"]} ${lyricalGenius["Name"]} \n")
 ```
 
 <details>
