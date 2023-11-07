@@ -48,14 +48,13 @@ math: true
   - Selectable 
   - Programmable to bring up the next Activity (screen)
 
-![bg right:40% 100%](../../figures/listviewcontrol1.png)
+![bg right:40% 60%](../../figures/recyclerviewcontrol1.png)
 
 ---
 
-## Extending a ListActivty
+## Extending a `RecyclerView`
 
-- A ListActivity class is needed to display a list of items
-- An ListView can be used to provide a list
+- A RecyclerView class is needed to display a list of items
 
 ![bg right:40% 100%](../../figures/recycleView.png)
 
@@ -71,86 +70,37 @@ math: true
 
 |Element| Value|
 |---|---|
-|attaction[0]| Art Institute of Chicago |
-|attaction[1]| Magnificent Mile |
-|attaction[2]| Willis Tower |
-|attaction[3]| Navy Pier |
-|attaction[4]| Water Tower |
+|attaction[0]| Greenwich - Medway |
+|attaction[1]| Great Lines |
+|attaction[2]| HMS Gannet |
+|attaction[3]| Rochester Cathedral  |
+|attaction[4]| Fort Amherst  |
+
 </div>
 
 ---
 
 ## Declaring an Array
 
-- Square brackets `[ ]` are used to define an array
-- Curley braces `{ }` contain the list of items in the array
+- `arrayOf(value,value2,value3)` implictly sets the array data type to that supplied
+- `Array<T>(size){value;value2;value3}` explicit size and Type
+- Attribute 
+`arrayName.size` total number of elements
 
 Code Syntax:
 
-```java
-String[] attraction={"Art Institute of Chicago","Magnificent Mile","Willis Tower","Navy Pier","Water Tower"};
+```kt
+private val attractions = arrayOf("Greenwich - Medway","Great Lines",
+        "HMS Gannet","Rochester Cathedral","Fort Amherst")
 ```
 
 or
 
-```java
-String[5] attraction={"Art Institute of Chicago","Magnificent Mile","Willis Tower","Navy Pier","Water Tower"};
+```kt
+private val attractions = Array<String?>(5){"Greenwich - Medway";"Great Lines",
+        "HMS Gannet";"Rochester Cathedral";"Fort Amherst"}
 ```
 
----
-
-## Using a setListAdapter and Array Adapter
-
-- An **adapter** provides a model for the layout and converts the data into a list
-- The `setListAdapter` connects the list items to the images or Web pages they represent
-- An `array adapter` supplies the array data to the `ListView`
-
-Code Syntax:
-
-```java
-setListAdapter(new ArrayAdapter<String>(this, android.R.Layout.simple_list_item_1, attaction));
-
-```
-
----
-
-## Primitive & Referecence Data Types 1
-
-- Primitive (Build-in) Data Types
-  - examples: `int`, `char`, `float`, `double`, `bool`, etc.
-
-- Reference Data Types (Objects)
-  - Every object of a predefined class in Java or user defined class in a user package
-  - examples - `arrays`, `widgets`, etc.
-
----
-
-## Primitive & Reference Data Types 2, Memory Allocation
-
-- Primitive variables - must be allocated to *static* memory 
-  - automatically by the compiler
-- Objects - must be allocated to *dynamic* memory at runtime
-  - programmer’s responsibility - using `new`. 
-
----
-
-## Primitive & Reference Data Types 3, Creating Variables
-- **Primitive variables**
-  - declaration - providing a name and a type
-  - initialisation - providing initial value
-  - Example
-        ```java
-        int a = 5;
-        ```
-
-- **Objects**
-  - declaration 
-  - allocation - allocating memory (dynamically using new)
-  - initialisation  
-  - Example
-    ```java
-    int[ ] a = new int[10];
-    ```
 ---
 
 ## Arrays [1]
@@ -167,6 +117,7 @@ setListAdapter(new ArrayAdapter<String>(this, android.R.Layout.simple_list_item_
 |27|-7|0|16|38|40|16|77|16|
 |--|--|--|--|--|--|--|--|--|
 |c[0]|c[1]|c[2]|c[3]|c[4]|c[5]|c[6]|c[7]|c[8]|
+
 </div>
 
 `c[]` array elements, `c` array name
@@ -175,50 +126,51 @@ setListAdapter(new ArrayAdapter<String>(this, android.R.Layout.simple_list_item_
 
 ## Array [2]
 
-- Declaration 
- `arrayType[ ] arrayName;` (`arrayName` is the identifier)
-- Allocation - as an object
-  - `arrayName = new arrayType[ arraySize ];` (`arraySize` is a  positive number)
-- Initialisation
-`arrayType[ ] arrayName  = {value1, value2, … , valueN };`
-*`value1`, `value2`, … , `valueN` - list of values for array elements of `arrayType`
 
-- Attribute 
-`arrayName.length`
+**Declaration**
+- `var arrayName: Array<arrayType>`
+
+- **Allocation - as an object**
+  - `arrayName = Array(arraySize) { value } (arraySize is a positive number)`
+
+- **Initialization**
+  - `var arrayName = arrayOf(value1, value2, … , valueN)`
+
+
 
 ---
 
 ## Array [3]
 
 Example 1:
-```java
-int[] c;        // declares the array
-c = new int[8]; // allocates the memory
+```kt
+var c: Array<Int> // declares the array
+c = Array(8) { 0 } // allocates the memory
 ```
 
 
 Example 2:
-```java
-// declares the array and allocates memory its elements
-double[] b = new double[100];
-String[] s = new String[5];
+```kt
+// declares the array and allocates memory for its elements
+var b = Array(100) { 0.0 }
+var s = Array(5) { "" }
+
 ```
 
 ---
 
 ## Arrays [4]
 
-- Combining declaration and initialisation - no `new` operator explicitly needed - `new` is invoked automatically
+- Combining declaration and initialisation
 
-```java 
-// declares and initialises - no allocation via new!
-String daysOfTheWeek[] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+```kt 
+val daysOfTheWeek = arrayOf("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
+
 ```
 
-- `arrayName.length` = the number of the elements in the array 
-Example
-```java
-int length = daysOfTheWeek.length;  // int length = 7
+- `arrayName.size` = the number of the elements in the array
+```kt
+val length = daysOfTheWeek.size // length = 7
 ```
 
 ---
@@ -226,62 +178,165 @@ int length = daysOfTheWeek.length;  // int length = 7
 ## Arrays [5] - Initialisation
 
 - In the declaration
-  - Example:
-```java
-int[] a = {0,0,0,0,0,0}; 
-int length = a.length; // is equal to 6
-```
+  ```kt
+  val a = arrayOf(0, 0, 0, 0, 0, 0)
+  val length = a.size // length is equal to 6
+  ```
 
 - one by one
-  - Example:
-```java
-int[] a = new int[6]; 
-a[0] = 0; a[1] = 0; a[2] = 0; [3] = 0; a[4] = 0; a[5] = 0; 
-```
+  ```kt
+  val a = Array(6) { 0 }
+  a[0] = 0; a[1] = 0; a[2] = 0; [3] = 0; a[4] = 0; a[5] = 0
+  ```
 
 - Using a for loop
-  - Example:
-```java
-int[] a = new int[6]; 
-for (i = 0; i < a.length; i++ ) { a[i] = 0; }
-```
+  ```kt
+  val a = Array(6) { 0 }
+  for (i in a.indices) { a[i] = 0 }
+  ```
 ---
 
 ## Arrays [6] - Examples
 
 ```java
-{
-    {
-        int day = 5;
-        String dayName;
+fun main() {
+    val day = 5
+    val dayName: String
 
-        String dayOfTheWeek[] = {"Monday", "Tuesday", "Wednesday", 
-                        "Thursday","Friday", "Saturday",  "Sunday" };
-       
-        if ( day > 7 || day < 1) 
-        {
-            dayName = "That is not a valid day of the week";
-        }
-        else
-        {
-             dayName = dayOfTheWeek[day-1]; // Saturday or Friday?
-        }
+    val dayOfTheWeek = arrayOf("Monday", "Tuesday", "Wednesday", "Thursday", 
+    "Friday", "Saturday", "Sunday")
+
+    if (day > 7 || day < 1) {
+        dayName = "That is not a valid day of the week"
+    } else {
+        dayName = dayOfTheWeek[day - 1] // Saturday or Friday?
     }
+}
+```
+---
+
+## Using a setListAdapter and Array Adapter
+
+- You **must** create your own `adapter` class for a `RecyclerView` in Kotlin for Android Studio because the `adapter` is responsible for mapping your data to the `views` in the `RecyclerView`. 
+
+- The `adapter` also creates and reuses the view holders that hold the views for each item in the list. 
+
+- By creating a custom adapter, you can define how your data is displayed and how it behaves when the user interacts with it.
+
+```kt
+internal class CustomAdapter(
+    private var itemsList: List<String>,
+    private val itemClickListener: OnItemClickListener ) : RecyclerView.Adapter<CustomAdapter.MyViewHolder>() {
+    internal inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        var itemTextView: TextView = view.findViewById(R.id.itemTextView)
+    }
+```
+<!--
+the internal modifier is used to restrict the visibility of a class, function, property, or other declarations to within the same module. A module, in this context, is typically defined as a group of Kotlin files compiled together. In other words, elements marked as internal can only be accessed within the same module.
+-->
+
+---
+
+## KDoc 1
+- Kotlin Documentation (**KDoc**), is a documentation format for adding comments and documentation to your Kotlin code. 
+- easily consumed by developers and tools. 
+- These comments are written in a specific format and are used to describe classes, functions, properties, and other code elements. 
+- KDocs are processed by tools like Dokka to generate documentation in various formats, such as HTML or PDF.
+![bg right:40% 100%](../../figures/kdoc_example0.PNG)
+
+---
+
+## KDoc 2
+
+There are 21 **Tags** that can be used here are a few that are fairly common. Others can be seen in the lab.
+
+- `@param`: Describes a parameter of a function or constructor.
+
+- `@return`: Describes the return value of a function.
+
+- `@throws` or` @exception`: Describes exceptions that a function may throw.
+
+- `@sample`: Provides a usage example for the documented code.
+
+- `@since`: Indicates the version or release when the code was introduced.
+
+- `@author`: Identifies the author or contributor of the code.
+
+---
+## KDoc 3
+
+```kt
+
+/**
+  * Divides two numbers.
+  * @author Seb Blair
+  * @since dd/mm/yyyy
+  * @param dividend The number to be divided.
+  * @param divisor The divisor.
+  * @return The result of the division.
+  * @throws ArithmeticException if divisor is 0.
+  * @sample com.example.cityguide.MainActivity.divideNumbers
+  */
+fun divideNumbers(dividend: Int, divisor: Int): Int {
+    if (divisor == 0) {
+        throw ArithmeticException("Division by zero is not allowed.")
+    }
+    return dividend / divisor
 }
 ```
 
 ---
 
+## KDoc 4
+
+![center w:700](../../figures/kdoc_example1.PNG)
+
+---
+
 ## Android Intent
 
-- Android intents send and receive activities and services including:
-  - Opening a Web page in a browser
-  - Calling a phone number
-  - Locating a GPS position on a map
-  - Posting notes to a note-taking program
-  - Opening your contacts list
-  - Sending a photo
-  - Posting to a social network
+-  Is a fundamental concept used for communication between different components of an Android application.
+
+-  It represents an abstract description of an operation to be performed, such as starting an activity, broadcasting a message, or delivering a message between components.
+
+- **Explicit Intent**: This type of intent is used to start a specific component within your own application, such as starting a new activity or service.
+
+- **Implicit Intent:** Implicit intents are used to request functionality provided by other Android components, like sending an email or opening a web page, without specifying the exact component to be used. The Android system will determine the appropriate component based on the intent's action and data.
+
+---
+
+##  `Intent` continued
+One common use of Intent is to pass data between different activities or components of your Android app.
+```kt
+val intent = Intent(this, MainActivity::class.java)
+// Start the MainActivity when the button is clicked
+startActivity(intent)
+```
+
+**Put Extras**: Extras are key-value pairs that can be attached to an `Intent` to carry data from one activity to another. The `putExtra()` method is used to add data to an intent. These extras can be accessed in the receiving activity using `getIntent().getExtras()` or `getIntent().getStringExtra(key)` (or similar methods based on the data type).
+
+---
+
+## `Intent` Extras
+
+```kt
+// Sending data from the sender activity
+val intent = Intent(this, ReceiverActivity::class.java)
+intent.putExtra("name", "YourName")
+intent.putExtra("age", 25)
+startActivity(intent)
+```
+
+```kt
+// Receiving data in the ReceiverActivity
+val extras = intent.extras
+if (extras != null) {
+    val name = extras.getString("name")
+    val age = extras.getInt("age")
+    // Use name and age as needed
+}
+```
+
 
 ---
 ## Launching the Browser from an Android Device
@@ -299,22 +354,24 @@ for (i = 0; i < a.length; i++ ) { a[i] = 0; }
 
 Code Syntax
 
-```java
-startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://gre.ac.uk")));
+```kt
+val intent = Intent(Intent.ACTION_VIEW)
+intent.data = Uri.parse("https://www.gre.ac.uk/about-us/campus/medway")
+// Start an activity to view the webpage
+startActivity(intent)
 ```
 
 The `startActivity` code launches the University of Greenwich website when the user selects the first item in the list item.  Mobile friendly sites may display m.gre.ac.uk. Where the letter m denotes a mobile site that was launched automatically due to the platform of a mobile device.
 
 ```java
-protected void onListItemClick(ListView l, View v, int position, long id){
-    switch(position){
-        case 0: 
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://gre.ac.uk")));
-        break;
-        case 1: 
-        // something else
-        break;
-        ...
+when (position) {
+            0 -> {
+                // Create an intent to view a webpage and set the URL to "https://www.gre.ac.uk/about-us/campus/medway"
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse("https://www.gre.ac.uk/about-us/campus/medway")
+                // Start an activity to view the webpage
+                startActivity(intent)
+            }
 ```
 
 ---
@@ -326,29 +383,38 @@ protected void onListItemClick(ListView l, View v, int position, long id){
 ![bg left:50% 100%](../../figures/classfiles.png)
 
 ---
-
 ## Classes and Acivities
 
-- **Class** - A class is a combination of methods, variables and data types. Every Java or Android project must have at least one class.
+- **Class** 
+- A class is a combination of methods, variables and data types. Every Kotlin or Android project must have at least one class.
 
-```java
-public class shape{
-    public void circle()
-    {
-        int A,B,radias;
+```kt
+class Shape {
+    fun circle() {
+        var A: Int
+        var B: Int
+        var radias: Int
     }
 }
 ```
+---
 
-- **Activity** - An Activity is an android class. If we want to use an activity class, we must use extend Activity in your android project.
+- **Activity** 
 
-```java
-public class shape extends Activity{
-    public void circle()
-    {
-        int A,B,radias;
+- In the Activity example, we import the `android.app.Activity` package and extend the `Activity` class.
+
+```kt
+// Activity
+import android.app.Activity
+
+class Shape : Activity() {
+    fun circle() {
+        var A: Int
+        var B: Int
+        var radias: Int
     }
 }
+
 ```
 ---
 
