@@ -922,7 +922,7 @@ table, th,tr, td {
   border: none!important;
   vertical-align: middle;
 }
-;" data-size="16:9" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;../../figures/Java_Error_Handling_1.svg&quot;);background-size:auto 500px;"></figure><figure style="background-image:url(&quot;../../figures/Java_Error_Handling_2.svg&quot;);background-size:auto 400px;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="19" data-class="gaia" data-paginate="true" data-style="#img-right{
+;" data-size="16:9" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;../../figures/Error_Handling_1.svg&quot;);background-size:auto 500px;"></figure><figure style="background-image:url(&quot;../../figures/Error_Handling_2.svg&quot;);background-size:auto 400px;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="19" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
 }
  img[alt~=&quot;center&quot;] {
@@ -1003,13 +1003,13 @@ table, th,tr, td {
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt"><span class="hljs-keyword">try</span>  {
      <span class="hljs-comment">// code that might generate exceptions</span>
 }
-<span class="hljs-keyword">catch</span> ( Exception1 ex1 )  {
+<span class="hljs-keyword">catch</span> ( ex1 : Exception )  {
 	<span class="hljs-comment">// handle exceptions of type Exception1</span>
 }
-<span class="hljs-keyword">catch</span> ( Exception2 ex2 )  {
+<span class="hljs-keyword">catch</span> ( ex2 : Exception )  {
 	<span class="hljs-comment">// handle exceptions of type Exception1</span>
 }
-<span class="hljs-keyword">catch</span> ( Exception3 ex3 )  {
+<span class="hljs-keyword">catch</span> ( ex3 : Exception )  {
 	<span class="hljs-comment">// handle exceptions of type Exception1</span>
 }…
 <span class="hljs-keyword">finally</span> { <span class="hljs-comment">/*Optional*/</span>
