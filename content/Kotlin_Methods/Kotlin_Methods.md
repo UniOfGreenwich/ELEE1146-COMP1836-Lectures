@@ -346,8 +346,9 @@ fun main() {
 
 ---
 
-![bg h:500 horizontal](../../figures/Java_Error_Handling_1.svg)
-![bg h:400 horizontal](../../figures/Java_Error_Handling_2.svg)
+![bg h:500 horizontal](../../figures/Error_Handling_1.svg)
+
+![bg h:400 horizontal](../../figures/Error_Handling_2.svg)
 
 ---
 
@@ -357,13 +358,13 @@ fun main() {
 try  {
      // code that might generate exceptions
 }
-catch ( Exception1 ex1 )  {
+catch ( ex1 : Exception )  {
 	// handle exceptions of type Exception1
 }
-catch ( Exception2 ex2 )  {
+catch ( ex2 : Exception )  {
 	// handle exceptions of type Exception1
 }
-catch ( Exception3 ex3 )  {
+catch ( ex3 : Exception )  {
 	// handle exceptions of type Exception1
 }…
 finally { /*Optional*/
