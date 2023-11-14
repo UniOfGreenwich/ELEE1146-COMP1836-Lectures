@@ -352,7 +352,7 @@ An XML document is made up of:
 <lecture>
   <title>XML</title>
   <place>Nelson 128 C</place>
-  <date>13 December 2022</date>
+  <date>14 November 2023</date>
     <time>9:00-11:00am</time>
   <lecturer>
     <fname>Seb </fname>
