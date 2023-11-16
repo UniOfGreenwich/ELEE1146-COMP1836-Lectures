@@ -44,6 +44,9 @@ math: true
 
 Android app permissions can give apps control of your phone and access to your camera, microphone, private messages, conversations, photos, and more. App permission requests pop up the first time an app needs access to sensitive hardware or data on your phone or tablet and are usually privacy-related.
 
+
+- **Restricted data**, such as system state and users' contact information
+- **Restricted actions**, such as connecting to a paired device and recording audio
 ---
 
 ## Google play Installation notification
@@ -282,7 +285,7 @@ Each of these dangerous permission groups contains multiple permissions, and app
 
 ---
 
-## Malcious Apps
+## Malicious  Apps
 
 **Hidden Apps**
 - Once these shady apps get on your phone, they disguise themselves. They replace their icons with Google Chrome logos or use transparent icons to make it look like they're not even there.
