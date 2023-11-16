@@ -169,45 +169,6 @@ The sensors' possible architectures vary by sensor type:
 
 ---
 
-## Java `Field`'s 
-
-A Java field is a variable inside a class. For instance, in a class representing an employee, the Employee class might contain the following fields:
-- name
-- position
-- salary
-- hiredDate
-
-The corresponding Java class could be defined like this:
-
-```java
-public class Employee {
-  String  name     ;
-  String  position ;
-  int     salary   ;
-  Date    hiredDate;
-}
-```
-
----
-##  Java `Field`'s 2: Declaration Syntax
-
-Java field is declared using the following syntax:
-
-```java
-[access_modifier] [static] [final] type name [= initial value] ;
-```
-
-- `type` and `name` are mandatory
-- `[]` are optional keywords
-
-```java
-public class Customer {
- // [access_modifier] [static] [final] type   name [= initial value]
-    private            static  final  String field1 = "Fixed Value"; 
-}
-```
----
-
 ## `Sensor` `Field`'s
 
 - There are numerous variables that provide information about a sensor.
