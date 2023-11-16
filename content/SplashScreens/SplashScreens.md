@@ -68,7 +68,7 @@ math: true
 -  is a screen shown by a computer program, very often a video game, while the program is loading (moving program data from the disk to RAM) or initialising.
 -  Some loading screens display a progress bar or a timer countdown to show how much data has actually loaded. Others, recently, are not even a picture at all, and are a small video or have parts animated in real time.
 
-![bg right:50% 100%](https://gifimage.net/wp-content/uploads/2017/11/gif-load-14.gif)
+![bg right:50% 100%](../../figures/splashAnimationBars.gif)
 
 ---
 
@@ -84,7 +84,7 @@ math: true
 
 ## Android Splash Screen
 
-![bg right:40% 50%](https://journaldev.nyc3.digitaloceanspaces.com/2018/01/android-splash-screen-classical.gif)
+![bg right:40% 50%](../../figures/android-splash-screen-classical.gif)
 
 ```java
 new Handler().postDelayed(new Runnable() {
