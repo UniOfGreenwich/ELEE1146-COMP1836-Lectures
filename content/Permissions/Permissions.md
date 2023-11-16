@@ -229,15 +229,23 @@ Each of these dangerous permission groups contains multiple permissions, and app
 
 ## What are device administrator privileges?
 
-Device administrator privileges let apps modify your system settings, change your device **password**, **lock your phone**, or even **permanently wipe all data** from your device. Malicious apps can use these privileges against user, but they’re also important for some legitimate apps. 
+- Device administrator privileges let apps modify your system settings, change your device **password**, **lock your phone**, or even **permanently wipe all data** from your device. 
 
-For example, security apps with admin privileges are difficult to uninstall, which helps stop thieves and hackers from removing them from your phone.
+- Malicious apps can use these privileges against user,
+  
+- They are also important for some legitimate apps too. 
+
+- For example, security apps with admin privileges are difficult to uninstall, which helps stop thieves and hackers from removing them from your phone.
 
 ---
 
 ## What are root privileges?
 
-Root privileges are the most dangerous app permissions. Any app with **root** privileges can do whatever it wants — **regardless** of which permissions you’ve already **blocked** or **enabled**. Malicious apps with superuser privileges can wreak havoc on your phone. Thankfully, **Android blocks root privileges by default**. 
+- Root privileges are the most dangerous app permissions. 
+
+- Any app with **root** privileges can do whatever it wants — **regardless** of which permissions you’ve already **blocked** or **enabled**.
+
+-  Malicious apps with superuser privileges can wreak havoc on your phone. Thankfully, **Android blocks root privileges by default**. 
 
 ---
 
@@ -271,3 +279,18 @@ Root privileges are the most dangerous app permissions. Any app with **root** pr
 </manifest>
 
 ```
+
+---
+
+## Malcious Apps
+
+**Hidden Apps**
+- Once these shady apps get on your phone, they disguise themselves. They replace their icons with Google Chrome logos or use transparent icons to make it look like they're not even there.
+- They start working silently in the background, pushing ads through your browser and making money for the people behind this mess
+
+**FakeApps**
+- Buying a product or service 
+- Lead you to sketchy investment scam sites
+
+**JokerApps**
+ - Sign you up to subscriptions
