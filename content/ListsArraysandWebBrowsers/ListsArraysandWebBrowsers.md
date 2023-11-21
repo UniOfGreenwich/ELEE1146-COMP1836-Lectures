@@ -179,29 +179,29 @@ val length = daysOfTheWeek.size // length = 7
 
 - In the declaration
   ```kt
-  val a = arrayOf(0, 0, 0, 0, 0, 0)
+  var a = arrayOf(0, 0, 0, 0, 0, 0)
   val length = a.size // length is equal to 6
   ```
 
 - one by one
   ```kt
-  val a = Array(6) { 0 }
+  var a = Array(6) { 0 }
   a[0] = 0; a[1] = 0; a[2] = 0; [3] = 0; a[4] = 0; a[5] = 0
   ```
 
 - Using a for loop
   ```kt
-  val a = Array(6) { 0 }
+  var a = Array(6) { 0 }
   for (i in a.indices) { a[i] = 0 }
   ```
 ---
 
 ## Arrays [6] - Examples
 
-```java
+```kt
 fun main() {
-    val day = 5
-    val dayName: String
+    var day = 5
+    var dayName: String
 
     val dayOfTheWeek = arrayOf("Monday", "Tuesday", "Wednesday", "Thursday", 
     "Friday", "Saturday", "Sunday")
@@ -213,6 +213,51 @@ fun main() {
     }
 }
 ```
+---
+
+## Princple of Locality
+
+Programs tend to use data and instructions with addresses near or equal to those they have used recently​
+
+​Temporal Locality: Recently referenced items are likely to be referenced again in the near future​
+
+<div align=center>
+
+![](../../figures/temp_local.png)
+
+</div>
+
+Spatial Locality: Items with nearby addresses tend to be referenced close together in time​
+
+<div align=center>
+
+![](../../figures/spatial_local.png)
+
+
+</div>
+
+---
+
+## Locality Example
+
+```kt
+var sum : Int = 0​
+var a: Array<Int>
+a = Array(5) { 0 } 
+
+for (i in a.indices) {​
+  sum += a[i];​
+}
+```
+
+- Data
+  - Access array elements `a[i]` in succession – Spatial Locality ​
+  - Reference `sum` each iteration – Temporal Locality ​
+
+- Instructions​
+  - Reference instructions in sequence – Spatial Locality​
+  - Cycle through loop repeatedly - Temporal Locality​
+
 ---
 
 ## Using a setListAdapter and Array Adapter
