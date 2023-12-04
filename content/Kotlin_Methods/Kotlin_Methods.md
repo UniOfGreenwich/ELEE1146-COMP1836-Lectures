@@ -87,7 +87,7 @@ actually executes the method statements with method arguments provided
 ---
 
 
-## Function Declaration
+## Function Anatomy
 
 ```
 FUNCTION HEADER
@@ -208,29 +208,6 @@ print("Your module result is:  $assessment(45, 55))
 
 ---
 
-## The `main()` function
-
-- Every Kotlin application (Not Android) must contain a main method 
-
-  ```kt
-  fun main(args: Array<String>) {...}
-  ```
-
-- implicitly a `public` modifier which indicates that the `main` function can be called by any `object`. 
-
-- `main()` is invoked when the the program it belongs to runs.
-- `programName 1 2 3 4`
----
-## How the `main()` function gets called?
-
-- When the Kotlin interpreter executes an application it starts by calling the class `main` function
-
-- The `main` method then calls all the other functions required to run your application
-
-- The `main` method in the Kotlin language is similar to the main function in C, C++ and C# and many others.
-
----
-
 ## Exceptions
 
 >"Computer says, no!"
@@ -279,6 +256,12 @@ print("Your module result is:  $assessment(45, 55))
 
 3. The exception is *caught* and *handled* by an exception handler. 
 
+
+---
+## Exception Hierachy
+
+![bg right:65% w:850](https://images.ctfassets.net/em6l9zw4tzag/7J8MLkqvpL8Id0TfkMlf4K/c7c353a4ce33adde8507060344f6867f/android-exception-handling-Screenshot_2022-10-08_at_3.43.58_PM.png)
+
 ---
 
 ## Kotlin Exception Handling Example (1)
@@ -296,8 +279,6 @@ fun main(args: Array<String>) {
     System.exit(0)
 }
 ```
-
-
 ---
 
 ## Kotlin Exception Handling Example (2)
@@ -385,3 +366,96 @@ finally { /*Optional*/
 
 - `ArithmeticException`
     - division by zero
+
+---
+
+## Handling Exceptions in Kotlin with `runCatching`
+
+In Kotlin, the `runCatching` function provides a concise way to handle exceptions without the need for explicit `try-catch` blocks.
+
+- In Kotlin, `runCatching` is a convenient utility that encapsulates a code block and allows you to handle exceptions in a more functional style.
+
+- It is used to capture exceptions that might occur during the execution of a block of code.
+
+---
+
+## `runCatching` Syntax
+
+```kotlin
+val result = runCatching {
+    // Code that may throw exceptions
+    // ...
+}
+
+result.onSuccess { value ->
+    // Code to handle the successful execution
+    println("Result: $value")
+}
+
+result.onFailure { exception ->
+    // Code to handle the exception
+    println("Exception: $exception")
+}
+```
+---
+## Rethrowing Exceptions
+
+```kotlin
+val result = runCatching {
+    // Code that may throw exceptions
+    // ...
+}
+
+result.onFailure { exception ->
+    when (exception) {
+        is NumberFormatException -> {
+            // Handle NumberFormatException
+        }
+        // Handle other specific exceptions
+        else -> {
+            // Handle any other type of exception
+        }
+    }
+}
+```
+---
+
+## Example of Slide 16 as `runCatching`
+
+```kotlin
+val resultCatching = runCatching {
+    // Set Input fields with prompt.
+    firstNumber = JOptionPane.showInputDialog("Enter first integer")
+    secondNumber = JOptionPane.showInputDialog("Enter second integer")
+    number1 = firstNumber.toInt()
+    number2 = secondNumber.toInt()
+    result = number1 / number2
+
+    JOptionPane.showMessageDialog(null, "The result is $result", "Result", JOptionPane.PLAIN_MESSAGE)
+}
+
+// Handling NumberFormatException
+resultCatching.onFailure { e ->
+    when (e) {
+        is NumberFormatException -> {
+            JOptionPane.showMessageDialog(null, "You must enter two integers!", "Invalid Number Format", JOptionPane.ERROR_MESSAGE)
+        }
+        is ArithmeticException -> {
+            JOptionPane.showMessageDialog(
+                null,"Second number should not be zero!", "Division by zero", JOptionPane.ERROR_MESSAGE)
+        }
+        else -> throw e // rethrow other exceptions
+    }
+}
+```
+---
+
+## `runCatching` vs `try`, `catch` and, `finally`
+
+- **Functional Approach:** `runCatching` allows a more functional programming style for error handling, separating the success path from the error handling.
+
+- **No Explicit try-catch:** There is no need for an explicit try-catch block. Instead, exceptions are handled using the `onFailure` and `getOrElse` functions.
+
+- **Separation of Concerns:** Error handling is separated into specific blocks (`onFailure` and `getOrElse`), improving code readability and maintainability.
+
+- **No Direct Equivalent of `finally`:** In this specific context, there is no direct equivalent of the `finally` block. Code outside the `runCatching` scope is used for logic that needs to run regardless of success or failure.
