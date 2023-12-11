@@ -438,7 +438,7 @@ table, th,tr, td {
 <li>Access modifiers specify levels of access control to and the visibility of class variables and methods</li>
 <li>Access modifier’s type:
 <ul>
-<li><code>public</code> (default, no keyword) - can be accessed from everywhere (implicit)</li>
+<li><code>open</code> (default, no keyword) - can be accessed from everywhere (implicit)</li>
 <li><code>private</code> - can only be accessed by the methods/functions inside the class definition</li>
 <li><code>internal</code>  - can only be accessed by other classes in the same package</li>
 <li><code>protected</code> - can only be accessed by other classes in the same package or by subclasses of the class</li>
@@ -493,6 +493,7 @@ table, th,tr, td {
 }
 </code></pre>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt"><span class="hljs-keyword">var</span> student : Student() <span class="hljs-comment">// object declaration</span>
+printf(student.assessment(<span class="hljs-number">50</span>,<span class="hljs-number">50</span>,<span class="hljs-number">50</span>,<span class="hljs-number">50</span>))
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-class="gaia" data-paginate="true" data-style="#img-right{
@@ -627,10 +628,10 @@ table, th,tr, td {
 <p>They are invoked automatically each time an object of that class is instantiated</p>
 </li>
 <li>
-<p>The name of the constructor has to be the same as the class name (case sensitive)</p>
+<p>The name of the constructor has to be the same as the class name (case sensitive), <code>constructor</code> is the keyword too for ease of rememberance.</p>
 </li>
 <li>
-<p>Constructors do not specify return values</p>
+<p>Constructors do not specify return values as the <code>object</code> is returned data type</p>
 </li>
 </ul>
 </section>
@@ -682,7 +683,7 @@ table, th,tr, td {
         <span class="hljs-keyword">this</span>.balance = bal;                
     }
     
-    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">toString</span><span class="hljs-params">( )</span></span> : String {
+    <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">customerToString</span><span class="hljs-params">()</span></span> : String {
         <span class="hljs-keyword">return</span> ( <span class="hljs-string">&quot;<span class="hljs-variable">$accNumber</span> <span class="hljs-variable">$firstName</span> <span class="hljs-variable">$lastName</span> £<span class="hljs-variable">$balance</span>&quot;</span> );
     }
 }
@@ -719,7 +720,7 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Constructors Overloading</h2>
+<h2>Constructor Overloading</h2>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt"><span class="hljs-keyword">class</span> <span class="hljs-title class_">BankCustomer</span>  {
    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> accNumber : <span class="hljs-built_in">Int</span>? = <span class="hljs-literal">null</span>; <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> pin : <span class="hljs-built_in">Int</span>? = <span class="hljs-literal">null</span>
    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> firstName : String? = <span class="hljs-literal">null</span>; <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> lastName: String? = <span class="hljs-literal">null</span>
@@ -772,7 +773,7 @@ table, th,tr, td {
   vertical-align: middle;
 }
 ;" data-size="16:9">
-<h2>Constructor</h2>
+<h2>Constructor Invocation</h2>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt"><span class="hljs-keyword">class</span> <span class="hljs-title class_">BankCustomerTest</span> 
 {
   <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">(args: <span class="hljs-type">Array</span>&lt;<span class="hljs-type">String</span>&gt;)</span></span> {
@@ -780,8 +781,8 @@ table, th,tr, td {
     <span class="hljs-keyword">var</span> cust1 : BankCustomer = BankCustomer(<span class="hljs-number">12312124</span>,<span class="hljs-number">1234</span>,<span class="hljs-number">0.0</span>)
     <span class="hljs-keyword">var</span> cust2 : BankCustomer = BankCustomer(<span class="hljs-number">12318888</span>,<span class="hljs-number">1104</span>, <span class="hljs-string">&quot;First&quot;</span>,<span class="hljs-string">&quot;Last&quot;</span>,<span class="hljs-number">1200.00</span>)
     <span class="hljs-keyword">var</span> cust3 : BankCustomer = BankCustomer()
-    <span class="hljs-comment">// initialisation</span>
-
+    
+    <span class="hljs-comment">//Print accout information</span>
     println(<span class="hljs-string">&quot;Information for :\n\n&quot;</span>);
     printBankCustomer (<span class="hljs-number">1</span>, cust1 );
     printBankCustomer (<span class="hljs-number">2</span>, cust2 );
