@@ -142,7 +142,7 @@ Encapsulation principle means that we should add to the same class behavioral me
 - Access modifiers are a means of hiding the implementation details within a class
 - Access modifiers specify levels of access control to and the visibility of class variables and methods
 - Access modifier’s type:
-  - `public` (default, no keyword) - can be accessed from everywhere (implicit)
+  - `open` (default, no keyword) - can be accessed from everywhere (implicit)
   - `private` - can only be accessed by the methods/functions inside the class definition
   - `internal`  - can only be accessed by other classes in the same package
   - `protected` - can only be accessed by other classes in the same package or by subclasses of the class
@@ -171,6 +171,7 @@ class Student {
 
 ```kt
 var student : Student() // object declaration
+printf(student.assessment(50,50,50,50))
 ```
 
 ---
@@ -210,9 +211,9 @@ class Point  {
 
 - They are invoked automatically each time an object of that class is instantiated
 
-- The name of the constructor has to be the same as the class name (case sensitive)
+- The name of the constructor has to be the same as the class name (case sensitive), `constructor` is the keyword too for ease of rememberance.
 
-- Constructors do not specify return values 
+- Constructors do not specify return values as the `object` is returned data type
 
 ---
 
@@ -235,7 +236,7 @@ class BankCustomer  {
         this.balance = bal;                
     }
     
-    fun toString( ) : String {
+    fun customerToString() : String {
         return ( "$accNumber $firstName $lastName £$balance" );
     }
 }
@@ -243,7 +244,7 @@ class BankCustomer  {
 
 --- 
 
-## Constructors Overloading
+## Constructor Overloading
 
 ```kt
 class BankCustomer  {
@@ -269,7 +270,7 @@ class BankCustomer  {
 
 ---
 
-## Constructor 
+## Constructor Invocation
 
 ```kt
 class BankCustomerTest 
@@ -279,8 +280,8 @@ class BankCustomerTest
     var cust1 : BankCustomer = BankCustomer(12312124,1234,0.0)
     var cust2 : BankCustomer = BankCustomer(12318888,1104, "First","Last",1200.00)
     var cust3 : BankCustomer = BankCustomer()
-    // initialisation
-
+    
+    //Print accout information
     println("Information for :\n\n");
     printBankCustomer (1, cust1 );
     printBankCustomer (2, cust2 );
