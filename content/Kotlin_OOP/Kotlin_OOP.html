@@ -672,7 +672,7 @@ table, th,tr, td {
    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> firstName : String? = <span class="hljs-literal">null</span>; <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> lastName: String? = <span class="hljs-literal">null</span>
    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> balance : <span class="hljs-built_in">Double</span>? = <span class="hljs-literal">null</span>;
    <span class="hljs-comment">// constructor   </span>
-   constuctor(){
+   <span class="hljs-keyword">constructor</span>(){
      setBankCustomer ( <span class="hljs-number">0</span>, <span class="hljs-number">0</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-number">0.0</span> );   
    }
 
@@ -835,13 +835,18 @@ table, th,tr, td {
    <span class="hljs-keyword">public</span> BankCustomer ()  
    { ... }
    ...
-   <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">setAccount</span> <span class="hljs-params">( acc : <span class="hljs-type">Int</span> )</span></span> 
-   {  <span class="hljs-keyword">this</span>.accountNumber = acc;   }
-   <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">setPIN</span> <span class="hljs-params">( p: <span class="hljs-type">Int</span> )</span></span> 
-   {  <span class="hljs-keyword">this</span>.pin = p;   }
-   <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">setName</span> <span class="hljs-params">(fn : <span class="hljs-type">String</span>, ln : <span class="hljs-type">String</span> )</span></span> 
-   {  <span class="hljs-keyword">this</span>.firstName = fn; <span class="hljs-keyword">this</span>.lastName = ln;  }
-   <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">setBalance</span> <span class="hljs-params">( bal : <span class="hljs-type">Double</span> )</span></span> {  <span class="hljs-keyword">this</span>.balance = bal;   }
+   <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">setAccount</span> <span class="hljs-params">( acc : <span class="hljs-type">Int</span> )</span></span> {  
+      <span class="hljs-keyword">this</span>.accountNumber = acc;   
+   }
+   <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">setPIN</span> <span class="hljs-params">( p: <span class="hljs-type">Int</span> )</span></span>{
+      <span class="hljs-keyword">this</span>.pin = p;   
+      }
+   <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">setName</span> <span class="hljs-params">(fn : <span class="hljs-type">String</span>, ln : <span class="hljs-type">String</span> )</span></span>{  
+      <span class="hljs-keyword">this</span>.firstName = fn; <span class="hljs-keyword">this</span>.lastName = ln;  
+    }
+   <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">setBalance</span> <span class="hljs-params">( bal : <span class="hljs-type">Double</span> )</span></span>{  
+      <span class="hljs-keyword">this</span>.balance = bal;   
+    }
 }
 </code></pre>
 </section>
