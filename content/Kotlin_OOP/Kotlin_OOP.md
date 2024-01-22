@@ -225,7 +225,7 @@ class BankCustomer  {
    private var firstName : String? = null; private var lastName: String? = null
    private var balance : Double? = null;
    // constructor   
-   constuctor(){
+   constructor(){
      setBankCustomer ( 0, 0,"","",0.0 );   
    }
 
@@ -307,13 +307,18 @@ class BankCustomer  {
    public BankCustomer ()  
    { ... }
    ...
-   fun setAccount ( acc : Int ) 
-   {  this.accountNumber = acc;   }
-   fun setPIN ( p: Int ) 
-   {  this.pin = p;   }
-   fun setName (fn : String, ln : String ) 
-   {  this.firstName = fn; this.lastName = ln;  }
-   fun setBalance ( bal : Double ) {  this.balance = bal;   }
+   fun setAccount ( acc : Int ) {  
+      this.accountNumber = acc;   
+   }
+   fun setPIN ( p: Int ){
+      this.pin = p;   
+      }
+   fun setName (fn : String, ln : String ){  
+      this.firstName = fn; this.lastName = ln;  
+    }
+   fun setBalance ( bal : Double ){  
+      this.balance = bal;   
+    }
 }
 ```
 ---
