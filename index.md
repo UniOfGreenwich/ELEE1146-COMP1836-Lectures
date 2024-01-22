@@ -4,6 +4,6 @@
 |[Input Variables Operations Pt1](content/InputVariablesOperationsPt1/InputVariablesOperationsPt1.html)|[Icons Decision Making Controls](content/IconsDecisionMakingControls/IconsDecisionMakingControls.html)|
 |[XML](content/XML/XML.html)|[Android Lists Arrays and Web Browsers](content/ListsArraysandWebBrowsers/ListsArraysandWebBrowsers.html)|
 |[Kotlin Methods](content/Kotlin_Methods/Kotlin_Methods.html)|[Kotlin OOP](content/Kotlin_OOP/Kotlin_OOP.html)|
-|[Permissions]()|[Splash Screens]()|
+|[Permissions](content/Permissions/Permissions.md)|[Splash Screens]()|
 |[Sensors 2]()|[Sensors 1]()|
 |[Development Kits]()|[Revision]()|
