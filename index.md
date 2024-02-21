@@ -7,3 +7,4 @@
 |[Permissions](content/Permissions/Permissions.md)|[Splash Screens]()|
 |[Sensors 2]()|[Sensors 1]()|
 |[Development Kits]()|[Revision]()|
+|[Workshop](content/Workshop/Workshop.html)|
