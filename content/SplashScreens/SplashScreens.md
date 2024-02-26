@@ -47,7 +47,7 @@ math: true
 - Graphical representation Boot process of the OS
 - is not necessarily designed for marketing purposes; 
 - it can be intended to enhance the experience of the user as eye candy
-- or provide the user with messages (with an added advantage of color-coding facility) to diagnose the state of the system.
+- or provide the user with messages (with the added advantage of color-coding facility) to diagnose the state of the system.
 
 ![bg right:50% 100% vertical](https://upload.wikimedia.org/wikipedia/commons/8/88/Ubuntu_9.4_Bootsplash.png)
 
@@ -55,10 +55,10 @@ math: true
 
 ---
 
-## Interstital Webpage
+## Interstitial Webpage
 
-- interstital (interval or intervening space or segment)
-- displayed before or after expected content page
+- Interstitial (interval or intervening space or segment)
+- displayed before or after the expected content page
 
 ![bg right:50% 100% vertical](https://w0.peakpx.com/wallpaper/761/975/HD-wallpaper-sunlights-through-green-trees-forest-background-nature.jpg)
 
@@ -67,7 +67,7 @@ math: true
 ## Loading Screen
 
 -  is a screen shown by a computer program, very often a video game, while the program is loading (moving program data from the disk to RAM) or initialising.
--  Some loading screens display a progress bar or a timer countdown to show how much data has actually loaded. Others, recently, are not even a picture at all, and are a small video or have parts animated in real time.
+-  Some loading screens display a progress bar or a timer countdown to show how much data has actually loaded. Others, recently, are not even a picture at all, and are a small video or have parts animated in real-time.
 
 ![bg right:50% 100%](../../figures/splashAnimationBars.gif)
 
@@ -106,7 +106,7 @@ Looper.myLooper()?.let { looper ->
 
 Two main instances...
 
-1. To schedule messages and runnables to be executed as some point in the future
+1. To schedule messages and runnables to be executed at some point in the future
 2. To enqueue an action to be performed on a different thread than your own.
 
 Send and notify state changes of your objects to other applications using an Event-driven Architecture
@@ -132,7 +132,7 @@ Send and notify state changes of your objects to other applications using an Eve
 
 ----
 
-## Animations - Transistions Functions
+## Animations - Transitions Functions
 
 <div style="font-size:27px">
 
@@ -144,9 +144,9 @@ Send and notify state changes of your objects to other applications using an Eve
    
   - `exitAnim`: A resource ID of the animation resource to use for the outgoing activity. Use 0 for no animation.
 
-  - `OVERRIDE_TRANSITION_OPEN/CLOSE`:  starting/entering or finising/closing
+  - `OVERRIDE_TRANSITION_OPEN/CLOSE`:  starting/entering or finishing/closing
 
-Both functions are used to customise the animation for the activity transition with this activity. This can be called at any time while the activity still alive.
+Both functions are used to customise the animation for the activity transition with this activity. This can be called at any time while the activity is still alive.
 
 </div>
 
@@ -169,7 +169,7 @@ Both functions are used to customise the animation for the activity transition w
 
 - Slide -> Vertical(up, down) and Horizontal(left, right)
 - Zoom/Scale
-- Rotation -> Including spiralling
+- Rotation -> Including spiraling
 - More here:
   -  [https://developer.android.com/guide/topics/resources/animation-resource](https://developer.android.com/guide/topics/resources/animation-resource)
 
@@ -221,7 +221,7 @@ Both functions are used to customise the animation for the activity transition w
 
 - `fromX/YScale` - starting from N size offset, where 1.0 is no change
 - `toX/YScale` - ending from N size offset, where 1.0 is no change
-- `pivotX/Y` - coordinate to remain fixed when object is scaled
+- `pivotX/Y` - coordinate to remain fixed when the object is scaled
 
 </div>
 <div>
