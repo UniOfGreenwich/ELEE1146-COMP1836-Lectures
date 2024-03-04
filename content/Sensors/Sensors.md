@@ -173,17 +173,17 @@ The sensors' possible architectures vary by sensor type:
 
 - There are numerous variables that provide information about a sensor.
 - accessible through functions like...
-```java
-private int android.hardware.Sensor.mFifoMaxEventCount
-...
-public int getFifoReservedEventCount (){
- 
- return android.hardware.Sensor.mFifoMaxEventCount
-}
-```
-![bg right:50% 45% ](../../figures/Sensor_Orientation.png)
+  ```java
+  private int android.hardware.Sensor.mFifoMaxEventCount
+  ...
+  public int getFifoReservedEventCount (){
+  
+  return android.hardware.Sensor.mFifoMaxEventCount
+  }
+  ```
+  ![bg right:50% 45% ](../../figures/Sensor_Orientation.png)
 
-*In the lab will be using Fields to always get the same data from each sensor*
+  *In the lab will be using Fields to always get the same data from each sensor*
 <!--
 Number of events reserved for this sensor in the batch mode FIFO. 
 
@@ -198,23 +198,24 @@ This gives a guarantee on the minimum number of events that can be batched.
 - `String` Class in Java creates an **immutable** sequence of characters, 
 - Constructs a string builder with no characters in it and an initial capacity of 16 characters
 
-```java
-StringBuilder str = new StringBuilder();
+  ```kt
+  val stringBuilder = StringBuilder()
 
-str.append("Hello");
-str.append("World!");
-// print string
-System.out.println("String = " + str.toString());
-```
 
-<details>
-<summary>Output?</summary>
+  stringBuilder.append("Hello");
+  stringBuilder.append("World!");
+  // print string
+  println("String = " + str.toString());
+  ```
 
-```
-String = HelloWorld!
-```
+  <details>
+  <summary>Output?</summary>
 
-</details>
+  ```
+  String = HelloWorld!
+  ```
+
+  </details>
 
 <!--
 modifying the `String` creates a new String object in the heap memory with the latest content, and the original String is never changed.
@@ -227,19 +228,19 @@ modifying the `String` creates a new String object in the heap memory with the l
 - is a type of object that is used to help you extract information from any string data by searching through text to find what you need
 - you will with high probabilty encounter regex many times in your career and by then this daunting set of characters grouped together will be a breeze:
 
-```
-(\b[A-Z][a-z]*\s*\b)+$
-```
+  ```
+  (\b[A-Z][a-z]*\s*\b)+$
+  ```
 
-<details>
+  <details>
 
-<summary>Means?</summary>
+  <summary>Means?</summary>
 
-Search for *Title Case*
+  Search for *Title Case*
 
-![center](../../figures/Regex_Title.svg)
+  ![center](../../figures/Regex_Title.svg)
 
-</details>
+  </details>
 
 ---
 
