@@ -685,18 +685,22 @@ table, th,tr, td {
 ;--marpit-advanced-background-split:50%;" data-size="16:9" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
 <h2><code>Sensor</code> <code>Field</code>'s</h2>
 <ul>
-<li>There are numerous variables that provide information about a sensor.</li>
-<li>accessible through functions like...</li>
-</ul>
+<li>
+<p>There are numerous variables that provide information about a sensor.</p>
+</li>
+<li>
+<p>accessible through functions like...</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-keyword">private</span> <span class="hljs-type">int</span> android.hardware.Sensor.mFifoMaxEventCount
 ...
 <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getFifoReservedEventCount</span> <span class="hljs-params">()</span>{
- 
- <span class="hljs-keyword">return</span> android.hardware.Sensor.mFifoMaxEventCount
+
+<span class="hljs-keyword">return</span> android.hardware.Sensor.mFifoMaxEventCount
 }
 </code></pre>
 
 <p><em>In the lab will be using Fields to always get the same data from each sensor</em></p>
+</li>
+</ul>
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -746,22 +750,29 @@ table, th,tr, td {
 ;" data-size="16:9">
 <h2><code>StringBuilder</code> Class</h2>
 <ul>
-<li>a <strong>mutable</strong> sequence of characters.</li>
-<li><code>String</code> Class in Java creates an <strong>immutable</strong> sequence of characters,</li>
-<li>Constructs a string builder with no characters in it and an initial capacity of 16 characters</li>
-</ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-java"><span class="hljs-type">StringBuilder</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();
+<li>
+<p>a <strong>mutable</strong> sequence of characters.</p>
+</li>
+<li>
+<p><code>String</code> Class in Java creates an <strong>immutable</strong> sequence of characters,</p>
+</li>
+<li>
+<p>Constructs a string builder with no characters in it and an initial capacity of 16 characters</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-kt"><span class="hljs-keyword">val</span> stringBuilder = StringBuilder()
 
-str.append(<span class="hljs-string">&quot;Hello&quot;</span>);
-str.append(<span class="hljs-string">&quot;World!&quot;</span>);
+
+stringBuilder.append(<span class="hljs-string">&quot;Hello&quot;</span>);
+stringBuilder.append(<span class="hljs-string">&quot;World!&quot;</span>);
 <span class="hljs-comment">// print string</span>
-System.out.println(<span class="hljs-string">&quot;String = &quot;</span> + str.toString());
+println(<span class="hljs-string">&quot;String = &quot;</span> + str.toString());
 </code></pre>
 <details>
 <summary>Output?</summary>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>String = HelloWorld!
 </code></pre>
 </details>
+</li>
+</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
@@ -796,10 +807,14 @@ table, th,tr, td {
 ;" data-size="16:9">
 <h2><code>Pattern</code> Class</h2>
 <ul>
-<li>is class used in regular expression(regex)</li>
-<li>is a type of object that is used to help you extract information from any string data by searching through text to find what you need</li>
-<li>you will with high probabilty encounter regex many times in your career and by then this daunting set of characters grouped together will be a breeze:</li>
-</ul>
+<li>
+<p>is class used in regular expression(regex)</p>
+</li>
+<li>
+<p>is a type of object that is used to help you extract information from any string data by searching through text to find what you need</p>
+</li>
+<li>
+<p>you will with high probabilty encounter regex many times in your career and by then this daunting set of characters grouped together will be a breeze:</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>(\b[A-Z][a-z]*\s*\b)+$
 </code></pre>
 <details>
@@ -807,6 +822,8 @@ table, th,tr, td {
 <p>Search for <em>Title Case</em></p>
 <p><img src="../../figures/Regex_Title.svg" alt="center" /></p>
 </details>
+</li>
+</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-class="gaia" data-paginate="true" data-style="#img-right{
   float: right;
