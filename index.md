@@ -4,7 +4,7 @@
 |[Input Variables Operations Pt1](content/InputVariablesOperationsPt1/InputVariablesOperationsPt1.html)|[Icons Decision Making Controls](content/IconsDecisionMakingControls/IconsDecisionMakingControls.html)|
 |[XML](content/XML/XML.html)|[Android Lists Arrays and Web Browsers](content/ListsArraysandWebBrowsers/ListsArraysandWebBrowsers.html)|
 |[Kotlin Methods](content/Kotlin_Methods/Kotlin_Methods.html)|[Kotlin OOP](content/Kotlin_OOP/Kotlin_OOP.html)|
-|[Permissions](content/Permissions/Permissions.md)|[Splash Screens](content/SplashScreens/SplashScreens.md)|
-|[Sensors 2]()|[Sensors 1]()|
+|[Permissions](content/Permissions/Permissions.html)|[Splash Screens](content/SplashScreens/SplashScreens.html)|
+|[Sensors 1](content/Sensors/Sensors.html)|[Sensors 2]()|
 |[Development Kits]()|[Revision]()|
 |[Workshop](content/Workshop/Workshop.html)|
