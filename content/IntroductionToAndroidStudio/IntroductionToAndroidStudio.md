@@ -98,6 +98,16 @@ math: true
 
 ---
 
+## Monolithic Kernel
+- Arm and X86 Architecture
+- Android kernel is based on an upstream [Linux Long Term Supported (LTS) kernel](https://www.kernel.org/).
+- HAL
+  - Hardware abstraction layer provides abstraction for the hardware to kernel (software) using devices drivers and firmware
+
+![bg right:50% 100%](https://source.android.com/static/docs/core/architecture/images/generic-kernel-image-architecture.png)
+
+---
+
 ## Versions
 
 - 14 Platform Versions and 34 API levels 
