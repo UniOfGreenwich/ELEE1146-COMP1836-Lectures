@@ -57,8 +57,6 @@ Encapsulation and Information Hiding, Constructors, Inheritance, Polymorphism, I
 
 --- 
 
- 
-
 ## Programming/Markup Languages
 
 -  Kotlin
@@ -66,7 +64,7 @@ Encapsulation and Information Hiding, Constructors, Inheritance, Polymorphism, I
 -  XML
    -  Extensible Markup Langauge, for design in Android Studio
 
-![bg right:40% 100%](https://developer.android.com/static/codelabs/basic-android-kotlin-compose-first-program/img/3bbebda874e6003b.png)
+![bg right:40% 40%](../../figures/kotlin_logo.png)
 
 ![bg vertical right:40% 75%](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Xml_logo.svg/241px-Xml_logo.svg.png?20080508104026)
 
