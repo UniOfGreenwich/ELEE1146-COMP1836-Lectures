@@ -52,12 +52,20 @@ math: true
 
 - Polymorphism
 
+- Interfaces 
+
 ---
 
-## Classes & Objects (1) 
+## Classes
+
+**Classes** are software programming models - abstractions of the real world or system entities. 
+
+**Classes** define methods that operate on their object instances
 
 
-> **Classes** are software programming models - abstractions of the real world or system entities. 
+![bg right:50% 100%](../../figures/houses_class.png)
+
+<!--
 
 - Classes have *state* and *behaviour*
 
@@ -67,43 +75,522 @@ math: true
 
 - Objects belong to a particular class, objects are instances of a particular class 
 
+-->
+
 ---
 
-## Classes & Objects (2)
+## Classes vs Objects (2)
 
-- **Class**
-  - a template that describes the data and behaviour associated with instances of that class
-  - the basic building block of an object-oriented language such as C++, C#, Java, Kotlin etc.
-  - classes are data types and can be used to create multiple objects
+**House Class**
+- Data
+    - House color (`String`)
+    - Number of windows (`Int`)
+    - Is for sale (`Boolean`)
 
-- **Object**
-  - represents something with which we can interact with in a program
-  - an object’s behaviour defines a collection of services that we can tell it to perform for us
-  - a class is abstract and represents a concept, and an object represents an instance (realisation) of a class 
+- Behavior
+    - `updateColor()`
+    - `putOnSale()`
+
+
+![bg right:50% 100%](../../figures/houses_objects.png)
+
+<!--
+
+The House class contains a blueprint of what goes into a House. It has properties like color (which is a String), number of windows (an Int), and whether or not the house is for sale (a Boolean).
+
+The House class also contains methods like updating the house color or putting the house on sale.
+
+We use the class to create object instances of the class. On the right are 3 different House object instances that have different attributes. They have different colors and one is even for sale.
+
+-->
 
 ---
 
 ## Class - an Example
 
-<div align=center>
+**Class Definition**
 
-![h:500](../../figures/class_diagram.svg)
+```kt
+class House {
+  val color: String = "white"
+  val numberOfWindows: Int = 2
+  val isForSale: Boolean = false
 
-</div>
+  fun updateColor(newColor: String){...}
+  ...
+}
+```
+
+**Object Creation**
+
+```kt
+val myHouse = House()
+println(myHouse)
+```
+---
+
+## Constructors
+
+When a constructor is defined in the class header, it can contain:
+
+- No parameters
+  `class A`
+
+- Parameters
+  
+  - Not marked with var or val → copy exists only within scope of the constructor
+  `class B(x: Int) `
+  
+  - Marked var or val → copy exists in all instances of the class
+  `class C(val y: Int)`
+
 
 ---
 
-## Class – an Example 2
 
-<div align=center>
+## Constructors Examples
 
-![h:500](../../figures/class_diagram_2.svg)
+class `A`
+```kt
+val aa = A()
+```
 
-</div>
+class `B (x: Int)`
+```kt
+val bb = B(12) 
+println(bb.x) 
+=> compiler error unresolved reference
+```
+class `C(val y: Int)`
 
+```kt
+val cc = C(42)
+println(cc.y)   
+=> 42
+```
+
+<!--
+
+These are different examples of how you can define constructors with or without parameters.
+
+The constructor for class A has no parameters. 
+
+The constructor for class B has 1 input parameter: x which is an Int. Because the parameter is not marked as a var or val, the variable x does not exist outside the scope of the constructor. Hence, if we create an object instance called bb, and we try to call the property x on it, we will get a compiler error. The property x does not exist on the object.
+
+In the third case, we have a constructor for class C with 1 input parameter: a val called y. If you create an object instance called cc, you can access the property y which has the value of 42 in this case. 
+
+To summarize, you can define the properties directly within the constructor, using var or val (as seen in the third example).
+
+-->
 
 ---
 
+## Parameters
+
+Class instances can have default values.
+  - Use default values to reduce the number of constructors needed
+
+  - Default parameters can be mixed with required parameters 
+
+  - More concise (don’t need to have multiple constructor versions)
+
+
+```kt
+class Box(val length: Int, val width:Int = 20, val height:Int = 40)
+val box1 = Box(100, 20, 40)
+val box2 = Box(length = 100)
+val box3 = Box(length = 100, width = 20, height = 40)
+```
+---
+
+## Primary Constructor
+
+Declare the primary constructor within the class header.
+
+```kt
+class Circle(i: Int) {	
+   init {
+        ... 
+   }
+}
+```
+
+This is technically equivalent to:
+
+```kt
+class Circle {
+    constructor(i: Int) {
+        ...
+    }
+}
+```
+
+---
+
+## Initialiser Block 
+
+- Any required initialization code is run in a special `init` block 
+
+- Multiple `init` blocks are allowed
+
+- `init` blocks become the body of the primary constructor
+
+  ```kt
+  class Square(val side: Int) {
+      init {
+          println(side * 2)
+      }
+  }
+
+  val s = Square(10)
+  => 20
+  ```
+
+---
+
+## Multiple Constructors
+
+- Use the `constructor` keyword to define secondary constructors
+
+- Secondary constructors must call:
+
+  - The primary constructor using `this` keyword 
+
+
+- Secondary constructor body is not required
+```kt
+class Circle(val radius:Double) {
+    constructor(name:String) : this(1.0)
+    constructor(diameter:Int) : this(diameter / 2.0) {
+        println("in diameter constructor")
+    }
+    init {
+        println("Area: ${Math.PI * radius * radius}")
+    }
+}
+val c = Circle(3)
+```
+
+<!--
+In the Circle class, we have a primary constructor (that takes a double radius value as input) and 2 secondary constructors. 
+
+To define a secondary constructor, start with the constructor keyword followed by parameters, a colon, and a call to the default constructor with this (which takes the radius as input). For classes with multiple constructors like this one, the init block runs before any code in the secondary constructor. Hence, the println statement will be executed before any of the code within the secondary constructors. 
+
+-->
+
+---
+
+## Properties
+
+- Define properties in a class using `val` or `var`
+
+- Access these properties using
+
+- dot `.` notation with property name
+
+- Set these properties using dot `.` notation with property name (only if declared a `var`)
+
+
+```kt
+class Person(var name: String)
+fun main() {
+    val person = Person("A Name")
+    println(person.name)           // Access with .<property name>
+    person.name = "Your Name"           // Set with .<property name>
+    println(person.name)	
+}
+```
+
+---
+
+## Setters and Getters
+
+If you don’t want the default `get`/`set` behavior:
+
+- Override `get()` for a property 
+- Override `set()` for a property (if defined as a `var`)
+
+```kt
+class Person(val firstName: String, val lastName:String) {
+    val fullName:String
+        get() {
+            return "$firstName $lastName"
+        }
+}
+```
+```kt
+val person = Person("Your", "Name")
+println(person.fullName)
+=> Your Name
+```
+
+---
+## Custom Setter
+
+```kt
+var fullName:String = ""
+    get() = "$firstName $lastName"
+    set(value) {
+        val components = value.split(" ")
+        firstName = components[0]
+        lastName = components[1]
+        field = value
+    }
+```
+
+```kt
+person.fullName = "Marshall Mathers"
+```
+---
+
+## Inhertiance
+
+- Kotlin has single-parent class inheritance
+
+- Each class has exactly one parent class, called a superclass
+
+- Each subclass inherits all members of its superclass including ones that the superclass itself has inherited
+
+> If you don't want to be limited by only inheriting a single class, you can define an `interface` since you can implement as many of those as you want.
+
+---
+
+## Interfaces 
+
+- Provide a contract all implementing classes must adhere to 
+
+- Can contain method signatures and property names 
+
+- Can derive from other interfaces 
+
+```kt
+interface Shape {
+    fun computeArea() : Double
+}
+class Circle(val radius:Double) : Shape {
+    override fun computeArea() = Math.PI * radius * radius
+}
+```
+```kt 
+val c = Circle(3.0)
+println(c.computeArea())
+=> 28.274333882308138
+```
+---
+
+## Extending Classes
+
+To extend a class: 
+
+- Create a new class that uses an existing class as its core (subclass)
+
+- Add functionality to a class without creating a new one (extension functions)
+
+- Kotlin classes by default are not subclassable 
+
+- use keyword `open` to allow subclassing
+
+- Properties and functions are redefined with the override keyword 
+
+---
+
+## Classes are Final
+
+- Declare a class
+   `class A`
+
+- Try to subclass A
+   `class B : A`
+
+  `=>Error: A is final and cannot be inherited from`
+
+- Use `open` to declare a class so that it can be subclassed.
+
+  - Declare a class
+   `open class C`
+
+  - Subclass from C
+   `class D : C()`
+
+---
+
+## Abstraction
+
+- Class is marked as `abstract`
+
+- Cannot be instantiated, must be subclassed 
+
+- Similar to an interface with the added the ability to store state 
+
+- Properties and functions marked with `abstract` must be overridden 
+
+- Can include non-abstract properties and functions 
+
+---
+
+## Abstraction Example
+
+```kt
+abstract class Food {
+    abstract val kcal : Int
+    abstract val name : String
+    fun consume() = println("I'm eating ${name}")
+}
+
+class Pizza() : Food() {
+    override val kcal = 600
+    override val name = "Pizza"
+}
+
+fun main() {
+    Pizza().consume()    // "I'm eating Pizza"
+}
+```
+
+---
+
+## Special Classes
+
+- **`Data` Class:** 
+  - Special class that exists just to store a set of data 
+  - Mark the class with the `data` keyword
+  - Generates getters for each property (and setters for vars too)
+  - Generates `toString()`, `equals()`, `hashCode()`, `copy()` methods, and destructuring operators
+
+Define the data class:
+
+```kt
+data class Player(val name: String, val score: Int)
+
+val firstPlayer = Player("Lauren", 10)
+println(firstPlayer)
+=> Player(name=Lauren, score=10)
+```
+<!--
+Data classes make your code much more concise!
+-->
+---
+
+## Pair and Triple ~~Tuple~~
+
+- Pair and Triple are predefined data classes that store 2 or 3 pieces of data respectively
+
+- Access variables with `.first`, `.second`, `.third` respectively 
+
+- Usually named data classes are a better option (more meaningful names for your use case)
+
+```kt
+val bookAuthor = Pair("Harry Potter", "J.K. Rowling")
+println(bookAuthor)
+=> (Harry Potter, J.K. Rowling)
+
+val bookAuthorYear = Triple("Harry Potter", "J.K. Rowling", 1997)
+println(bookAuthorYear)
+println(bookAuthorYear.third)
+=> (Harry Potter, J.K. Rowling, 1997)
+    1997
+```
+---
+
+## Pair to.. 
+
+Pair's special to variant lets you omit parentheses and periods (infix function).
+
+More readable
+
+```kt
+val bookAuth1 = "Harry Potter".to("J. K. Rowling")
+val bookAuth2 = "Harry Potter" to "J. K. Rowling"
+=> bookAuth1 and bookAuth2 are Pair (Harry Potter, J. K. Rowling)
+```
+
+Also used in collections like Map and HashMap
+
+```kt
+val map = mapOf(1 to "x", 2 to "y", 3 to "zz")
+=> map of Int to String {1=x, 2=y, 3=zz}
+```
+---
+
+## `Enum` Class
+
+User-defined data type for a set of named values
+
+- Use `this` to require instances be one of several constant values 
+
+- The constant value is, by default, not visible to you 
+
+- Use `enum` before the class keyword
+
+
+Define an enum with red, green, and blue colors.
+
+
+```kt
+enum class Color(val r: Int, val g: Int, val b: Int) {
+   RED(255, 0, 0), GREEN(0, 255, 0), BLUE(0, 0, 255)
+}
+
+println("" + Color.RED.r + " " + Color.GREEN.g + " " + Color.BLUE.b)
+=> 255 255 255
+```
+---
+
+## Companion objects
+
+- Lets all instances of a class share a single instance of a set of variables or functions 
+
+- Use `companion` keyword
+
+- Referenced via `ClassName.PropertyOrFunction` 
+
+```kt
+class PhysicsSystem {
+    companion object WorldConstants {
+        val gravity = 9.8
+        val unit = "metric"
+        fun computeForce(mass: Double, accel: Double): Double {
+            return mass * accel
+        }
+    }
+}
+println(PhysicsSystem.WorldConstants.gravity)
+println(PhysicsSystem.WorldConstants.computeForce(10.0, 10.0))
+=> 9.8100.0
+```
+---
+
+## Packages
+
+- Provide means for organization
+
+- Identifiers are generally lower case words separated by periods
+
+- Declared in the first non-comment line of code in a file following the package keyword
+
+- package `org.example.game`
+
+---
+
+## Example class hierarchy
+
+![w:1000 center](../../figures/class_heirarchy.png)
+
+---
+
+## Visibility modifiers
+
+Use visibility modifiers to limit what information you expose.
+
+- `public` means visible outside the class. Everything is public by default, including variables and methods of the class.
+
+
+- `private` means it will only be visible in that class (or source file if you are working with functions).
+
+
+- `protected` is the same as `private`, but it will also be visible to any subclasses.
+
+<!--
 ## Encapsulation (1)
 
 - Any changes to the object's state (i.e. its variables) should be made only via that object's methods
@@ -462,4 +949,4 @@ fun main(args: Array<String>) {
     myCircle.area()
 }
 ```
-
+-->

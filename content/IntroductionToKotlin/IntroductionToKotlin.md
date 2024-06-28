@@ -119,6 +119,11 @@ math: true
 
 </div>
 
+<!--
+
+9 Quintrillion... 223 Quadrillion...
+-->
+
 ---
 
 ## Kotlin Naming Convention
@@ -155,10 +160,10 @@ Two mandatory keywords that must be declared for any variable:
 - `val`
   - Essentially this variable is write-protected and once intialised it cannot be modified.
     ```kt
-    val a: Int = 1  // immediate assignment
-    val b = 2   // `Int` type is inferred
-    val c: Int  // Type required when no initializer is provided
-    c = 3       // deferred assignment
+    val a: Int = 1  // val(ue) immediate assignment
+    val b = 2       // `Int` type is inferred
+    val c: Int      // Type required when no initializer is provided
+    c = 3           // deferred assignment
     ```
 
 - `var`
@@ -180,8 +185,8 @@ const val/val myValue: Type = someValue
 - for `const val` use uppercase for naming
 
 ```kt
-const val NAME = "Kotlin"	// can be calculated at compile-time
-val nameLowered = NAME.lowercase()	 // cannot be calculated at compile-time
+const val NAME = "Kotlin"	        // can be calculated at compile-time
+val nameLowered = NAME.lowercase()	// cannot be calculated at compile-time
 ```
 
 ---
@@ -193,7 +198,7 @@ keyword name : dataType = Value
 ```
 
 ```kt
-val a: Int = 1	// immediate assignment
+val a: Int = 1	        // immediate assignment
 
 var b = 2		// 'Int' type is inferred
 b = a 			// Reassigning to 'var' is okay
@@ -231,11 +236,11 @@ Lead Designer Michail Zarečenskij
 A for loop is a fundamental programming construct used for iterating over a sequence of elements, such as arrays, lists, or ranges. It typically consists of three parts: initialization, condition, and iteration.
 
 ```kt
-for (i in 1..100) { ... }  // closed-ended range: includes 100
-for (i in 1..<100) { ... } // open-ended range: does not include 100
+for (i in 1..100) { ... }       // closed-ended range: includes 100
+for (i in 1..<100) { ... }      // open-ended range: does not include 100
 for (x in 2..10 step 2) { ... } // step from 2,4,6,8,10
-for (x in 10 downTo 1) { ... } // step down from a number `x` that is less than 10 down to 1
-(1..10).forEach { ... } // will iterate over 1 to 10, used for objects
+for (x in 10 downTo 1) { ... }  // step down from a number `x` that is less than 10 down to 1
+(1..10).forEach { ... }         // will iterate over 1 to 10, used for objects
 ```
 
 > `downTo` and `step` are extension functions, not keywords.
@@ -487,10 +492,16 @@ public final static main()V
 
 <!--
 L# - {L}able for an instruction block
+
 LINENUMBER - references the line number from the source code
+
 LDC - This instruction loads a constant value onto the operand stack
+
 ASTORE - stores a reference from the operand stack into a local variable. 
+
 ALOAD -  load a reference from a local variable onto the operand stack.
+
 GETSTATIC - This instruction gets the value of a static field from a class.
+
 INVOKEVIRTUAL - is an instruction used to invoke a virtual method on an object for runtime data type
 -->

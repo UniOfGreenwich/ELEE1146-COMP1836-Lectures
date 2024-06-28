@@ -42,59 +42,24 @@ math: true
 
 ## Meet Android
 
-- **Open-Source operating system**
-  - The Android platform is built on a free operating system created by Android Inc. In 2005, Google obtained Android Inc.
-  - No company or individual defines the features or direction of the development. Organizations and developers can extract, modify and use the code for creating any app
-  - Phone manufacturers do not pay license fees for the operating system
+- Open-source mobile platform
+- 11 major platform releases so far
+- 2.5 billion monthly active Android devices
+- 2+ billion monthly active Google Play users
 
-- **Open Handset Alliance led by Google**
-  - 80 firms that develop standards for mobile devices such as Samsung, Sony, HTC, Texas Instruments, etc.
+![bg right:45% 100%](../../figures/android_logo.png)
 
 ---
 
 ## Meet Android
 
-- **Android Phone Devices**
+- **Form Factors**
   - Most popular are Galaxy family, fold, etc
-  - OS also powers tablets, netbooks, e-readers, MP4 players and  Internet TVs
+  - OS also powers tablets, netbooks, e-readers, MP4 playert, Smart TVs, Smart white applicances and Vehicles 
 - **Emulator**
   - Duplicates how the app looks and feels on a particular device
 
-![bg right:40% 100%](./../../figures/androidexamples.png)
-
----
-
-## Meet Android -Features
-
-<div align=center>
-
-|Feature|Description|
-|---|---|
-|Beautiful UI|Android OS basic screen provides a beautiful and intuitive user interface.|
-|Connectivity|GSM/EDGE, IDEN, CDMA, EV-DO, UMTS, Bluetooth, Wi-Fi, LTE, NFC and WiMAX.|
-|Storage|SQLite, a lightweight relational database, is used for data storage purposes.|
-|Media support|H.263, H.264, MPEG-4 SP, AMR, AMR-WB, AAC, HE-AAC, AAC 5.1, MP3, MIDI, Ogg Vorbis, WAV, JPEG, PNG, GIF, and BMP.|
-|Messaging|SMS and MMS|
-|Web Browser| Based on the open-source WebKit layout engine, coupled with Chrome's V8 JavaScript engine supporting HTML5 and CSS3.|
-|Multi-Touch|Android has native support for multi-touch which was initially made available in handsets such as the HTC Hero.|
-</div>
-
----
-
-## Meet Android - Features
-
-<div align=center>
-
-|Feature|Description|
-|---|---|
-|Multi-tasking |User can jump from one task to another and same time various application can run simultaneously.|
-|Resizable widgets|Widgets are resizable, so users can expand them to show more content or shrink them to save space.|
-|Multi-Language|Supports single direction and bi-directional text.|
-|GCM|Google Cloud Messaging (GCM) is a service that lets developers send short message data to their users on Android devices, without needing a proprietary sync solution.|
-|Wi-Fi Direct|A technology that lets apps discover and pair directly, over a high-bandwidth peer-to-peer connection.|
-|Android Beam|A popular NFC-based technology that lets users instantly share, just by touching two NFC-enabled phones together..|
-
-</div>
+![bg right:40% 100%](./../../figures/MeetAndroid.png)
 
 ---
 
