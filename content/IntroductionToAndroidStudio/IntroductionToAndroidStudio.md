@@ -79,33 +79,32 @@ math: true
 
 <div align=center >
 
-|Platform Version|	API Level|	VERSION_CODE|
-|--|--|--|	
-|Android 14.0	|34	|UPDSIDE DOWN CAKE|	
-|Android 13.0	|33	|TIRAMSU|
-|Android 12.0	|31 - 32	|SNOW CONE|	
-|Android 11.0	|30	|RED VELVET CAKE|	
-|Android 10.0	|29	|QUINCE TART|
-|Android 9.0	|28	|PIE|	
-|Android 8.0	|27	|OREO|	
-|Android 7.0	|26	|NOUGAT|	
+|Platform Version|	API Level|	VERSION_CODE|Culmative Usage|Year|
+|--|--|--|--|--|	
+|Android 15.0 |35 | VANILLA ICE CREAM| 0.0% |Q4 2024|
+|Android 14.0	|34	|UPDSIDE DOWN CAKE| 25.7% | 2023|	
+|Android 13.0	|33	|TIRAMSU|48.0%|2022|
+|Android 12.0	|31 - 32	|SNOW CONE|	63.8%|2021|
+|Android 11.0	|30	|RED VELVET CAKE|	78.0%|2020|
+|Android 10.0	|29	|QUINCE TART|86.0%|2019|
+|Android 9.0	|28	|PIE|	91.1%|2018|
+|Android 8.0	|26 - 27	|OREO|95.5% - 92.7%|2017|	
+|Android 7.0	|24 - 25	|NOUGAT| 97.1% - 95.9%|2016|	
 
 </div>
-<!--
-14 is in beta
--->
 
 ---
 
 ## Programming and Environment
 
 - **Writing Android Apps**
-  - `Java` and `Kotlin` are  Object-oriented programming languages patterned after the `C++` language
+  - `Java` and `Kotlin` are Object-oriented programming languages patterned after the `C++` language
+  - You can also write apps in `C++` called native development. 
 - **Android Studio**
   - An `integrated development environment (IDE)` for building and integrating application development tools and open-source projects. 
   - Android Studio `IDE` is exclusively dedicated to the purpose of creating Android applications
   - Includes the `Android Software Development Kit (SDK)`
-  - `XML` is used to assist in the layout of the Android emulator
+
 ---
 
 ## Emulator vs Simulator
@@ -124,9 +123,8 @@ math: true
 ## What about Kotlin
 
 - Kotlin is an open-source programming language that can run on Java Virtual Machine (JVM). The language can run on numerous platforms.
-
 - It is a language that combines Object Oriented Programming (OOPs) and functional programming in an unrestricted, self-sufficient and distinctive platform.
-- In 2019, Google announced Kotlin as its preferred programming language for Android application developers
+- In 2019, Google announced Kotlin as its preferred programming language for over 60% of Android application developers.
 
 
 ---
@@ -144,10 +142,10 @@ math: true
 
 ## Opening Android Studio to Create a New Project
 
-- We will be using Android Studio Giraffe | 2022.3.1 Canary 8 March 6, 2023
+- We will be using Android Studio Koala | 2024.1.1 Patch 1 July 11, 2024
 - Download and install the Android Studio from https://developer.android.com/studio/archive. 
-- Search for th "Android Studio Giraffe | 2022.3.1 Canary 8 March 6, 2023"
-- Make sure you have enough space on the disk, it takes 2.6GB and you would also need extra space to run it.
+- Search for th "Android Studio Koala | 2024.1.1 Patch 1 July 11, 2024"
+- Make sure you have enough space on the disk, it takes > 3GB and you would also need extra space to run it.
 ![bg right:40% w:500](../../figures/download.png)
 
 ---
@@ -184,15 +182,16 @@ math: true
 
 - **Must** be intuitive
 - Interface **must** not distract from functionality
-- Java / Kotlin code or XML layout files are needed 
+- Jetpack Compose (new!)
   - Can design interface without writing large amounts of code
+- XML (old, like really old!)
+  - Java / Kotlin code or XML layout files are needed 
 
 ---
 
 ## Taking a Tour of the Android Project View
 
-
-- **Java folder** – contains Java / Kotlin source code
+- **Kotlin+Java folder** – contains Kotlin and Java source code
 - **Res folder** – contains images, music, and video
 - **Manifests folder** – contains the `Android Manifest.xml`, which contains information about the application that Android needs to run
 
@@ -200,28 +199,147 @@ math: true
 
 ---
 
-## Designing the User Interface Layout within the Virtual Device
+## Designing the App
 
-- **Widget** – a single element on the screen (Button, Text Box, etc.)
-- **Layout** – a container that holds as many widgets as needed
-- **Properties pane** – contains the properties of the currently active app project or object 
-- **Android Virtual Device (AVD)** – Android Studio displays an emulator configuration for design and layout purposes
+![w:1000 center](../../figures/projectView.png)
 
 ---
 
-## Designing the User Interface Layout within the Virtual Device (Cont’d.)
+## Jetpack Compose
 
-Click Device Manager on the menu and Create Virtual Device at the bottom of the screen 
+- Is a declarative framework.
+- The technique works by conceptually regenerating the entire screen from scratch, then applying only the necessary changes.
+- **Composables** execute in any order, and in parallel, be skipped and run frequently 
+
+- Model-View-ViewMode architecture (MVVM)
+
+![bg right:50% 100%](../../figures/mvvm-pattern.png)
+
+<!--
+Declarative describe your view without relying on mutation and more traditional imperative programming concepts
+
+Compose doesn’t actually rebuild the entire View when you update something. 
+It’s smart enough to only change the section that needs to change.
+
+-->
+---
+
+## State and Composition
+
+<table width="100%">
+<tr>
+<td width = "40%">
+
+
+Key Term:
+- **Composition**: a description of the UI built by Jetpack Compose when it executes composables.
+- **Initial composition**: creation of a Composition by running composables the first time.
+- **Recomposition**: re-running composables to update the Composition when data changes.
+
+</td>
+<td>
+
+```kt
+@Composable
+private fun HelloContent() {
+    Column(modifier = Modifier.padding(16.dp)) {
+        Text(
+            text = "Hello!",
+            modifier = Modifier.padding(bottom = 8.dp),
+            style = MaterialTheme.typography.bodyMedium
+        )
+        OutlinedTextField(
+            value = "",
+            onValueChange = { },
+            label = { Text("Name") }
+        )
+    }
+}
+```
+
+</td>
+</tr>
+</table>
+
+---
+
+## Referencing the String
+
+![w:1000 center](../../figures/referenceString.png)
+
+---
+
+## Modifying the Jetpack Compose UI Components
+
+![w:1000 center](../../figures/jetComposeUIModifications.png)
+
+---
+
+## State in composable
+
+<table width="100%">
+<tr>
+<td width = "40%">
+
+- **Composable functions** can use the `remember` API to store an object in memory. 
+- A value computed by `remember` is stored in the Composition during **initial composition**, and the stored value is returned during **recomposition**. 
+- `remember` can be used to store both **mutable** and **immutable** objects.
+</td>
+<td>
+
+```kt
+@Composable
+fun HelloContent() {
+    Column(modifier = Modifier.padding(16.dp)) {
+        //val mutableState = remember { mutableStateOf(default) }
+        //val (value, setValue) = remember { mutableStateOf(default) }
+        var name by remember { mutableStateOf("") }
+        if (name.isNotEmpty()) {
+            Text(
+                text = "Hello, $name!",
+                modifier = Modifier.padding(bottom = 8.dp),
+                style = MaterialTheme.typography.bodyMedium
+            )
+        }
+        OutlinedTextField(
+            value = name,
+            onValueChange = { name = it },
+            label = { Text("Name") }
+        )
+    }
+}
+```
+
+</td>
+</tr>
+</table>
+
+---
+
+## Modifying the Jetpack Compose UI Components
+
+![w:800 center](../../figures/interactiveModeComposable.gif)
+
+
+---
+
+
+## The Virtual Device
+
+- **Android Virtual Device (AVD)** – Android Studio displays an emulator configuration for design and layout purposes
+
+- Click Device Manager on the menu and Create Virtual Device at the bottom of the screen 
 
 ![bg right:50% 90% center](../../figures/avd.png)
 
 ---
-## Designing the User Interface Layout within the Virtual Device (Cont’d.)
+
+## The Virtual Device (Cont’d.)
 
 ![w:850 center](../../figures/selectingAVD.png)
 
 ---
-## Designing the User Interface Layout within the Virtual Device (Cont’d.)
+## The Virtual Device (Cont’d.)
 
 ![w:850 center](../../figures/selectingAVDImage.png)
 
@@ -231,44 +349,29 @@ Click Device Manager on the menu and Create Virtual Device at the bottom of the 
 ![w:850 center](../../figures/downloadingSDK.png)
 
 ---
-## Designing the User Interface Layout within the Virtual Device (Cont’d.)
+## The Virtual Device (Cont’d.)
 
 ![w:850 center](../../figures/selectingAVDVerification.png)
 
 ---
-## Designing the User Interface Layout within the Virtual Device (Cont’d.)
 
-Step 1: Click ‘Device for Preview (D)’ button (the emulator button) directly to the right of the Palette on the `activity_main.xml` tab, and then click Nexus 6 
-
----
-## Designing the User Interface Layout within the Virtual Device (Cont’d.)
-
-![w:950 center](../../figures/nexusSelection.png)
-
----
-## Designing the User Interface Layout within the Virtual Device (Cont’d.)
-
-Step 2: Click on the text in the middle to display the Attributes window 
-
-
-![w:850 center](../../figures/mainActivityView.png)
-
----
-
-## Modifying the Text in the TextView Control
-
-![w:850 center](../../figures/stringsXML.png)
-
----
-
-## Referencing the String
-
-![w:800 center](../../figures/referenceString.png)
-
----
 ## Testing the Application in the Emulator
 
 - Step 1:  Tap or click the Run ‘app’ button on the toolbar 
 - Step 2: After you have run the app once and have started the emulator, next time around the Run ‘app’ button has changed
 
-![bg right:50% 60%](../../figures/Emulator.png)
+![bg right:50% 50%](../../figures/Emulator.png)
+
+---
+
+## Go to for Referencing 
+
+<div style="font-size:27px">
+
+- Android JetPack - [https://developer.android.com/jetpack](https://developer.android.com/jetpack)
+
+- JetPack Compose - [https://developer.android.com/jetpack/androidx/releases/compose](https://developer.android.com/jetpack/androidx/releases/compose)
+
+- API references - [https://developer.android.com/reference](https://developer.android.com/reference)
+
+</div>

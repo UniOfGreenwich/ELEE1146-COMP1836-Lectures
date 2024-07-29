@@ -55,19 +55,22 @@ On successful completion of this module, a student will be able to:
 
 Encapsulation and Information Hiding, Constructors, Inheritance, Polymorphism, Interfaces, Exception Handling, Files and Streams, Threads, User Interface Design, Widgets, Activities, Views, Intents, Menus, 2D and 3D Graphics, Animation.
 
+This is non-exhaustive. 
+
 --- 
 
-## Programming/Markup Languages
+## Programming
+
+-  Android Studio
+   - The Intergrated Development Environment for developing on the Android platform.
+
 
 -  Kotlin
    -  Now the preferred programming language for Android development
--  XML
-   -  Extensible Markup Langauge, for design in Android Studio
 
-![bg right:40% 40%](../../figures/kotlin_logo.png)
+![bg right:40% 40%](../../figures/android_studio.png)
 
-![bg vertical right:40% 75%](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Xml_logo.svg/241px-Xml_logo.svg.png?20080508104026)
-
+![bg vertical right:40% 40%](../../figures/kotlin_logo.png)
 
 ---
 
@@ -77,12 +80,12 @@ Encapsulation and Information Hiding, Constructors, Inheritance, Polymorphism, I
 
 This module will be taught based on a problem-solving approach. [You] will be given specific problems to solve with the underpinning material supplied by lectures and tutorials.
 
-At the end of this module, [you] will be able to undertake an engineering challenge such as designing and developing a mobile app. An example app might be a mobile game (like a Grade Calculator or Sensor Utility). The app will be developed using the basic principles of mobile development technology and incorporating various additional features like an animated user interface, playing music, and sound effects.
+At the end of this module, [you] will be able to undertake an engineering challenge such as designing and developing a mobile app. The app will be developed using the basic principles of mobile development technology and incorporating various additional features like an animated user interface, playing music, and sound effects.
 
 Learning and teaching will be by a combination of:
 - Lectures/tutorials/laboratory sessions (face-to-face, video, or computer-mediated)
 - Individual or group-based teaching tutorial/project
-Self-study-supported structured learning materials
+- Self-study-supported structured learning materials
 
 </div>
 
