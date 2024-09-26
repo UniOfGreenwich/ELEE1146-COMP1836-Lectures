@@ -154,7 +154,8 @@ math: true
 
 <div align=center>
 
-![w:900 center](../../figures/createProject1.png)
+![w:800 center ](../../figures/koala.png)
+
 
 </div>
 
@@ -163,6 +164,7 @@ math: true
 ## Opening Android Studio to Create a New Project (cont’d)
 
 ![w:800 center](../../figures/selectDefaultActivity.png)
+
 
 ---
 
