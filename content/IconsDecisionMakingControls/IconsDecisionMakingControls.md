@@ -39,10 +39,13 @@ math: true
     Module Leader: Seb Blair BEng(H) PGCAP MIET MIHEEM FHEA
 
 ---
+<div align=center>
 
 ## The Medical Calculator App
 
-![h:600 center](../../figures/completedMedicalApp.png)
+![bg right:50% 50%](../../figures/completedMassApp.png)
+
+</div>
 
 ---
 
@@ -64,15 +67,14 @@ The Launcher Icon allows you to view which apps are available
 
 ## Radio Buttons and RadioGroups Controls
 
-[Documentation for Radio\<controls\>](https://developer.android.com/reference/android/widget/RadioGroup?hl=en)
+[Documentation for Radio\<controls\>](https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#RadioButton(kotlin.Boolean,kotlin.Function0,androidx.compose.ui.Modifier,kotlin.Boolean,androidx.compose.material3.RadioButtonColors,androidx.compose.foundation.interaction.MutableInteractionSource))
 
-A `RadioButton` control selects or deselects an option
-- Can be arranged horizontally or vertically (by default)
-- Has a label defined by the text property
-- Can be initially set to checked or unchecked
-- Typically used together in a `RadioGroup`
-- Only one `RadioButton` in the group can be selected at a time
-- Good to offer a default selection (checked == `true`) for the option that is used most
+- Radio buttons allow users to select one option from a set.
+  - Can be arranged horizontally or vertically (by default)
+  - Has a label defined by the text property
+  - Can be initially set to checked or unchecked
+  - Only one `RadioButton` in the group can be selected at a time
+  - Good to offer a default selection (checked == `true`) for the option that is used most
 
 ---
 
@@ -96,26 +98,19 @@ A `RadioButton` control selects or deselects an option
 
 ## Coding a `RadioButton` Control
 
+![center](../../figures/radioButtonExample.png)
+
 ```kt
-class MainActivity : AppCompatActivity() {
-
-  val conversionRate : Double = 2.2
-  var weightEntered :  Double = 0.0
-  var convertedWeight : Double = 0.0
-
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
-    supportActionBar?.setDisplayShowCustomEnabled(true)
-    supportActionBar?.setLogo(R.mipmap.ic_launcher_foreground)
-    supportActionBar?.setDisplayShowTitleEnabled(true)
-    supportActionBar?.setDisplayUseLogoEnabled(true)
-
-    val kiloToLb = findViewById<RadioButton>(R.id.radiobutton)
-    val lbToKilo = findViewById<RadioButton>(R.id.radiobutton2)
-
-    ...
-  }
+Text("Input Mass Unit")
+Row {
+    RadioButton(selected = inputMassUnit == "kg", onClick = { inputMassUnit = "kg" })
+    Text("Kilograms")
+    Spacer(modifier = Modifier.width(8.dp))
+    RadioButton(selected = inputMassUnit == "lbs", onClick = { inputMassUnit = "lbs" })
+    Text("Pounds")
+    Spacer(modifier = Modifier.width(8.dp))
+    RadioButton(selected = inputMassUnit == "stone", onClick = { inputMassUnit = "stone" })
+    Text("Stone")
 }
 ```
 ---
@@ -391,85 +386,90 @@ when (grade) {
 ```kt
 Toast toast = Toast.makeText(context, text, duration).show()
 ...
-Toast.makeText(this, "Pounds must be less than 500", Toast.LENGTH_LONG).show()
+Toast.makeText(this@MainActivity, "Mass must be greater than 0", Toast.LENGTH_LONG).show()
 ```
 ---
 
 ## Using the `isChecked()` Method of `RadioButton` Controls
 
-- The `isChecked()` method determines if the `RadioButton` object has been selected
+- `when` to determines if which `RadioButton` has been selected ...
   
-```java
-if (lbToKilo.isChecked){
-  // Statements completed if condition is true
-}
-else{
-  // Statements completed if condition is false
+```kt
+val massInKg = when (inputUnit) {
+            "kg" -> mass
+            "lbs" -> mass / conversionToPounds
+            "stone" -> mass / conversionToStones
+            else -> 0.0
+        }
+```
+<div style="font-size:24px">
+<table>
+<tr>
+<td>
+
+```kt
+if (condition1) {
+    // code
+} else if (condition2) {
+    // code
+} else {
+    // code
 }
 ```
+
+</td>
+<td>
+
+```kt
+when {
+    condition1 -> // code
+    condition2 -> // code
+    else -> // code
+}
+```
+</td>
+
+<td>
+
+```java
+switch (value) {
+    case 1:
+        // code
+        break;
+    case 2:
+        // code
+        break;
+    default:
+        // code
+}
+
+```
+
+</td>
+</tr>
+</table>
+
 
 ---
 
 ## Coding the Button Event
 
-- The syntax `weight.getText().toString().toDouble()` converts input to a `Double` data type 
-
-
 ```kt
-convert.setOnClickListener {
-    val weightEntered : Double  = weight.getText().toString().toDouble()
-    ...
-}
+Button(onClick = {
+                val mass = massEntered.toDoubleOrNull()
+
+                if (mass != null && mass > 0) {
+                    convertedValues = convertor(numberFormat,mass, inputMassUnit, outputMassUnit)
+
+                } else {
+                    Toast.makeText(this@MainActivity, "Mass must be greater than 0",
+                        Toast.LENGTH_LONG).show()
+                }
+            }) {
+                Text("Convert")
+            }
 ```
 ---
-
-## Coding the Nested `if` Statements
-
-- If statements are embedded/nested when one if statement is inside of another if statement
-
-```kt
-convert.setOnClickListener {
-  weightEntered = weight.getText().toString().toDouble()
-  val tenth : DecimalFormat = DecimalFormat("#.#")
-
-  if (lbToKilo.isChecked()) {
-      if (weightEntered <= 500) {
-          convertedWeight = weightEntered / conversionRate
-          result.setText(tenth.format(convertedWeight) + " kilograms")
-      } else {
-          Toast.makeText(this,"Pounds must be less than 500",Toast.LENGTH_LONG
-          ).show()
-      }
-      ...
-  }
-}
-```
----
-## Coding the Nested `if` Statements
-
-```kt
-
- if(lbToKilo.isChecked()){
-    if (weightEntered <= 500){
-      convertedWeight = weightEntered / conversionRate;
-      result.setText(tenth.format(convertedWeight)+ " kilograms");
-    } else{
-      Toast.makeText(this, "Pounds must be less than 500", Toast.LENGHT_LONG).show();
-    }
-    lbToKilo.setChecked(false);
- }
-
- if(kiloToLb.isChecked()){
-    if (weightEntered <= 225){
-      convertedWeight = weightEntered / conversionRate;
-      result.setText(tenth.format(convertedWeight)+ " pounds");
-    } else{
-      Toast.makeText(this, "Kilos must be less than 225", Toast.LENGHT_LONG).show();
-    }
-    lbToKilo.setChecked(false);
- }
-```
- ---
 
  ## `Map`
 

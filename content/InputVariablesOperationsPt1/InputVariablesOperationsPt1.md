@@ -42,9 +42,7 @@ math: true
 
 ## The result of the lab
 
-![bg right:60% 90% ](../../figures/concertAppFinished.png)
-
-![bg right:60% 90% horizontal](../../figures/concertAppFinishedPrice2.png)
+![bg right:60% 80% ](../../figures/concertAppFinished.png)
 
 ---
 
@@ -77,7 +75,7 @@ math: true
 ## Simplifying User Input
 
 
-- Text Fields are the most common type of mobile 
+- `TextFields` are the most common type of mobile 
     - input
     - Can be free-form plain text
     - Numbers (whole/decimals)
@@ -87,16 +85,36 @@ math: true
     - A date and time
     - Multiline text
 
-![bg right:40% 90%](../../figures/widgets1.png)
+![bg right:40% 90%](../../figures/jetpackcompose_user_input.jpg)
 
 ---
 
 ## Simplifying User Input
 
-- The Concert Tickets app requests the number of concert tickets which is a positive integer number
-- There is a variety of Text Fields to choose from in Android Studio 
-- By selecting the Number text field, users can enter only positive integers from the keyboard
-- This way, the app will not accept letters or symbols from the keyboard, saving developers time for writing data validation code 
+- The Concert Tickets app requests the number of concert tickets, which is a positive integer number.
+- There is a variety of `TextFields` to choose from in Jetpack Compose.
+- By selecting the `TextField` with specific `keyboardOptions`, developers can customize the keyboard for different input types. For instance, by using the `Number` keyboard type, users can only enter numbers, preventing the app from accepting letters or symbols.
+- This way, the app will not accept invalid input, saving developers time from having to write extra validation code.
+
+
+
+---
+
+## Example `TextField`
+
+```kt
+TextField(
+      value = ticketCount,
+      onValueChange = onTicketCountChange,
+      label = { Text("Number of Tickets") },
+      keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+      modifier = Modifier.fillMaxWidth()
+)
+```
+
+![w:500 center](../../figures/textfield.png)
+
+API here: [user-inputs](https://developer.android.com/develop/ui/compose/text/user-input#:~:text=TextField%20allows%20users%20to%20enter%20and%20modify%20text.%20This%20page)
 
 ---
 
@@ -131,42 +149,84 @@ math: true
 
 ---
 
-## Setting the Hint Property for a Text Field
-- A hint is a short description of a field visible as light-colored 
-text (called a watermark)
-- When the user clicks the control, the hint is removed, and the user is free to type the requested input
-
-
-![center w:500](../../figures/waterMark.png)
-
----
-
-## Using the Android Spinner Control
-
-- A **Spinner control** is a widget like a drop-down list for selecting a single item from a fixed list
-- The spinner control displays a list of strings called **items** in a pop-up window
-- A **prompt**, which can be used to display instructions at the top of the Spinner control, also is stored in strings.xml and is named prompt
-- The Spinner property called **entries** connects the String Array to the Spinner control for display in the application
-- The prompt property of the Spinner connects to the resource named `@string/prompt`
-- The entries property of the Spinner connects to the resources of the string array `@array/txtGroup`
-- The actual groups are displayed in the Spinner when the app is executed in the emulator
----
-
-## Coding the widget Classes
-
-- A **variable** is used in programming to contain data that changes during the execution of a program
-- `val` variables can be initialized but cannot be changed
-**EditText** code assigns input value to variable named **tickets**
+## Data Class
 
 ```kt
-val tickets : EditText = findViewById(R.id.editTextNumber)
+data class Band(
+  val name: String, 
+  val imageRes: Int,
+  val price: Float)
 ```
-The Spinner assigns the value from the user’s input to the variable named group
+
+![bg right:50% 100%](../../figures/data-class-1.png)
+
+---
+## `Object` of `data` class
 
 ```kt
-val group : Spinner = findViewById<Spinner>(R.id.spinner)
+data class Band(
+  val name: String, 
+  val imageRes: Int,
+  val price: Float)
 ```
+
+```kt
+object BandDataSource {
+    val bands = listOf(
+        Band("Select a Band", R.mipmap.concert, 0.0f),
+        Band("Written by Wolves", R.mipmap.written_by_wolves,24.95f),
+        Band("Linkin Park", R.mipmap.linkin_park, 63.95f),
+        Band("Man with a Mission", R.mipmap.man_with_a_mission, 36.00f),
+        Band("Hollywood Undead", R.mipmap.hollywood_undead,125.0f)
+    )
+}
+```
+
+```kt
+var selectedBand by remember { mutableStateOf(BandDataSource.bands[0]) }
+```
+
 ---
+
+## Using the DropDownMenu
+
+- A `DropDownMenu` is a widget used for selecting a single item from a fixed list of options.
+- The `DropDownMenu` displays a list of `DropDownMenuItems` for users to choose from in a dropdown pop-up menu.
+- A `label` or `hint` can be provided to display instructions or a title for the `DropDownMenu`, typically defined in your layout or resource files.
+- The `DropDownMenuItems` represent the individual options within the menu and are usually connected to a data source, such as a `String` array or `listOf` `objects`, for display in the application.
+
+---
+
+## Coding the `DropDownMenu`
+
+![bg right:50% 50%](../../figures/dropdownmenu.png)
+
+```kt
+DropdownMenu(
+        expanded = expanded,
+        onDismissRequest = { expanded = false },
+        modifier = Modifier
+            .background(Color(0XFFE3E3E6))
+            .width(350.dp)
+    ) {
+        BandDataSource.bands.forEach { band ->
+            DropdownMenuItem(
+                text = {
+                    Text(
+                        text = band.name,
+                        color = Color(0Xff1e2c41),
+                        fontSize = 20.sp)
+                        },
+                onClick = {
+                onBandSelected(band)
+                expanded = false
+            })
+        }
+    }
+```
+
+---
+
 
 ## Variables
 
@@ -177,21 +237,6 @@ val group : Spinner = findViewById<Spinner>(R.id.spinner)
     - variable size 
     - range of values
     - the operations that can be performed with this variable type
-
----
-
-## Declaring the Variables
-  - Typically declared at the beginning of an Activity
-  - Variables must be declared before you can use them
-  - `val` immutable
-  - `var` mutable
-
-```kt
-private val costPerTicket : Double = 79.99 // immutable
-private var numberOfTickets : Int = 0 // mutable
-private var totalCost : Double = 0.0
-private var groupChoice: String? = null
-```
 
 ---
 
@@ -270,17 +315,37 @@ private var groupChoice: String? = null
 
 ---
 
-## `getText()` Method
+## Elivs operator `?:`
 
-- Read data stored in the `EditText` control with the `getText()` method
+<div style="font-size:24px">
 
-  ```kt 
-  numberOfTickets = tickets.getText().toString().toIntOrNull() ?: 0
-  ```
-- Data is read in as a `String`, by default, hence `toString()` is the only conversion method.
-- the extended method, `toIntOrNull() ?` 
+```kt 
+val count = ticketCount.toIntOrNull() ?: 0
+```
+
+- Data is read in as a `String`, by default, hence `toIntOrNull() ?` 
   - Parses the `String` as an `Int` number and returns the result or `null` if the string is not a valid representation of a number.
   - or by adding `?: 0` returns zero if `null`
+
+
+
+```kt
+Button(
+        onClick = {
+            val count = ticketCount.toIntOrNull() ?: 0
+            if (selectedBand.name == "Select a Band") {
+                onCalculate("Please select a band")
+            } else if (count <= 0) {
+                onCalculate("Enter value greater than 0")
+            } else {
+                val total = costPerTicket * count
+                onCalculate("Cost for ${selectedBand.name} is ${format.format(total)}")
+            }
+        },
+```
+
+</div>
+
 ---
 
 ## Working with Mathematical Operations
@@ -300,46 +365,38 @@ private var groupChoice: String? = null
 
 </div>
 
----
-
-## Displaying Android Output
-
-- **`getSelectedItem()` Method**
-  - The `getSelectedItem()` method returns the text label of the currently selected Spinner item.
-
-```kt
-groupChoice = group.getSelectedItem().toString()
-```
-
-- **`selectedItemPosition`**
-  - Returns the selected items position between 0 and *n*
-
-```kt
-val index = spinner.selectedItemPosition
-```
 
 ---
+<div style="font-size:23px">
 
 ## `NumberFormat` and `setText()`
 
+<div style="font-size:23px">
+
 - `NumberFormat`
-```kt
-val format: NumberFormat = NumberFormat.getCurrencyInstance()
-
-format.currency = Currency.getInstance("GBP") // 230 currencies 
-format.maximumFractionDigits = 2
-format.minimumFractionDigits = 2
-```
-
-- **`setText()` Method**
-  - The `setText()` method displays text in a TextView control
-
   ```kt
-  result.setText("Cost for " + groupChoice + " is " + format.format(totalCost))
+  fun CalculateCostButton(selectedBand: Band, ticketCount: String, onCalculate: (String) -> Unit) {
+    val format: NumberFormat = NumberFormat.getCurrencyInstance().apply {
+        currency = Currency.getInstance("GBP"), maximumFractionDigits = 2, minimumFractionDigits = 2
+    }
+    ...
+  }
   ```
 
-**Output**
+- **Setting the `TextField`**
 
-```
-Cost for Written By Wolves is £39.98 
-```
+  ```kt
+  CalculateCostButton(selectedBand, ticketCount) { totalCost = it }
+  ...
+  CostDisplay(totalCost)
+  ...
+  @Composable
+  fun CostDisplay(totalCost: String) {
+      Text(
+          text = totalCost, fontSize = 20.sp, color = Color.Black,
+          modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center
+      )
+  }
+  ```
+
+  </div>
