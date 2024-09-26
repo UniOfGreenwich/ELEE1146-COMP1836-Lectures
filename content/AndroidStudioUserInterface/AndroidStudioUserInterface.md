@@ -45,16 +45,20 @@ math: true
 - Designing apps is like constructing a building
 - **The Big Picture**
  - Follow these steps:
-   - Create the user interface (XML layout) for every screen
+   - JetPack Composeable elements
    - Create an Activity (Kotlin class) for every screen
    - Code each Kotlin class with appropriate objects and actions
    - Test the application in the emulator
 
 ---
 
+<div align=center>
+
 ## Designing an Android App
 
-![center](../../figures/finishedBruschetta.png)
+</div>
+
+![bg right:60% 70% center](../../figures/finishedHealthyRecipes.png)
 
 ---
 
@@ -63,7 +67,7 @@ math: true
 - The interface is a window on the screen of any mobile device
 - Android apps run on various **form factors** such as smartphones, smart watches, tablets, televisions, etc. 
   Form factor refers to the screen size, configuration, or physical layout of a device
-- The layout is designed with XML code Special Android-formatted XML code is extremely compact
+- The layout is designed with the Composable class
 
 ---
 ## Resources: String
@@ -78,41 +82,35 @@ math: true
 ```
 ---
 
-## Constraint Layout – the Default Layout 
+<iv align=center>
 
-- Allows you to create large and complex layouts with a flat view hierarchy (no nested view groups)
-- Similar to **Relative Layout** in that all views are laid out according to the relationship between sibling views and the parent layout
-- It is more flexible than the Relative Layout and easier to use with Android Studio’s Layout Editor
-- In this layout, you add at least one horizontal and one vertical constraint for each view
-- Each constraint represents a connection or alignment to another view, the parent layout, or an invisible guideline
+## Compose Layouts
 
----
-##  Constraint Layout
+</div>
 
-![bg right:50% h:600](../../figures/constraintLayout.png)
+![bg right:50% 100%](../../figures/columns_rows_boxes.png)
+![center](../../figures/rows_cols_boxes.jfif)
 
 ---
 
-## Relative Layout
+<div align=center>
 
-- A **Relative Layout** organizes layout components in relation with each other
-- Provides more flexibility in 
-positioning than Linear layouts
-- Must be changed from the constraint 
-default 
+## Columns 
 
-![bg right:50% 180%](../../figures/relativeLayout.png)
+</div>
 
+
+![bg right:70% 50%](../../figures/column_compose.gif) 
 
 ---
 
-## Linear Layout
+<div align=center>
 
-- A **Linear Layout** organizes layout components in a vertical column or horizontal row
-- Objects are placed  directly below each other 
-- Can be switched from vertical to horizontal orientation
+## Rows
 
-![bg right:50% 180%](../../figures/linearLayout.png)
+</div>
+
+![bg right:70% 100%](../../figures/row_compose.gif)
 
 ---
 
@@ -162,7 +160,6 @@ The preferred unit of measurement is often `sp`, which stands for scaled-indepen
 - An **Activity** is one of the core components of an Android application
 - Each screen is considered an **activity**
   - The point at which the application makes contact with users
-  - Constructed using XML layout files and a Java class
 - Planning a program
   1. Gather and analyze the program requirements
   2. Design the user interface
@@ -205,54 +202,78 @@ The preferred unit of measurement is often `sp`, which stands for scaled-indepen
 - A **method** is a set of Kotlin statements that can be included inside a Kotlin class to perform specific tasks
 - The **method body** contains a collection of statements that define what the method does.
 - Coding an `onCreate` Method
-- Requires corresponding `setContentView` Kotlin code to display a specific screen
+- Requires corresponding `setContent` Kotlin code to display a specific screen
 
 ```kt
-override fun onCreate(Bundle savedInstanceState : Bundle?){
-    super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
-}
+override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+          ...
+        }
+    }
 ```
 
 ---
 
-## Kotlin: Creating Button Event Handler
+## Moving between composables
 
-- An **event handler** is part of a program coded to respond to a specific event
-- Tapping the button is called a click event
-- Kotlin code must contain the following sections
-    - Class property to hold a reference to the Button object
-`button : Button = findViewbyId(R.id.button)`
-  
-- `button : Button = findViewbyId(R.id.button)`
-  - `setOnClickListener{}` method to await the button click action
-  - `setOnClick{}` method to respond to the click event
+`NavController`: Handles the app's navigation and manages the back stack of composable screens.
+`NavHost`: Hosts the navigation graph, specifying the composable destinations.
 
+```kt
+val navController = rememberNavController()
+NavHost(
+    navController = navController,
+    startDestination = "home"
+) {
+    composable("home") { HomeScreen(navController) }
+    composable("details") { DetailsScreen(navController) }
+}
+
+```
+
+![bg right:40% 100%](../../figures/navHost.png)
 
 ---
 
-## Kotlin
+## @Composable and composable
 
-```kt
-class MainActivity : ActionBarActivity {
-  override fun onCreate(Bundle savedInstanceState : Bundle?){
-    super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
-    
-    button : Button = findViewById(R.id.btnRecipe)
-    
-    button.setOnClickListener{
+- `@Composable`: This is an annotation used to mark a function as composable. It tells the compiler that this function can be used in the UI hierarchy to build the UI in a declarative way. Any function marked with @Composable can define part of the UI.
 
-      val intent = Intent(this, Recipe::class.java)
-        
-      // start your next activity
-      startActivity(intent)
-    }  
+  ```kt
+  @Composable
+  fun MyScreen() {
+      Text("Hello")
   }
-}
-```
+  ```
+
+- `composable()`: This is a function used within a NavHost to declare a navigation destination. It defines which composable function should be rendered when a user navigates to that destination.
+
+  ```kt
+  NavHost(navController, startDestination = "home") {
+      composable("home") { HomeScreen() }
+  }
+  ```
+<!--
+@Composable defines UI components.
+composable() defines navigation destinations
+-->
 ---
 
+## Resources
+
+In Android Studio, resources (like `strings`, `layouts`, `drawables`, etc.) are referenced numerically because of how they are handled in the underlying Android system for efficiency and performance.
+
+- **Efficiency/Performance**: The Android build system compiles all resources into a single class (R.java or R.kt) where each resource is assigned a unique integer identifier. Using integers for referencing resources allows for faster lookup during runtime compared to using text-based identifiers.
+
+- **Naming Convention**: "File-based resource names must contain only lowercase a-z, 0-9, or underscore... must not start with a number" - source the Compiler
+
+  ```kt
+  avocado_toast_1.png // Acceptable
+  1_Avocado-toast.png // Not Acceptable
+  ```
+
+---
 ## Now do the lab!
 
 ![w:1000 center](https://imgs.xkcd.com/comics/academia_vs_business.png)
