@@ -65,15 +65,15 @@ The Launcher Icon allows you to view which apps are available
 
 ---
 
-## Radio Buttons and RadioGroups Controls
+## Switch Components
 
-[Documentation for Radio\<controls\>](https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary#RadioButton(kotlin.Boolean,kotlin.Function0,androidx.compose.ui.Modifier,kotlin.Boolean,androidx.compose.material3.RadioButtonColors,androidx.compose.foundation.interaction.MutableInteractionSource))
+[Documentation for switch\<controls\>](https://developer.android.com/develop/ui/compose/components/switch)
 
-- Radio buttons allow users to select one option from a set.
+- Switch components allow users to select one option from a set.
   - Can be arranged horizontally or vertically (by default)
   - Has a label defined by the text property
   - Can be initially set to checked or unchecked
-  - Only one `RadioButton` in the group can be selected at a time
+  - Only one `switch` in the group can be selected at a time
   - Good to offer a default selection (checked == `true`) for the option that is used most
 
 ---
@@ -96,12 +96,12 @@ The Launcher Icon allows you to view which apps are available
 
 ---
 
-## Coding a `RadioButton` Control
+## Coding a `Switch` Control
 
 ![center](../../figures/radioButtonExample.png)
 
 ```kt
-Text("Input Mass Unit")
+ Text("Input Mass Unit")
 Row {
     RadioButton(selected = inputMassUnit == "kg", onClick = { inputMassUnit = "kg" })
     Text("Kilograms")
@@ -262,7 +262,7 @@ Row {
   - It is raining outside. Take your umbrella.
 Flowchart
 
-![center](../../figures/rainingSelection.png)
+![center w:550](../../figures/rainingSelection.png)
 
 ---
 
@@ -292,7 +292,7 @@ if ( dayOfTheWeek > 5 )
 - **Example**
   - If you are hungry - go for lunch, otherwise take a cup of coffee. 
 - **Flowchart**
-![center](../../figures/hungry.png)
+![center w:550](../../figures/hungry.png)
 
 ---
 ## The `if/else` Statement Examples
