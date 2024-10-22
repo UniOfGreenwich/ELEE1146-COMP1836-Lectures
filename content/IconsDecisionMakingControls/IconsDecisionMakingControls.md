@@ -41,7 +41,7 @@ math: true
 ---
 <div align=center>
 
-## The Medical Calculator App
+## The Mass Convertor App
 
 ![bg right:50% 50%](../../figures/completedMassApp.png)
 
