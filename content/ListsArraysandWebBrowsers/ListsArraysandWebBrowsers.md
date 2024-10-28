@@ -41,24 +41,46 @@ math: true
 ---
 
 
-## Creating a List
+## Lazy lists
 
-- Lists are one of the most common designs in mobile apps
-  - Scrollable
-  - Selectable 
-  - Programmable to bring up the next Activity (screen)
+- `column` and `row` are good for a known length of items, generally of size less than 10 
+  - Performance issues aas all items are composed and laid out despite not being in view!
 
-![bg right:40% 60%](../../figures/recyclerviewcontrol1.png)
+- LazyColumn & LazyRow
+  - Dynamic or larger number of items, as only items in components viewport are composed.
 
----
-
-## Extending a `RecyclerView`
-
-- A RecyclerView class is needed to display a list of items
-
-![bg right:40% 100%](../../figures/recycleView.png)
+![bg right:50% 40%](../../figures/ListItem.png)
 
 ---
+
+## Example LazyColumn
+
+```kt
+
+@Composable
+fun ItemList(items: List<String>, onItemClick: (Int) -> Unit){
+    LazyColumn {
+        itemsIndexed(items){index, item ->
+            ListItem(item = item, onClick = {onItemClick(index)})
+        }
+    }
+}
+
+@Composable
+fun ListItem(item: String, onClick: () -> Unit){
+
+    Row (...){
+        Spacer(modifier = Modifier.width(8.dp))
+        Image( ... )
+        Spacer(modifier = Modifier.width(8.dp))
+        Text( ... )
+    }
+}
+```
+
+![bg right:30% 60%](../../figures/ListItem.png)
+
+--- 
 
 ## Creating an Array 
 - Array variables can store more than one value
@@ -90,14 +112,14 @@ math: true
 Code Syntax:
 
 ```kt
-private val attractions = arrayOf("Greenwich - Medway","Great Lines",
+val attractions = arrayOf("Greenwich - Medway","Great Lines",
         "HMS Gannet","Rochester Cathedral","Fort Amherst")
 ```
 
 or
 
 ```kt
-private val attractions = Array<String?>(5){"Greenwich - Medway";"Great Lines",
+val attractions = Array<String?>(5){"Greenwich - Medway";"Great Lines",
         "HMS Gannet";"Rochester Cathedral";"Fort Amherst"}
 ```
 
@@ -260,28 +282,6 @@ for (i in a.indices) {​
 
 ---
 
-## Using a setListAdapter and Array Adapter
-
-- You **must** create your own `adapter` class for a `RecyclerView` in Kotlin for Android Studio because the `adapter` is responsible for mapping your data to the `views` in the `RecyclerView`. 
-
-- The `adapter` also creates and reuses the view holders that hold the views for each item in the list. 
-
-- By creating a custom adapter, you can define how your data is displayed and how it behaves when the user interacts with it.
-
-```kt
-internal class CustomAdapter(
-    private var itemsList: List<String>,
-    private val itemClickListener: OnItemClickListener ) : RecyclerView.Adapter<CustomAdapter.MyViewHolder>() {
-    internal inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var itemTextView: TextView = view.findViewById(R.id.itemTextView)
-    }
-```
-<!--
-the internal modifier is used to restrict the visibility of a class, function, property, or other declarations to within the same module. A module, in this context, is typically defined as a group of Kotlin files compiled together. In other words, elements marked as internal can only be accessed within the same module.
--->
-
----
-
 ## KDoc 1
 - Kotlin Documentation (**KDoc**), is a documentation format for adding comments and documentation to your Kotlin code. 
 - easily consumed by developers and tools. 
@@ -427,40 +427,6 @@ when (position) {
 
 ![bg left:50% 100%](../../figures/classfiles.png)
 
----
-## Classes and Acivities
-
-- **Class** 
-- A class is a combination of methods, variables and data types. Every Kotlin or Android project must have at least one class.
-
-```kt
-class Shape {
-    fun circle() {
-        var A: Int
-        var B: Int
-        var radias: Int
-    }
-}
-```
----
-
-- **Activity** 
-
-- In the Activity example, we import the `android.app.Activity` package and extend the `Activity` class.
-
-```kt
-// Activity
-import android.app.Activity
-
-class Shape : Activity() {
-    fun circle() {
-        var A: Int
-        var B: Int
-        var radias: Int
-    }
-}
-
-```
 ---
 
 ## Activity 
