@@ -32,9 +32,9 @@ math: true
 
 # Introduction To Kotlin
 
-    Course Code: ELEE1146 and COMP1836
+    Course Code: ELEE1146 
 
-    Course Name: Mobile Applications for Engineers/Technologists
+    Course Name: Mobile Applications for Engineers
 
     Credits: 15
 

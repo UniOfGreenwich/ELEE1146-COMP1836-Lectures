@@ -23,7 +23,7 @@ math: true
 
     Course Code: ELEE1119 & COMP1836
     
-    Course Name: Mobile Applications for Engineers/Technologists
+    Course Name: Mobile Applications for Engineers
 
     Credits: 15
 
@@ -91,7 +91,7 @@ Learning and teaching will be by a combination of:
 
 ---
 
-## Assessments ELEE1146 and COMP1836
+## Assessments ELEE1146 
 Remember this is a level five module it is more technical than level 4.
 
 1. Report 

@@ -31,7 +31,7 @@ math: true
 
     Module Code: ELEE1149 -COMP1836
     
-    Module Name: Mobile Applications for <Engineering/Technologists>
+    Module Name: Mobile Applications for <Engineering>
 
 
 ![bg right:40% 100%](../../figures/Workshop.PNG)
