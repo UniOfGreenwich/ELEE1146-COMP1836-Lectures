@@ -158,46 +158,9 @@ val attractions = Array<String?>(5){"Greenwich - Medway";"Great Lines",
 - **Initialization**
   - `var arrayName = arrayOf(value1, value2, … , valueN)`
 
-
-
 ---
 
-## Array [3]
-
-Example 1:
-```kt
-var c: Array<Int> // declares the array
-c = Array(8) { 0 } // allocates the memory
-```
-
-
-Example 2:
-```kt
-// declares the array and allocates memory for its elements
-var b = Array(100) { 0.0 }
-var s = Array(5) { "" }
-
-```
-
----
-
-## Arrays [4]
-
-- Combining declaration and initialisation
-
-```kt 
-val daysOfTheWeek = arrayOf("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
-
-```
-
-- `arrayName.size` = the number of the elements in the array
-```kt
-val length = daysOfTheWeek.size // length = 7
-```
-
----
-
-## Arrays [5] - Initialisation
+## Arrays [3] - Initialisation
 
 - In the declaration
   ```kt
@@ -218,7 +181,7 @@ val length = daysOfTheWeek.size // length = 7
   ```
 ---
 
-## Arrays [6] - Examples
+## Arrays [4] - Examples
 
 ```kt
 fun main() {
@@ -237,48 +200,23 @@ fun main() {
 ```
 ---
 
-## Princple of Locality
+## Lists
 
-Programs tend to use data and instructions with addresses near or equal to those they have used recently​
+- The default implementation (List) is **immutable**
+- Commonly used for collections of items where the number of elements does not change frequently
 
-​Temporal Locality: Recently referenced items are likely to be referenced again in the near future​
+  ```kt
+  val immutableList = listOf(1, 2, 3)
+  val mutableList = mutableListOf("mutable", "list", "of")
+  mutableList.add(4) // Mutable list can be modified
 
-<div align=center>
+  // Sacrifice type saftey
+  val mixedList: List<Any> = listOf(1, "Hello", 3.14, true)
+  val firstElement = mixedList[0] as Int
+  val secondElement = mixedList[1] as String
 
-![](../../figures/temp_local.png)
-
-</div>
-
-Spatial Locality: Items with nearby addresses tend to be referenced close together in time​
-
-<div align=center>
-
-![](../../figures/spatial_local.png)
-
-
-</div>
-
----
-
-## Locality Example
-
-```kt
-var sum : Int = 0​
-var a: Array<Int>
-a = Array(5) { 0 } 
-
-for (i in a.indices) {​
-  sum += a[i];​
-}
-```
-
-- Data
-  - Access array elements `a[i]` in succession – Spatial Locality ​
-  - Reference `sum` each iteration – Temporal Locality ​
-
-- Instructions​
-  - Reference instructions in sequence – Spatial Locality​
-  - Cycle through loop repeatedly - Temporal Locality​
+  fun ItemList(items: List<String>, onItemClick: (Int) -> Unit){ ...}
+  ```
 
 ---
 
@@ -382,17 +320,6 @@ if (extras != null) {
 }
 ```
 
-
----
-## Launching the Browser from an Android Device
-
-- The intent sends the browser a **URI** (Uniform  Resource Identifier)
-**URI** is similar to **URL** (Uniform Resource Locator) 
-
-- URI has additional information necessary for gaining access to the resources required for posting the page
-
-- The action called **ACTION_VIEW** (must be in caps) is what actually displays the page in the browser
-
 ---
 
 ## Launching the Browser from an Android Device (continued)
@@ -400,32 +327,12 @@ if (extras != null) {
 Code Syntax
 
 ```kt
-val intent = Intent(Intent.ACTION_VIEW)
-intent.data = Uri.parse("https://www.gre.ac.uk/about-us/campus/medway")
-// Start an activity to view the webpage
-startActivity(intent)
+val intent = Intent(Intent.ACTION_VIEW,Uri.parse("https://www.gre.ac.uk/about-us/campus/medway"))
+context.startActivity(intent)
 ```
 
-The `startActivity` code launches the University of Greenwich website when the user selects the first item in the list item.  Mobile friendly sites may display m.gre.ac.uk. Where the letter m denotes a mobile site that was launched automatically due to the platform of a mobile device.
+The `startActivity` code launches the University of Greenwich website when the user selects the first item in the list item.  Mobile friendly sites may display `m.gre.ac.uk`. Where the letter m denotes a mobile site that was launched automatically due to the platform of a mobile device.
 
-```java
-when (position) {
-            0 -> {
-                // Create an intent to view a webpage and set the URL to "https://www.gre.ac.uk/about-us/campus/medway"
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse("https://www.gre.ac.uk/about-us/campus/medway")
-                // Start an activity to view the webpage
-                startActivity(intent)
-            }
-```
-
----
-
-## Adding Multiple Class Files
-
-- Class Files are needed to display images on the screen when the user selects options
-
-![bg left:50% 100%](../../figures/classfiles.png)
 
 ---
 
