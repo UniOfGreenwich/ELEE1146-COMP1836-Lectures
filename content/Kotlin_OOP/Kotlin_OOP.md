@@ -950,3 +950,174 @@ fun main(args: Array<String>) {
 }
 ```
 -->
+
+
+
+
+## Method vs Function
+
+**Method**: a set of instructions that are associated with an object.
+```kt
+var s: String = "some string"
+
+s.toCharArray() 
+```
+
+**Function**: a set of instructions that perform a task.
+```kt
+fun concatName(firstName : String, middleName: String, lastName: String) : String {
+    return "$firstName $middleName $lastName"
+}
+
+val fullName : String = concatName("Marshall", "Bruce", "Mathers")
+```
+---
+
+## Function
+
+- **Function Definition** 
+  - Specifies what the method is doing and how to use it consists of method declaration and method body does not execute the statements specified in the method body!
+  
+-  **Function Invocation (Call)**
+   -  specifies how the method should be used (invoked, called) in another method
+actually executes the method statements with method arguments provided
+
+---
+
+## Function Definition
+
+- **Function Declaration contains:**
+  - access modifiers – optional
+  - return type - optional
+  - the method identifier 
+  - any legal identifier name (Camel case)
+    - method arguments (if present) enclosed in brackets  `(` and `)`
+    - even when the method have no arguments you must still keep the brackets
+
+- **Function Body:**
+  - Enclosed in braces `{` and `}`
+  - Consists of statements that specify what the method is doing
+
+---
+
+
+## Function Anatomy
+
+```
+FUNCTION HEADER
+<visibility modifiers>[fun keyword][function name]<(function parameters)><:return type>
+{
+  ...                  FUNCTION BODY
+  <return type>
+}
+```
+
+**Example**
+
+```kt
+private fun myFunction(s: String, n: Int) : Boolean
+{
+  ...
+  return Boolean
+}
+```
+
+---
+
+## Function Body Block
+
+<div style="font-size: 26px">
+
+- Function body is a block of code where declarations and/or statements are enclosed in 
+`{` and `}`.
+
+- If the Function returns a value, e.g. the method *returnValue* then the statement `return expression` should be present in the method body.
+  
+- The expression type in the `return` statement must be the same as the *returnType* – casting rules apply.
+
+</div >
+
+```kt
+private fun myFunction(s: String, n: Int) : Boolean
+{
+  if(s.toIntOrNull() != null && s.toIntOrNull() == n ){
+      return true
+  }
+  else {
+      return false
+  }
+}
+```
+---
+
+## Function Innvocation (to call)
+
+- **Function invocation (call)**
+  - Actually executes the statements in the body of the function
+  - `functionName` ( [argument list] )
+    - the values passed as arguments should have the same type as specified in the function declaration - casting rules 
+
+  ```kt
+  fun concatNameAndAge(firstName : String, middleName: String, lastName: String, age: Int) : String 
+  {
+      return "$firstName $middleName $lastName : $age:"
+  }
+
+  val fullName : String = concatName("Marshall", "Bruce", "Mathers", (25.0).toInt)
+  ```
+---
+
+
+## Function Innvocation 2
+
+- **Function definition**
+```kt
+fun assessment( assessmentOne: Byte, assessmentTwo: Byte ) : Double
+{
+    return ( (0.3 * assessmentOne) + (0.7 * assessmentTwo) )
+}
+``` 
+
+- **Function call**
+ 
+```kt
+print("Your module result is:  $assessment(45, 55))
+```
+<details>
+<summary>What will be displayed</summary>
+
+`The result of the assessment of the course is: 52.0`
+
+</summary>
+
+---
+
+
+## Function Innovation 3
+
+- **Function Definition**
+  ```kt
+  internal private fun printResult( s1 : String, i1 : Int, s2 : String, i2: Int )
+  {
+      println( "$s1 : $i1, $s2 : $i2");
+  }
+  ``` 
+
+  <!--
+  internal means that the declarations are visible inside the module only 
+  -->
+
+- **Function Call**
+
+  ```kt
+  printResult("First number", -25, "second number", 10);
+  ```
+
+  <details>
+  <summary>What will be displayed</summary>
+
+  `First number: -25, second number: 10`
+
+  </summary>
+
+---
