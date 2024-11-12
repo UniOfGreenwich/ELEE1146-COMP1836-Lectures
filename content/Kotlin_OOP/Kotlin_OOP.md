@@ -480,15 +480,15 @@ Data classes make your code much more concise!
 - Usually named data classes are a better option (more meaningful names for your use case)
 
 ```kt
-val bookAuthor = Pair("Harry Potter", "J.K. Rowling")
+val bookAuthor = Pair("Prox Transmissions", "Dustin Bates & Peter David")
 println(bookAuthor)
-=> (Harry Potter, J.K. Rowling)
+=> (Prox Transmissions, Dustin Bates & Peter David)
 
-val bookAuthorYear = Triple("Harry Potter", "J.K. Rowling", 1997)
+val bookAuthorYear = Triple("Prox Transmissions", "Dustin Bates & Peter David", 2017)
 println(bookAuthorYear)
 println(bookAuthorYear.third)
-=> (Harry Potter, J.K. Rowling, 1997)
-    1997
+=> (Prox Transmissions, Dustin Bates & Peter David, 2017)
+    2017
 ```
 ---
 
@@ -499,9 +499,9 @@ Pair's special to variant lets you omit parentheses and periods (infix function)
 More readable
 
 ```kt
-val bookAuth1 = "Harry Potter".to("J. K. Rowling")
-val bookAuth2 = "Harry Potter" to "J. K. Rowling"
-=> bookAuth1 and bookAuth2 are Pair (Harry Potter, J. K. Rowling)
+val bookAuth1 = "Prox Transmissions".to("Dustin Bates & Peter David")
+val bookAuth2 = "Prox Transmissions" to "Dustin Bates & Peter David"
+=> bookAuth1 and bookAuth2 are Pair (Prox Transmissions, Dustin Bates & Peter David)
 ```
 
 Also used in collections like Map and HashMap
@@ -558,6 +558,8 @@ println(PhysicsSystem.WorldConstants.gravity)
 println(PhysicsSystem.WorldConstants.computeForce(10.0, 10.0))
 => 9.8100.0
 ```
+
+
 ---
 
 ## Packages
@@ -576,8 +578,9 @@ println(PhysicsSystem.WorldConstants.computeForce(10.0, 10.0))
 
 ![w:1000 center](../../figures/class_heirarchy.png)
 
----
 
+<!--
+----
 ## Visibility modifiers
 
 Use visibility modifiers to limit what information you expose.
@@ -590,7 +593,7 @@ Use visibility modifiers to limit what information you expose.
 
 - `protected` is the same as `private`, but it will also be visible to any subclasses.
 
-<!--
+
 ## Encapsulation (1)
 
 - Any changes to the object's state (i.e. its variables) should be made only via that object's methods
@@ -949,7 +952,7 @@ fun main(args: Array<String>) {
     myCircle.area()
 }
 ```
--->
+-
 
 
 
@@ -1105,7 +1108,7 @@ print("Your module result is:  $assessment(45, 55))
 
   <!--
   internal means that the declarations are visible inside the module only 
-  -->
+  
 
 - **Function Call**
 
@@ -1121,3 +1124,4 @@ print("Your module result is:  $assessment(45, 55))
   </summary>
 
 ---
+-->
