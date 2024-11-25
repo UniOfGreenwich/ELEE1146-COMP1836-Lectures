@@ -21,6 +21,11 @@ style: |
       border: none!important;
       vertical-align: middle;
     }
+    section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+    }
+footer: ELEE1146 | Mobile Applications for Engineers
+auto-scaling: false
 size: 16:9
 paginate: true
 _paginate: false
@@ -28,6 +33,8 @@ marp: true
 math: true
 ---
 
+<!-- _footer: ""-->
+  
 # Android Lists Arrays and Web Browsers
 
     Course Code: ELEE1146 
@@ -43,11 +50,15 @@ math: true
 
 ## Lazy lists
 
+<div style="font-size:25px">
+
 - `column` and `row` are good for a known length of items, generally of size less than 10 
   - Performance issues aas all items are composed and laid out despite not being in view!
 
 - LazyColumn & LazyRow
   - Dynamic or larger number of items, as only items in components viewport are composed.
+
+</div>
 
 ![bg right:50% 40%](../../figures/ListItem.png)
 
@@ -221,10 +232,16 @@ fun main() {
 ---
 
 ## KDoc 1
+
+<div style="font-size:26px">
+
 - Kotlin Documentation (**KDoc**), is a documentation format for adding comments and documentation to your Kotlin code. 
 - easily consumed by developers and tools. 
 - These comments are written in a specific format and are used to describe classes, functions, properties, and other code elements. 
 - KDocs are processed by tools like Dokka to generate documentation in various formats, such as HTML or PDF.
+
+</div>
+
 ![bg right:40% 100%](../../figures/kdoc_example0.PNG)
 
 ---
@@ -272,7 +289,7 @@ fun divideNumbers(dividend: Int, divisor: Int): Int {
 
 ## KDoc 4
 
-![center w:700](../../figures/kdoc_example1.PNG)
+![center w:650](../../figures/kdoc_example1.PNG)
 
 ---
 
@@ -340,4 +357,4 @@ The `startActivity` code launches the University of Greenwich website when the u
 ## Life 
 ## Cycle
 
-![bg right:75% 100% ](../../figures/activityLifeCycle.svg)
+![bg right:69% 100% ](../../figures/activityLifeCycle.svg)

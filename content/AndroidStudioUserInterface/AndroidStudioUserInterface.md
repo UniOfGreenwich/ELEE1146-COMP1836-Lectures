@@ -21,6 +21,11 @@ style: |
       border: none!important;
       vertical-align: middle;
     }
+    section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+    }
+footer: ELEE1146 | Mobile Applications for Engineers
+auto-scaling: false
 size: 16:9
 paginate: true
 _paginate: false
@@ -28,6 +33,8 @@ marp: true
 math: true
 ---
 
+<!-- _footer: ""-->
+  
 # Android Studio User Interface
 
     Course Code: ELEE1146 
@@ -100,7 +107,7 @@ math: true
 </div>
 
 
-![bg right:70% 50%](../../figures/column_compose.gif) 
+![bg right:65% 50%](../../figures/column_compose.gif) 
 
 ---
 
@@ -110,7 +117,7 @@ math: true
 
 </div>
 
-![bg right:70% 100%](../../figures/row_compose.gif)
+![bg right:65% 100%](../../figures/row_compose.gif)
 
 ---
 
@@ -193,7 +200,7 @@ The preferred unit of measurement is often `sp`, which stands for scaled-indepen
 
 ## The Android Manifest File
 
-![center](../../figures/androidManifestFile.png)
+![center w:990](../../figures/androidManifestFile.png)
 
 ---
 
@@ -238,6 +245,8 @@ NavHost(
 
 ## @Composable and composable
 
+<div style="font-size:27px">
+
 - `@Composable`: This is an annotation used to mark a function as composable. It tells the compiler that this function can be used in the UI hierarchy to build the UI in a declarative way. Any function marked with @Composable can define part of the UI.
 
   ```kt
@@ -258,6 +267,9 @@ NavHost(
 @Composable defines UI components.
 composable() defines navigation destinations
 -->
+
+</div>
+
 ---
 
 ## Resources

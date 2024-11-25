@@ -21,12 +21,18 @@ style: |
       border: none!important;
       vertical-align: middle;
     }
-size: 16:9
+    section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+    }
+footer: ELEE1146 | Mobile Applications for Engineers
+auto-scaling: false
 paginate: true
 _paginate: false
 marp: true
 math: true
 ---
+
+<!-- _footer: ""-->
 
 # Object Orientated Programming
 
@@ -258,6 +264,9 @@ class Circle {
 
 
 - Secondary constructor body is not required
+
+<div style="font-size:22px">
+
 ```kt
 class Circle(val radius:Double) {
     constructor(name:String) : this(1.0)
@@ -270,6 +279,8 @@ class Circle(val radius:Double) {
 }
 val c = Circle(3)
 ```
+
+</div>
 
 <!--
 In the Circle class, we have a primary constructor (that takes a double radius value as input) and 2 secondary constructors. 
@@ -363,6 +374,9 @@ person.fullName = "Marshall Mathers"
 
 - Can derive from other interfaces 
 
+<div style="font-size:22px">
+
+
 ```kt
 interface Shape {
     fun computeArea() : Double
@@ -376,6 +390,9 @@ val c = Circle(3.0)
 println(c.computeArea())
 => 28.274333882308138
 ```
+
+</div>
+
 ---
 
 ## Extending Classes
@@ -479,6 +496,8 @@ Data classes make your code much more concise!
 
 - Usually named data classes are a better option (more meaningful names for your use case)
 
+<div style="font-size:24px">
+
 ```kt
 val bookAuthor = Pair("Prox Transmissions", "Dustin Bates & Peter David")
 println(bookAuthor)
@@ -490,6 +509,9 @@ println(bookAuthorYear.third)
 => (Prox Transmissions, Dustin Bates & Peter David, 2017)
     2017
 ```
+
+</div>
+
 ---
 
 ## Pair to.. 
@@ -544,6 +566,8 @@ println("" + Color.RED.r + " " + Color.GREEN.g + " " + Color.BLUE.b)
 
 - Referenced via `ClassName.PropertyOrFunction` 
 
+<div style="font-size:24px">
+
 ```kt
 class PhysicsSystem {
     companion object WorldConstants {
@@ -559,6 +583,7 @@ println(PhysicsSystem.WorldConstants.computeForce(10.0, 10.0))
 => 9.8100.0
 ```
 
+</div>
 
 ---
 

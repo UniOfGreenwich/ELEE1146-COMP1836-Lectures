@@ -20,7 +20,11 @@ style: |
     table, th,tr, td {
       border: none!important;
       vertical-align: middle;
+    }    section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
     }
+footer: ELEE1146 | Mobile Applications for Engineers
+auto-scaling: false
 size: 16:9
 paginate: true
 _paginate: false
@@ -28,6 +32,8 @@ marp: true
 math: true
 ---
 
+<!-- _footer: ""-->
+  
 # XML
 
     Course Code: ELEE1146 
@@ -286,6 +292,8 @@ An XML document is made up of:
 - The XML Declaration
 - The Document Type Declaration (DTD)
 
+<div style="font-size:26px">
+
 ```xml
 <?xml version = "1.0" encoding = "UTF-8"?>
 
@@ -298,6 +306,8 @@ An XML document is made up of:
 ]> 
 
 ```
+
+</div>
 
 ---
 
@@ -328,6 +338,8 @@ An XML document is made up of:
 
 ## Processing Instructions, Comments, Entities
 
+<div style="font-size:28px">
+
 - **Processing instructions** are instructions which are passed on to applications processing the document. 
 
 - Processing instructions are enclosed in tags which begin with `<?` and end with `?>`
@@ -340,6 +352,8 @@ An XML document is made up of:
     - `&gt;` (>), 
     - `&quot;` ("), 
     - `&apos;` ('), 
+
+</div>
 
 ---
 
@@ -514,6 +528,8 @@ EmpRecord:
 
 ## XML Adv and Disadv
 
+<div style="font-size:25px">
+
 **Advantages of XML**
 
 - XML is a generalized language that easily allows different formats to be realized from a common syntax.
@@ -529,6 +545,8 @@ EmpRecord:
 - Higher verbosity increases storage capacity and bandwidth needs.
 
 - Not considered easily human-readable due to the descriptive nature of elements.
+
+</div>
 
 --- 
 
@@ -549,6 +567,8 @@ EmpRecord:
 
 ## YAML Adv and Disadv
 
+<div style="font-size:27px">
+
 **Advantages of YAML**
 - Exceptionally human-readable syntax.
 - Compact syntax, which uses Python-style indentation to denote structure.
@@ -559,3 +579,5 @@ EmpRecord:
 - Portability with certain types may not exist due to a lack of features across all languages.
 - Debugging is difficult, due to the declarative nature of YAML.
 - Breakpoints and similar functionality do not exist.
+
+</div>

@@ -21,12 +21,19 @@ style: |
       border: none!important;
       vertical-align: middle;
     }
+    section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+    }
+footer: ELEE1146 | Mobile Applications for Engineers
+auto-scaling: false
 size: 16:9
 paginate: true
 _paginate: false
 marp: true
 math: true
 ---
+
+<!-- _footer: ""-->
 
 # Icons Decision Making Controls Pt1
 
@@ -51,6 +58,8 @@ math: true
 
 ## Launcher Icons
 
+<div style="font-size:27px">
+
 The Launcher Icon allows you to view which apps are available
 
 - An icon is a graphic that takes up a small portion of screen space and provides a quick, intuitive representation of an app
@@ -60,6 +69,8 @@ The Launcher Icon allows you to view which apps are available
 - Icons can establish brand identity 
 - Icon dimensions are 48 X 48 pixels 
 - The prefix ic_launcher is used to name launcher icons for Android apps. 
+
+</div>
 
 ![bg right:30% 100%](../../figures/icons.png)
 
@@ -242,6 +253,8 @@ Row {
 
 ## Selection Statements
 
+<div style="font-size:27px">
+
 - A **selection statement** lets us choose which statement will be executed next
 - Selection statements are sometimes called **conditional statements**
 - Selection statements give us the power to make decisions and branch the program execution
@@ -252,6 +265,8 @@ Row {
   - the `if/else` statement 
 - Multiple Selection 
   - the `when` statement 
+
+</div>
 
 ---
 

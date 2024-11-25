@@ -12,6 +12,11 @@ style: |
     table{
       font-size: 18 px;
     }
+    section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+    }
+footer: ELEE1146 | Mobile Applications for Engineers
+auto-scaling: false
 size: 16:9
 paginate: true
 _paginate: false
@@ -19,11 +24,13 @@ marp: true
 math: true
 ---
 
+<!-- _footer: ""-->
+   
 # Introduction to the Module
 
-    Course Code: ELEE1119 & COMP1836
+    Module Code: ELEE1146
     
-    Course Name: Mobile Applications for Engineers
+    Module Name: Mobile Applications for Engineers
 
     Credits: 15
 

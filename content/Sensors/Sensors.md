@@ -21,6 +21,11 @@ style: |
       border: none!important;
       vertical-align: middle;
     }
+    section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+    }
+footer: ELEE1146 | Mobile Applications for Engineers
+auto-scaling: false
 size: 16:9
 paginate: true
 _paginate: false
@@ -28,6 +33,8 @@ marp: true
 math: true
 ---
 
+<!-- _footer: ""-->
+  
 # Sensors
 
     Course Code: ELEE1146 
@@ -91,6 +98,8 @@ The source code is written in `C` and sits on the Linux Kernel that has been mod
 
 ## Motion Sensors
 
+<div style="font-size:27px">
+
 The sensors' possible architectures vary by sensor type:
 
 - **Software/Hardware**  
@@ -104,6 +113,8 @@ The sensors' possible architectures vary by sensor type:
 - **Hardware** **Only**
   - accelerometer 
   - gyroscope
+
+</div>
 
 ---
 

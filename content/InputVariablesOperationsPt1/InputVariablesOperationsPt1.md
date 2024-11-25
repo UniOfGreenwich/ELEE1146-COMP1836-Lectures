@@ -21,6 +21,11 @@ style: |
       border: none!important;
       vertical-align: middle;
     }
+    section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+    }
+footer: ELEE1146 | Mobile Applications for Engineers
+auto-scaling: false
 size: 16:9
 paginate: true
 _paginate: false
@@ -28,6 +33,8 @@ marp: true
 math: true
 ---
 
+<!-- _footer: ""-->
+  
 # Input Variables Operations Pt1
 
     Course Code: ELEE1146 
@@ -48,6 +55,8 @@ math: true
 
 ## Android Themes
 
+<div style="font-size:26px">
+
 - A **theme** is a style applied to an Activity or an entire application
     - Themes are Android’s mechanism for applying a consistent style to an app or Activity
     - The style specifies the visual properties of the elements that make up a user interface, such as colour, height, padding, and font size
@@ -55,6 +64,8 @@ math: true
     - Some themes display a background depending on the size of the mobile device
   - You can preview themes in the emulator in `activity_main.xml`
   - By changing the theme in the emulator in `activity_main.xml` file, you can preview what the theme looks like, but to change it permanently in the application, you must define the themes in the `themes.xml` file within the values subfolder of the Activity
+
+</div>
 
 ---
 

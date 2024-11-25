@@ -21,6 +21,11 @@ style: |
       border: none!important;
       vertical-align: middle;
     }
+    section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+    }
+footer: ELEE1146 | Mobile Applications for Engineers
+auto-scaling: false
 size: 16:9
 paginate: true
 _paginate: false
@@ -28,6 +33,8 @@ marp: true
 math: true
 ---
 
+<!-- _footer: ""-->
+  
 # Sensors 2
 
     Course Code: ELEE1146 
@@ -43,6 +50,8 @@ math: true
 ## Activity Lifecycle
 ![bg right:50% 80%](../../figures/activoityLifeCycle.png)
 
+<div style="font-size:26px">
+
 To navigate transitions between stages of the activity lifecycle, the `Activity` class provides a core set of six callbacks: 
 - `onCreate()`, 
 - `onStart()`, 
@@ -53,26 +62,34 @@ To navigate transitions between stages of the activity lifecycle, the `Activity`
 
  The system invokes each of these callbacks as an activity enters a new state.
 
+</div>
+
  ---
 
 ## `onCreate()`
+
+<div style="font-size:25px">
 
 - basic application startup logic
   -  that should happen only once for the entire life of the activity. 
   -  bind data to lists, associate the activity with a `ViewModel`, and instantiate some class-scope variables. 
 - This method receives the parameter `savedInstanceState`, which is a `Bundle` object containing the activity's **previously** saved state. If the activity has never existed before, the value of the `Bundle` object is `null`.
 
-```java
-String gameState;
-@Override
-public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    if (savedInstanceState != null) {
-        gameState = savedInstanceState.getString(GAME_STATE_KEY);
-    }
-    setContentView(R.layout.main_activity);
-    ...
-```
+  <div style="font-size:22px">
+
+  ```java
+  String gameState;
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      if (savedInstanceState != null) {
+          gameState = savedInstanceState.getString(GAME_STATE_KEY);
+      }
+      setContentView(R.layout.main_activity);
+      ...
+  ```
+  </div>
+</div>
 
 ---
 
@@ -97,11 +114,15 @@ After the `onCreate()` method finishes execution, the activity enters the Starte
 
 ## `onPause()`
 
+<div style="font-size:25px">
+
 - system calls this method as the first indication that the user is leaving your activity (though it **does not** always mean the activity is being `destroyed`)
 - the activity is no longer in the foreground (though it may still be visible if the user is in multi-window mode)
 - Use the `onPause()` method to pause or adjust operations that should not continue (or should continue in moderation) while the Activity is in the `Paused` state, and that you expect to resume shortly.
 - use the `onPause()` method to release system resources, handles to sensors (like GPS), or any resources that may affect battery life while your activity is paused and the user does not need them.
 > a Paused activity may still be fully visible if in multi-window mode. As such, you should consider using `onStop()` instead of `onPause()` to fully release or adjust UI-related resources and operations to better support multi-window mode
+
+</div>
 
 ---
 
@@ -130,7 +151,7 @@ After the `onCreate()` method finishes execution, the activity enters the Starte
 
 ## Sensors - Emulator Extended Controls
 
-![center](https://i.stack.imgur.com/G2DK6.gif)
+![center w:700](https://i.stack.imgur.com/G2DK6.gif)
 
 ---
 

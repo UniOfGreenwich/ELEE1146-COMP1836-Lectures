@@ -22,6 +22,11 @@ style: |
       vertical-align: middle;
     }
     @import url(../utilities.css);
+    section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+    }
+footer: ELEE1146 | Mobile Applications for Engineers
+auto-scaling: false
 size: 16:9
 paginate: true
 _paginate: false
@@ -29,11 +34,13 @@ marp: true
 math: true
 ---
 
+<!-- _footer: ""-->
+  
 # Splash Screens 
 
-    Course Code: ELEE1146 
+    Module Code: ELEE1146 
 
-    Course Name: Mobile Applications for Engineers
+    Module Name: Mobile Applications for Engineers
 
     Credits: 15
 
@@ -42,6 +49,8 @@ math: true
 ---
 
 ## Bootsplash
+
+<div style="font-size:26px">
 
 - AKA bootscreen
 - Graphical representation Boot process of the OS
@@ -52,6 +61,8 @@ math: true
 ![bg right:50% 100% vertical](https://upload.wikimedia.org/wikipedia/commons/8/88/Ubuntu_9.4_Bootsplash.png)
 
 ![bg right:50% 100% vertical](https://upload.wikimedia.org/wikipedia/commons/9/97/Windows_8_booting.png)
+
+</div>
 
 ---
 
@@ -66,8 +77,12 @@ math: true
 
 ## Loading Screen
 
+<div style="font-size:25px">
+
 -  is a screen shown by a computer program, very often a video game, while the program is loading (moving program data from the disk to RAM) or initialising.
 -  Some loading screens display a progress bar or a timer countdown to show how much data has actually loaded. Others, recently, are not even a picture at all, and are a small video or have parts animated in real-time.
+
+</div>
 
 ![bg right:50% 100%](../../figures/splashAnimationBars.gif)
 

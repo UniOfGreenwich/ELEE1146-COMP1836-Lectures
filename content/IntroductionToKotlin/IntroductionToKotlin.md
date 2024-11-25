@@ -22,14 +22,20 @@ style: |
       vertical-align: middle;
     }
     @import url('https://unpkg.com/tailwindcss@^2/dist/utilities.min.css');
+    section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+    }
+footer: ELEE1146 | Mobile Applications for Engineers
+auto-scaling: false
 size: 16:9
 paginate: true
 _paginate: false
 marp: true
 math: true
-
 ---
 
+<!-- _footer: ""-->
+  
 # Introduction To Kotlin
 
     Course Code: ELEE1146 
@@ -155,6 +161,8 @@ math: true
 
 ## Mutable vs Immutable
 
+<div style="font-size:27px">
+
 Two mandatory keywords that must be declared for any variable:
 
 - `val`
@@ -172,6 +180,8 @@ Two mandatory keywords that must be declared for any variable:
     ```kt
     var name : String = "Kotlin" //  var(iable) means mutable
     ```
+
+</div>
 
 ---
 
@@ -289,6 +299,8 @@ x = 10
 
 ## Kotlin Conditionals
 
+<div style="font-size:27px">
+
 Conditionals use the keywords; `if`, `else if` and `else`
 ```kt
 var x = 10
@@ -309,6 +321,9 @@ val message = if (x > 5) {
 println(message)
 
 ```
+
+</div>
+
 ---
 
 ## Kotlin Compilation

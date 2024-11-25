@@ -21,6 +21,11 @@ style: |
       border: none!important;
       vertical-align: middle;
     }
+    section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+    }
+footer: ELEE1146 | Mobile Applications for Engineers
+auto-scaling: false
 size: 16:9
 paginate: true
 _paginate: false
@@ -28,6 +33,8 @@ marp: true
 math: true
 ---
 
+<!-- _footer: ""-->
+  
 # Development Kits
 
     Course Code: ELEE1146 
@@ -164,7 +171,7 @@ or even cause apps to be banned from Google Play or the App Store
 
 - Used for developing drivers
 
-![bg right:50% 80%](https://www.usefullcode.net/2006/12/02/ddk01-thumb.gif)
+![bg right:50% 80%](https://opengraph.githubassets.com/fba5d0165777caccf1aeeb08e96361dfcace8b170bc85b6b336dfb9a536fceee/microsoft/Windows-driver-samples)
 ![bg right:50% 70% vertical](https://sysprogs.com/legacy/articles/visualddk/firstdriver/unload.png)
 
 ---
@@ -173,6 +180,7 @@ or even cause apps to be banned from Google Play or the App Store
 
 ![bg right:30% 100%](https://miro.medium.com/v2/resize:fit:720/0*lh-qVjpSpQtrsGqz)
 
+<div style="font-size:28px">
 
 1. **Initial Creation and ramp-up time**
    -  you will have to build a CI/CD pipeline end-to-end
@@ -183,6 +191,9 @@ or even cause apps to be banned from Google Play or the App Store
 
 3. **Release management**
    - You have track each change... 5 different languages, 10 updates... 50 versions of SDK
+
+</div>
+
 <!--
 1.
    -  generating or writing the code, 

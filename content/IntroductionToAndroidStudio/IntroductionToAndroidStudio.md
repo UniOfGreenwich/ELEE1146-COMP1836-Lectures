@@ -21,6 +21,11 @@ style: |
       border: none!important;
       vertical-align: middle;
     }
+    section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+    }
+footer: ELEE1146 | Mobile Applications for Engineers
+auto-scaling: false
 size: 16:9
 paginate: true
 _paginate: false
@@ -28,6 +33,8 @@ marp: true
 math: true
 ---
 
+<!-- _footer: ""-->
+  
 # Introduction to Android Studio
 
     Course Code: ELEE1146 
@@ -109,6 +116,8 @@ math: true
 
 ## Emulator vs Simulator
 
+<div style="font-size:28px">
+
 - **Simulator**
   -  is designed to create an environment that contains all of the software variables and configurations that will exist in an app's actual production environment. 
 - **Emulator**
@@ -117,6 +126,8 @@ math: true
 - **Android Emulator**
   - Design, develop, prototype, and test Android apps without using a physical device
   - Mimics almost every feature of a real Android handset, except placing phone calls
+
+</div>
 
 ---
 
@@ -163,20 +174,20 @@ math: true
 
 ## Opening Android Studio to Create a New Project (cont’d)
 
-![w:800 center](../../figures/selectDefaultActivity.png)
+![w:750 center](../../figures/selectDefaultActivity.png)
 
 
 ---
 
 ## Opening Android Studio to Create a New Project (cont’d)
 
-![w:800 center](../../figures/emptyActivity.png)
+![w:750 center](../../figures/emptyActivity.png)
 
 ---
 
 ## Opening Android Studio to Create a New Project (cont’d)
 
-![w:1000 center](../../figures/projectView.png)
+![w:900 center](../../figures/projectView.png)
 
 ---
 
@@ -203,7 +214,7 @@ math: true
 
 ## Designing the App
 
-![w:1000 center](../../figures/projectView.png)
+![w:900 center](../../figures/projectView.png)
 
 ---
 
@@ -273,7 +284,7 @@ private fun HelloContent() {
 
 ## Modifying the Jetpack Compose UI Components
 
-![w:1000 center](../../figures/jetComposeUIModifications.png)
+![w:900 center](../../figures/jetComposeUIModifications.png)
 
 ---
 
@@ -320,7 +331,7 @@ fun HelloContent() {
 
 ## Modifying the Jetpack Compose UI Components
 
-![w:800 center](../../figures/interactiveModeComposable.gif)
+![w:780 center](../../figures/interactiveModeComposable.gif)
 
 
 ---
@@ -332,7 +343,7 @@ fun HelloContent() {
 
 - Click Device Manager on the menu and Create Virtual Device at the bottom of the screen 
 
-![bg right:50% 90% center](../../figures/avd.png)
+![bg right:50% 85% center](../../figures/avd.png)
 
 ---
 
@@ -348,7 +359,7 @@ fun HelloContent() {
 ---
 ## Downloading SDK
 
-![w:850 center](../../figures/downloadingSDK.png)
+![w:750 center](../../figures/downloadingSDK.png)
 
 ---
 ## The Virtual Device (Cont’d.)

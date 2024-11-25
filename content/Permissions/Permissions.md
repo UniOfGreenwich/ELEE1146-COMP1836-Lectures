@@ -21,6 +21,11 @@ style: |
       border: none!important;
       vertical-align: middle;
     }
+    section::after {
+    content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+    }
+footer: ELEE1146 | Mobile Applications for Engineers
+auto-scaling: false
 size: 16:9
 paginate: true
 _paginate: false
@@ -28,6 +33,8 @@ marp: true
 math: true
 ---
 
+<!-- _footer: ""-->
+   
 # Permissions
 
     Course Code: ELEE1146 
@@ -86,6 +93,8 @@ The Android permissions controller is a part of the Android operating system tha
 --- 
 ## Android permissions: dangerous or normal
 
+<div style="font-size:24px">
+
 The nine dangerous permission groups:
 
 - Body sensors
@@ -105,6 +114,8 @@ The nine dangerous permission groups:
 - Texting
 
 - Storage
+
+</div>
 
 ---
 ## Android permissions: dangerous or normal
@@ -164,6 +175,8 @@ Each of these dangerous permission groups contains multiple permissions, and app
 
 ## Location App
 
+<div style="font-size:27px">
+
 **Location** — Allows apps to access your approximate location `ACCESS_COARSE_LOCATION` (using cellular base stations and Wi-Fi hotspots) and exact location `ACCESS_FINE_LOCATION` (using GPS).
 
 - **The good:** Navigation apps help you get around, camera apps can geo-tag your photos so you know where they were taken, and shopping apps can estimate your address for delivery.
@@ -171,6 +184,8 @@ Each of these dangerous permission groups contains multiple permissions, and app
 - **The bad:** A malicious app can secretly track your location to build a profile on your daily habits and digital breadcrumbs, or even let dangerous hackers or thieves know when you’re not at home.
 
 ![bg right:30% 60%](https://signal.avg.com/hubfs/Blog_Content/Avg/Signal/AVG%20Signal%20Images/Guide%20to%20Android%20App%20Permissions%20and%20How%20to%20Use%20Them%20Smartly%20(Signal)%20-%20refresh/icon_05.svg)
+
+</div>
 
 ---
 
@@ -189,6 +204,8 @@ Each of these dangerous permission groups contains multiple permissions, and app
 
 ## Phone App
 
+<div style="font-size:27px">
+
 **Phone:**  `READ_PHONE_STATE` allows apps to know your phone number, current cellular network information, and ongoing call status. Apps can also `CALL_PHONE` and end calls, see who’s calling you,`READ_CALL_LOG` `WRITE_CALL_LOG`, `ADD_VOICEMAIL`, use VoIP `USE_SIP`, and even redirect calls to other numbers, `PROCESS_OUTGOING_CALLS`.
 
 - **The good:** Communication apps can use this to let you call your friends.
@@ -196,6 +213,8 @@ Each of these dangerous permission groups contains multiple permissions, and app
 - **The bad:** A malicious app could be spyware that can eavesdrop on your phone habits and make calls without your consent (including paid calls).
 
 ![bg right:30% 60%](https://signal.avg.com/hubfs/Blog_Content/Avg/Signal/AVG%20Signal%20Images/Guide%20to%20Android%20App%20Permissions%20and%20How%20to%20Use%20Them%20Smartly%20(Signal)%20-%20refresh/icon_07.svg)
+
+</div>
 
 ---
 
@@ -260,6 +279,8 @@ Each of these dangerous permission groups contains multiple permissions, and app
 
 ## Manifest File
 
+<div style="font-size:25px">
+
 ```xml
 <!-- Recommended for Android 9 (API level 28) and lower. -->
 <!-- Required for Android 10 (API level 29) and higher. -->
@@ -282,10 +303,13 @@ Each of these dangerous permission groups contains multiple permissions, and app
 </manifest>
 
 ```
+</div>
 
 ---
 
 ## Malicious  Apps
+
+<div style="font-size:26px">
 
 **Hidden Apps**
 - Once these shady apps get on your phone, they disguise themselves. They replace their icons with Google Chrome logos or use transparent icons to make it look like they're not even there.
@@ -297,3 +321,5 @@ Each of these dangerous permission groups contains multiple permissions, and app
 
 **JokerApps**
  - Sign you up to subscriptions
+ 
+ </div>

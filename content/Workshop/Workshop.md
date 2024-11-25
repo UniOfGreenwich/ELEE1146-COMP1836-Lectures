@@ -4,6 +4,7 @@ description: Workshop
 class: gaia
 _class:
   - lead
+  - invert
 style: |
     #img-right{
       float: right;
@@ -29,9 +30,14 @@ math: true
 
 # Workshop for Assessment
 
-    Module Code: ELEE1149 -COMP1836
-    
-    Module Name: Mobile Applications for <Engineering>
+
+    Module Code: ELEE1146 
+
+    Module Name: Mobile Applications for Engineers
+
+    Credits: 15
+
+    Module Leader: Seb Blair BEng(H) PGCAP MIET MIEEE MIHEEM FHEA
 
 
 ![bg right:40% 100%](../../figures/Workshop.PNG)
