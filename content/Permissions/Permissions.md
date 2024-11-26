@@ -267,7 +267,14 @@ Each of these dangerous permission groups contains multiple permissions, and app
 
 - Any app with **root** privileges can do whatever it wants — **regardless** of which permissions you’ve already **blocked** or **enabled**.
 
--  Malicious apps with superuser privileges can wreak havoc on your phone. Thankfully, **Android blocks root privileges by default**. 
+-  Malicious apps with superuser privileges can wreak havoc on your phone. Thankfully, **Android blocks root privileges by default***. 
+
+
+<div style="font-size:20px">
+
+*Though if you are skilled and detemined enough... 
+
+</div>
 
 ---
 
