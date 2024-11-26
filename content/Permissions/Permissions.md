@@ -280,7 +280,7 @@ Each of these dangerous permission groups contains multiple permissions, and app
 
 ## Permission Workflow
 
-![](../../figures/permission_workflow.svg)
+![center w:980](../../figures/permission_workflow.svg)
 
 ---
 
