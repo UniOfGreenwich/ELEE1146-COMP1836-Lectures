@@ -180,16 +180,21 @@ The sensors' possible architectures vary by sensor type:
 
 ---
 
+## Sensors - Emulator Extended Controls
+
+![center w:700](https://i.stack.imgur.com/G2DK6.gif)
+
+---
+
 ## `Sensor` `Field`'s
 
 - There are numerous variables that provide information about a sensor.
 - accessible through functions like...
-  ```java
-  private int android.hardware.Sensor.mFifoMaxEventCount
-  ...
-  public int getFifoReservedEventCount (){
+  ```kt
+  fun getFifoReservedEventCount(): Int {
   
   return android.hardware.Sensor.mFifoMaxEventCount
+  
   }
   ```
   ![bg right:50% 45% ](../../figures/Sensor_Orientation.png)
@@ -205,13 +210,14 @@ This gives a guarantee on the minimum number of events that can be batched.
 
 ## `StringBuilder` Class
 
+<div style="font-size:24px">
+
 - a **mutable** sequence of characters. 
 - `String` Class in Java creates an **immutable** sequence of characters, 
 - Constructs a string builder with no characters in it and an initial capacity of 16 characters
 
   ```kt
   val stringBuilder = StringBuilder()
-
 
   stringBuilder.append("Hello");
   stringBuilder.append("World!");
@@ -228,12 +234,16 @@ This gives a guarantee on the minimum number of events that can be batched.
 
   </details>
 
+</div>
+
 <!--
 modifying the `String` creates a new String object in the heap memory with the latest content, and the original String is never changed.
 -->
 ---
 
 ## `Pattern` Class
+
+<div style="font-size:24px">
 
 - is class used in regular expression(regex)
 - is a type of object that is used to help you extract information from any string data by searching through text to find what you need
@@ -253,27 +263,31 @@ modifying the `String` creates a new String object in the heap memory with the l
 
   </details>
 
+</div>
+
 ---
 
 ## `Pattern` Class
 
-```java
-Pattern pattern = Pattern.compile("^(.+)@example.com$");
-   
+<div style="font-size:24px">
+
+```kotlin
+val pattern = Pattern.compile("^(.+)@example.com$")
+
 // Input list
-List<String> emails = Arrays.asList("anemail@example.com", "whouses@yahoo.com", 
-          "sellout@google.com", "youremail@example.com");
-  
-for(String email : emails)
-{
-    Matcher matcher = pattern.matcher(email);
-      
-    if(matcher.matches()) 
-    {
-      System.out.println(email);
+val emails = listOf("anemail@example.com", "whouses@yahoo.com", 
+                    "sellout@google.com", "youremail@example.com")
+
+for (email in emails) {
+    val matcher = pattern.matcher(email)
+
+    if (matcher.matches()) {
+        println(email)
     }
 }
 ```
+
+</div>
 
 <details>
 <summary>Output?</summary>
