@@ -33,7 +33,7 @@ marp: true
 math: true
 ---
 
-<!-- _footer: ""-->
+<!-- _footer: "[Download as a PDF](https://github.com/UniOfGreenwich/ELEE1146-Lectures/raw/gh-pages/content/DevelopmentsKits/DevelopmentsKits.pdf)" -->
   
 # Development Kits
 

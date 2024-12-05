@@ -1,6 +1,6 @@
 ---
-title: Input Variables Operations Pt1
-description: Input Variables Operations Pt1
+title: Input Variables Operations
+description: Input Variables Operations
 class: gaia
 _class:
   - lead
@@ -33,9 +33,9 @@ marp: true
 math: true
 ---
 
-<!-- _footer: ""-->
+<!-- _footer: "[Download as a PDF](https://github.com/UniOfGreenwich/ELEE1146-Lectures/raw/gh-pages/content/InputVariablesOperations/InputVariablesOperations.pdf)" -->
   
-# Input Variables Operations Pt1
+# Input Variables Operations
 
     Course Code: ELEE1146 
 

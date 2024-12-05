@@ -1,7 +1,8 @@
 #! /usr/bin/env bash
-MODULE_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]%/*}" )" &> /dev/null && pwd )
+LECTURES_DIR=$( cd -- "$( dirname -- "$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" && pwd )" )" && pwd )
 
-LECTURE_FOLDER=${MODULE_DIR}/content/$1
+echo $LECTURES_DIR
+LECTURE_FOLDER=${LECTURES_DIR}/content/$1
 
 # default name is $1 if $2 not supplied
 LECTURE_FILENAME=${2:-$1}
@@ -10,12 +11,12 @@ if [[ ! -d ${LECTURE_FOLDER} ]];then
 	mkdir ${LECTURE_FOLDER}
 fi
 
-source ${MODULE_DIR}/config
+source ${LECTURES_DIR}/scripts/config
 
 cat >> ${LECTURE_FOLDER}/${LECTURE_FILENAME}.md << EOF
 ---
-title: DOCUMENT TITLE
-description: DESCRIPTION OF DOCUMENT
+title: ${LECTURE_FILENAME}
+description: ${LECTURE_FILENAME} slides
 class: gaia
 _class:
   - lead
@@ -36,10 +37,22 @@ style: |
       border: none!important;
       vertical-align: middle;
     }
+    grid {
+      display: grid;
+    }
+    grid-cols {
+      grid-template-columns: repeat(var(--columns, 2), minmax(0, 1fr));
+    }
+    grid-rows {
+      grid-template-rows: repeat(var(--rows, 2), minmax(0, 1fr));
+    }
+    gap {
+      gap: var(--gap, 4px);
+    }
     section::after {
       content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
     }
-footer: "$modulecode | $modulename"
+footer: $modulecode  | $modulename
 size: 16:9
 paginate: true
 _paginate: false
@@ -47,18 +60,20 @@ marp: true
 math: true
 ---
 
-<!-- _footer: "" -->
+<!-- _footer: "[Download as a PDF](https://github.com/UniOfGreenwich/${modulecode}-Lectures/raw/gh-pages/content/${LECTURE_FILENAME}/${LECTURE_FILENAME}.pdf)" -->
 
-# LECTURE TITLE
+# ${LECTURE_FILENAME}
 
     Module Code: $modulecode
 
     Module Name: $modulename
 
-    Lecturer: $moduleleader
+    Credits: $credits
+
+    Module Leader: $moduleleader
 
 ---
 EOF
 
 # declutter environment variables
-unset $coursecode $coursename $lecturer
+unset $modulecode $modulename $credits $moduleleader

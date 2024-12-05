@@ -33,7 +33,8 @@ marp: true
 math: true
 ---
 
-<!-- _footer: ""-->
+<!-- _footer: "[Download as a PDF](https://github.com/UniOfGreenwich/ELEE1146-Lectures/raw/gh-pages/content/IconsDecisionMakingControls/IconsDecisionMakingControls.pdf)" -->
+  
 
 # Icons Decision Making Controls Pt1
 

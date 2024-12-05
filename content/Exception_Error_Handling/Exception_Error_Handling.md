@@ -33,9 +33,8 @@ marp: true
 math: true
 ---
 
-<!-- _footer: ""-->
+<!-- _footer: "[Download as a PDF](https://github.com/UniOfGreenwich/ELEE1146-Lectures/raw/gh-pages/content/Exception_Error_Handling/Exception_Error_Handling.pdf)" -->
   
-
 # Exception and Error Handiling
 
     Course Code: ELEE1146 
